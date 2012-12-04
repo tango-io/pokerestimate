@@ -15,7 +15,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var findByUsername = function(username, callback) {
   //TODO find user by username logic
-  return callback(null, {id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com'});
+  return callback(null, {id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com', password: '12345'});
 };
 
 passport.serializeUser(function(user, done) {
@@ -24,7 +24,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
   //TODO find user by ID
-  done(null, {id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com'});
+  done(null, {id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com', password: '12345'});
 });
 
 passport.use(new LocalStrategy(
@@ -36,9 +36,10 @@ passport.use(new LocalStrategy(
         if (!user) {
           return done(null, false, { message: 'Incorrect username.' });
         }
-        if (!user.validPassword(password)) {
+        if (user.password !== password) {
           return done(null, false, { message: 'Incorrect password.' });
         }
+
         return done(null, user);
 
       });
