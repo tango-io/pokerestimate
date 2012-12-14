@@ -3,7 +3,7 @@
  */
 
 var homeController = require('../controllers/home_controller');
-var authenticationController = require('../controllers/authentication_controller');
+var authController = require('../controllers/authentication_controller');
 
 /*
  * Routes
@@ -11,8 +11,10 @@ var authenticationController = require('../controllers/authentication_controller
 
 module.exports = function(app, passport){
 
+  var authenticate = authController.setUp(authController, passport);
+
   app.get('/', homeController.index);
 
-  app.all('/login', function(req, res, next){authenticationController.login(req, res, next, passport);});
+  app.all('/login', authenticate);
 
 };
