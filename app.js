@@ -13,9 +13,13 @@ var flash         = require('connect-flash');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+var User = require('./models/user');
+
 var findByUsername = function(username, callback) {
-  //TODO find user by username logic
-  return callback(null, {id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com', password: '12345'});
+  User.getByUsername(username, function(user){
+    //TODO error handler
+    return callback(null, user);
+  });
 };
 
 passport.serializeUser(function(user, done) {
@@ -23,8 +27,10 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  //TODO find user by ID
-  done(null, {id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com', password: '12345'});
+  User.getById(id, function(){
+    //TODO error handler
+    done(null, user);
+  });
 });
 
 passport.use(new LocalStrategy(
