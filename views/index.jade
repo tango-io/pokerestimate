@@ -1,4 +1,15 @@
 extends layout
 
 block content
-  p Hello world
+
+  - if(user)
+    p Welcome:
+      i #{user}
+    a(href="/logout") Log out
+  - else
+    form(action="/login", method="POST")
+      label Mail
+      input(type="text", name="username", placeholder="EXAMPLE@DOMAIN.COM")
+      label Password
+      input(type="password", name="password", placeholder="********")
+      input(type="submit", value="LOGIN")
