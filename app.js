@@ -15,10 +15,9 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('./models/user');
 
-var findByUsername = function(username, callback) {
-  User.getByUsername(username, function(user){
-    //TODO error handler
-    return callback(null, user);
+var findUser = function(username, callback) {
+  User.getByUsername(username, function(error, user){
+    return callback(error, user);
   });
 };
 
@@ -27,26 +26,25 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  User.getById(id, function(){
-    //TODO error handler
-    done(null, user);
+  User.getById(id, function(error, user){
+    done(error, user);
   });
 });
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
     process.nextTick(function () {
-      findByUsername(username, function(err, user) {
+      findUser(username, function(err, user) {
         if (err) { return done(err); }
 
         if (!user) {
-          return done(null, false, { message: 'Incorrect username.' });
+          return done(err, false, { message: 'Incorrect username.' });
         }
         if (user.password !== password) {
-          return done(null, false, { message: 'Incorrect password.' });
+          return done(err, false, { message: 'Incorrect password.' });
         }
 
-        return done(null, user);
+        return done(err, user);
 
       });
     });
