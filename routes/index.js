@@ -16,5 +16,6 @@ module.exports = function(app, passport){
   app.get('/', homeController.index);
 
   app.all('/login', authenticate);
+  app.get('/logout',authController.logout);
 
 };
