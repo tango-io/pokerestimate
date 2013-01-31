@@ -38,6 +38,11 @@ passport.use(new LocalStrategy(
         if (err) { return done(err); }
 
         if (!user) {
+
+          User.create({email: username, password: password}, function(err, newUser){
+            console.log(newUser);
+          });
+
           return done(err, false, { message: 'Incorrect username.' });
         }
         if (user.password !== password) {
