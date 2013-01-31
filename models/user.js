@@ -1,13 +1,27 @@
+var database = require("../config/database");
+var inspect  = require('eyes').inspector({ stream: null });
+
 module.exports = {
 
   getByUsername: function(username, callback){
-    //TODO find user by username on mongodb
-    return callback({id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com', password: '12345'});
+    database.open(function(err, db){
+      db.collection('users', function(error , userCollection){
+        userCollection.findOne({email: username}, function(err, user){
+          database.close();
+          return callback(error, user);
+        });
+      });
+    });
   },
 
   getById: function(id, callback){
-    //TODO find user by id on mongodb
-    return callback({id: 1, name: 'Narciso', email: 'narciso.guillen@tangosource.com', password: '12345'});
+    database.open(function(err, db){
+      db.collection('users', function(error , userCollection){
+        userCollection.findOne({id: id}, function(err, user){
+          database.close();
+          return callback(err, user);
+        });
+      });
+    });
   }
-
 };
