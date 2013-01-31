@@ -23,5 +23,10 @@ module.exports = {
         });
       });
     });
+  },
+
+  create: function(data, callback){
+    return callback(null, data);
   }
+
 };
