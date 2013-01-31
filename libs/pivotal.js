@@ -21,7 +21,7 @@ module.export.access = function(data, callback){
   var req = https.request(options, function(res) {
     res.on('data', function(d) {
       parser.parseString(d, function (err, result) {
-        return callback.call(this, result);
+        return callback.call(this, err, result);
       });
     });
 
