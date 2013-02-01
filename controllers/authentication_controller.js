@@ -16,13 +16,16 @@ module.exports = {
 
           if (err) { return next(err); }
 
-          if (!user) { return res.send(info); }
+          if (!user) { 
+            if(info){ return res.send(info); }
+
+            //TODO Need to improve this
+            return res.redirect('/');
+          }
 
           req.logIn(user, function(err) {
             if (err) { return next(err); }
-            var userEmail = req.user ? req.user.email : null;
             return res.redirect('/');
-            // return res.send('Success', userEmail);
           });
 
         })(req, res, next);
