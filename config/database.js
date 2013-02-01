@@ -14,14 +14,21 @@ exports.close = function(){
 };
 
 exports.open = function(callback){
+  console.log(inspect('Opening database...'));
 
   Database.open(function(error, db){
 
     if(error){return callback.call(this, error);}
+    console.log(inspect('Authenticating...'));
 
     db.authenticate('narciso', 'guillen', function (err, replies) {
-      // We are now connected and authenticated.
-      return callback.call(this, err, db);
+      console.log(inspect("We are now connected and authenticated ."));
+
+      var collections = {
+        users: new mongodb.Collection(db, "users")
+      };
+
+      return callback.call(this, err, collections);
     });
 
   });
