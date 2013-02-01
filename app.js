@@ -12,6 +12,7 @@ var app           = express();
 var flash         = require('connect-flash');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var bcrypt        = require('bcrypt');
 
 var User = require('./models/user');
 
@@ -33,27 +34,27 @@ passport.deserializeUser(function(id, done) {
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    process.nextTick(function () {
-      findUser(username, function(err, user) {
-        if (err) { return done(err); }
+  process.nextTick(function () {
+    findUser(username, function(err, user) {
+      if (err) { return done(err); }
 
-        if (!user) {
+      if (!user) {
+        User.create({email: username, password: password}, function(err, newUser){
+          if(newUser.message){
+            return done(err, false, { message: newUser.message });
+          }
+          return done(null, user);
+        });
+      }else{
+        bcrypt.compare(password, user.password, function(err, res) {
+          if(!res){ return done(err, false, { message: 'Incorrect password.' }); }
+          return done(err, user);
+        });
+      }
 
-          User.create({email: username, password: password}, function(err, newUser){
-            console.log(newUser);
-          });
-
-          return done(err, false, { message: 'Incorrect username.' });
-        }
-        if (user.password !== password) {
-          return done(err, false, { message: 'Incorrect password.' });
-        }
-
-        return done(err, user);
-
-      });
     });
-  }
+  });
+}
 ));
 
 
