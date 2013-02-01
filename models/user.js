@@ -6,46 +6,32 @@ var inspect  = require('eyes').inspector({ stream: null });
 module.exports = {
 
   getByUsername: function(username, callback){
-    database.open(function(err, db){
-      db.collection('users', function(error , userCollection){
-        userCollection.findOne({email: username}, function(err, user){
-          database.close();
-          return callback(error, user);
-        });
-      });
+    this.collection.findOne({email: username}, function(err, user){
+      return callback(err, user);
     });
   },
 
   getById: function(id, callback){
-    database.open(function(err, db){
-      db.collection('users', function(error , userCollection){
-        userCollection.findOne({id: id}, function(err, user){
-          database.close();
-          return callback(err, user);
-        });
-      });
+    this.collection.findOne({id: id}, function(err, user){
+      return callback(err, user);
     });
   },
 
   create: function(data, callback){
+    var self = this;
 
     bcrypt.hash(data.password, 10, function(err, hash) {
       data.password = hash;
     });
 
-    pivotal.access({username: data.email, password: data.password}, function(err, result){
-      if(result.message){ return callback(err, result); }
+    pivotal.access({username: data.email, password: data.password}, function(error, result){
+      if(result.message){ return callback(error, result); }
 
       data.id    = result.token.id[0]._;
       data.token = result.token.guid[0];
 
-      database.open(function(err, db){
-        db.collection('users', function(error , userCollection){
-          userCollection.save(data, {safe: true}, function(err, user){
-            database.close();
-            return callback(err, user);
-          });
-        });
+      self.collection.save(data, {safe: true}, function(err, user){
+        return callback(err, user);
       });
 
     });
