@@ -13,8 +13,17 @@ var flash         = require('connect-flash');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt        = require('bcrypt');
+var inspect       = require('eyes').inspector({ stream: null });
 
 var User = require('./models/user');
+var database = require("./config/database");
+
+database.open(function(err, db){
+  console.log(inspect('Database Ready!'));
+
+  // Set up database for models
+  User.collection = db.users;
+});
 
 var findUser = function(username, callback) {
   User.getByUsername(username, function(error, user){
@@ -83,5 +92,5 @@ app.configure('development', function(){
 require('./routes/index')(app, passport);
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+  console.log(inspect("Express server listening on port " + app.get('port')));
 });
