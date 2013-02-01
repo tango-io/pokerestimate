@@ -3,9 +3,10 @@ var inspect     = require('eyes').inspector({ stream: null });
 var querystring = require('querystring');
 var xml2js      = require('xml2js');
 
-module.export.access = function(data, callback){
+module.exports.access = function(data, callback){
   var parser     = new xml2js.Parser();
   var stringData = querystring.stringify(data);
+  var noAccess   = new RegExp(/Access denied/); 
 
   var options = {
     host: 'www.pivotaltracker.com',
@@ -20,9 +21,15 @@ module.export.access = function(data, callback){
 
   var req = https.request(options, function(res) {
     res.on('data', function(d) {
+
+      if(noAccess.test(d.toString())){
+        return callback.call(this, null, {message: d.toString()});
+      }
+
       parser.parseString(d, function (err, result) {
         return callback.call(this, err, result);
       });
+
     });
 
   });
