@@ -4,6 +4,8 @@ var TXE = {
   Views: {},
 
   Initialize: function(){
+    this.router = new TXE.Router();
+    Backbone.history.start({pushState: true});
   }
 };
 
