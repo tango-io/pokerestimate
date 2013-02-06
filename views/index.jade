@@ -2,10 +2,13 @@ extends layout
 
 block content
 
+  input#user(type='hidden', value='#{user}')
+
   - if(user)
     p Welcome:
       i #{user}
     a(href="/logout") Log out
+    include projects-list
   - else
     form(action="/login", method="POST")
       label Mail
