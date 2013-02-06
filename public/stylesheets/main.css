@@ -1,0 +1,8 @@
+/* line 1, ../sass/main.scss */
+body {
+  background-color: #F2F1ED;
+}
+/* line 5, ../sass/main.scss */
+body .row {
+  width: 940px;
+}
