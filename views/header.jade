@@ -1,0 +1,29 @@
+nav.top-bar
+  .row
+    ul
+      li.name
+        .egg
+        .logo
+          a(href="/")
+            img(src="images/logo.png")
+        h1
+          a(href="/") POKER 
+            span ESTIMATE’EM
+        //   img(src="images/slog.png")
+    section#navigator
+      ul.right
+        -if(user)
+          li.has-dropdown
+            a(href='#') Projects
+            ul.dropdown
+            li
+              a(href='#') 
+                img(src="images/user.png")
+                span #{user.email}
+          li
+            a.logout(href="/logout")
+              img(src="images/exit.png")
+        -else
+          li.item
+            a(href='#') Login
+

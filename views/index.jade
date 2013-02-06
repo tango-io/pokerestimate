@@ -2,6 +2,10 @@ extends layout
 
 block content
 
+  include header
+  #main-content.row
+  // include footer
+
   input#user(type='hidden', value='#{user}')
 
   - if(user)
@@ -16,3 +20,7 @@ block content
       label Password
       input(type="password", name="password", placeholder="********")
       input(type="submit", value="LOGIN", class="button")
+
+
+
+        
