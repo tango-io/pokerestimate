@@ -6,20 +6,25 @@ var inspect  = require('eyes').inspector({ stream: null });
 module.exports = {
 
   getByUsername: function(username, callback){
+    if(!this.collection){return callback('Damn! mongo is not ready, please try again');}
+
     this.collection.findOne({email: username}, function(err, user){
       return callback(err, user);
     });
   },
 
   getById: function(id, callback){
+    if(!this.collection){return callback('Damn! mongo is not ready, please try again');}
+
     this.collection.findOne({id: id}, function(err, user){
       return callback(err, user);
     });
   },
 
   create: function(data, callback){
-    var self = this;
+    if(!this.collection){return callback('Damn! mongo is not ready, please try again');}
 
+    var self = this;
     bcrypt.hash(data.password, 10, function(err, hash) {
       data.password = hash;
     });
