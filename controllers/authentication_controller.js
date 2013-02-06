@@ -9,31 +9,22 @@ module.exports = {
 
   login: function(req, res, next, passport){
 
-    switch(req.method){
+    passport.authenticate('local', function(err, user, info) {
+      if (err) { return next(err); }
 
-      case 'POST':
-        passport.authenticate('local', function(err, user, info) {
+      if (!user) { 
+        if(info){ return res.send(info); }
 
-          if (err) { return next(err); }
+        //TODO Need to improve this
+        return res.redirect('/');
+      }
 
-          if (!user) { 
-            if(info){ return res.send(info); }
+      req.logIn(user, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/');
+      });
 
-            //TODO Need to improve this
-            return res.redirect('/');
-          }
-
-          req.logIn(user, function(err) {
-            if (err) { return next(err); }
-            return res.redirect('/');
-          });
-
-        })(req, res, next);
-      break;
-
-      default: return res.redirect('/');
-
-    }
+    })(req, res, next);
 
   },
 
