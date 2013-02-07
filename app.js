@@ -52,7 +52,7 @@ passport.use(new LocalStrategy(
           if(newUser.message){
             return done(err, false, { message: newUser.message });
           }
-          return done(null, user);
+          return done(null, newUser);
         });
       }else{
         bcrypt.compare(password, user.password, function(err, res) {
