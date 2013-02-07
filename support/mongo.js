@@ -14,13 +14,15 @@ program
       if(er){console.log(er); process.exit();}
 
       if(db[collection]){
-        console.log('Deleting users...');
+        console.log('Deleting ' + collection + ' ...');
         db[collection].remove(function(){
           console.log('Done!');
+          database.close();
           process.exit();
         });
       }else{
         console.log('Collection does not exist!');
+        database.close();
         process.exit();
       }
     });
