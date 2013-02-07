@@ -25,7 +25,9 @@ exports.open = function(callback){
       console.log(inspect("We are now connected and authenticated ."));
 
       var collections = {
-        users: new mongodb.Collection(db, "users")
+        users: new mongodb.Collection(db, "users"),
+        tasks: new mongodb.Collection(db, "tasks"),
+        games: new mongodb.Collection(db, "games")
       };
 
       return callback.call(this, err, collections);
