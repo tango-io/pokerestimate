@@ -3,11 +3,11 @@ var https       = require('https');
 var inspect     = require('eyes').inspector({ stream: null });
 var querystring = require('querystring');
 var xml2js      = require('xml2js');
+var noAccess    = new RegExp(/Access denied/); 
 
 module.exports.access = function(data, callback){
   var parser     = new xml2js.Parser();
   var stringData = querystring.stringify(data);
-  var noAccess   = new RegExp(/Access denied/); 
 
   var options = {
     host: 'www.pivotaltracker.com',
@@ -44,16 +44,17 @@ module.exports.access = function(data, callback){
 
 };
 
-module.exports.getProjects = function(token, callback){
+module.exports.getProjects = function(data, callback){
   var parser = new xml2js.Parser();
+  var id = data.id ? '/' + data.id : '';
 
   var options = {
     host: 'www.pivotaltracker.com',
     port: 80,
-    path: '/services/v3/projects',
+    path: '/services/v3/projects' + id,
     method: 'GET',
     headers: {  
-      'X-TrackerToken': token
+      'X-TrackerToken': data.token
     }  
   };
 
@@ -63,6 +64,11 @@ module.exports.getProjects = function(token, callback){
 
   var req = http.request(options, function(res) {
     res.on('data', function(d) {
+
+      if(noAccess.test(d.toString())){
+        return callback.call(this, null, {message: d.toString()});
+      }
+
       parser.parseString(d);
     });
 
