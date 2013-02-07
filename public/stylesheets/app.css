@@ -6096,11 +6096,106 @@ table.hide-for-medium {
     margin: 0;
   }
 }
-/* line 1, ../sass/main.scss */
+/* line 3, ../sass/main.scss */
 body {
   background-color: #F2F1ED;
 }
 /* line 5, ../sass/main.scss */
+body h1, body h2, body h3, body h4, body li, body p, body button, body a {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+}
+/* line 10, ../sass/main.scss */
 body .row {
   width: 940px;
+}
+/* line 14, ../sass/main.scss */
+body .top-bar .egg {
+  background: transparent url("../images/poker-face.png") no-repeat 0 bottom;
+  position: absolute;
+  width: 32px;
+  height: 50px;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 25, ../sass/main.scss */
+body .top-bar .name:hover .egg {
+  left: -30px;
+}
+/* line 32, ../sass/main.scss */
+body .top-bar .row ul li.name {
+  position: relative;
+}
+/* line 35, ../sass/main.scss */
+body .top-bar .row ul li.name > * {
+  float: left;
+}
+/* line 38, ../sass/main.scss */
+body .top-bar .row ul li.name h1 {
+  padding-left: 60px;
+  margin: 0;
+}
+/* line 42, ../sass/main.scss */
+body .top-bar .row ul li.name h1 a {
+  font-size: 30px;
+  color: #C70A2B;
+  font-weight: 800;
+}
+/* line 46, ../sass/main.scss */
+body .top-bar .row ul li.name h1 a span {
+  color: #fff;
+}
+/* line 49, ../sass/main.scss */
+body .top-bar .row ul li.name .slog {
+  padding: 7px 0;
+  margin-left: 5px;
+}
+/* line 53, ../sass/main.scss */
+body .top-bar .row ul li.name .logo {
+  z-index: 5;
+  position: absolute;
+}
+/* line 57, ../sass/main.scss */
+body .top-bar .row ul li.name .logo a {
+  padding: 0;
+}
+/* line 65, ../sass/main.scss */
+body .top-bar .row #navigator li a {
+  font-size: 18px;
+  font-weight: 500;
+}
+/* line 68, ../sass/main.scss */
+body .top-bar .row #navigator li a img {
+  margin: 10px 5px 0 0;
+  float: left;
+}
+/* line 72, ../sass/main.scss */
+body .top-bar .row #navigator li a:hover {
+  color: #F9A73F;
+}
+/* line 74, ../sass/main.scss */
+body .top-bar .row #navigator li a.logout img {
+  margin-top: 7px;
+}
+/* line 79, ../sass/main.scss */
+body .top-bar .row #navigator li .dropdown {
+  padding: 0;
+}
+/* line 81, ../sass/main.scss */
+body .top-bar .row #navigator li .dropdown li.item {
+  padding: 0;
+}
+/* line 82, ../sass/main.scss */
+body .top-bar .row #navigator li .dropdown li.item a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
 }

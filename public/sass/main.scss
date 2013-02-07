@@ -1,9 +1,98 @@
+@import "mixins";
+
 body {
   background-color: #F2F1ED;
   h1, h2, h3, h4, li, p , button, a{
+    @include global_font;
+    padding: 0;
+    margin: 0;
   }
   .row{
     width: 940px;
+  }
+  .top-bar {
+    .egg {
+      background: transparent url('../images/poker-face.png') no-repeat 0 bottom;
+      position: absolute;
+      width: 32px;
+      height: 50px;
+      left: 0;
+      top: 0;
+      @include transition;
+    }
+
+    .name:hover {
+      .egg {
+        left: -30px;
+      }
+    }
+
+    .row {
+      ul {
+        li.name {
+          position: relative;
+
+          & > * {
+            float: left;
+          }
+          h1{
+            padding-left: 60px;
+            margin: 0;
+
+            a{
+              font-size: 30px;
+              color: #C70A2B;
+              font-weight: 800;
+              span{ color: #fff;}
+            }
+          }
+          .slog{
+            padding: 7px 0;
+            margin-left: 5px;
+          }
+          .logo{
+            z-index: 5;
+            position: absolute;
+
+            a {
+              padding: 0;
+            }
+          }
+        }
+      }
+      #navigator{
+        li {
+          a{
+            font-size: 18px;
+            font-weight: 500;
+            img{
+              margin: 10px 5px 0 0;
+              float: left;
+            }
+            &:hover{color: #F9A73F;}
+            &.logout{
+              img{
+                margin-top: 7px;
+              }
+            }
+          }
+          .dropdown{
+            padding: 0;
+            li.item{
+              a{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 14px;
+                font-weight: 400;
+              }
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+
+
   }
 
 }
