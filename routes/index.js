@@ -19,5 +19,6 @@ module.exports = function(app, passport){
   app.post('/login', authenticate);
   app.get('/logout', authController.logout);
 
-  app.get('/api/v1/projects', pivotalController.projects);
+  app.get('/api/v1/projects',     pivotalController.projects);
+  app.get('/api/v1/projects/:id', pivotalController.project);
 };
