@@ -2,17 +2,16 @@ extends layout
 
 block content
 
-  input#user(type='hidden', value='#{user}')
+  include header
+  #main-content.row
 
-  - if(user)
-    p Welcome:
-      i #{user}
-    a(href="/logout") Log out
-    include projects-list
-  - else
-    form(action="/login", method="POST")
-      label Mail
-      input(type="text", name="username", placeholder="EXAMPLE@DOMAIN.COM")
-      label Password
-      input(type="password", name="password", placeholder="********")
-      input(type="submit", value="LOGIN", class="button")
+    include home_page
+    include login_form
+
+  
+
+  include footer
+
+
+
+        

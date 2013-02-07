@@ -1,0 +1,85 @@
+@import "mixins";
+
+#main-content{
+
+  .six.columns{
+
+    .steps{
+
+      .box {
+        height: 225px;
+        width: 225px;
+        float: left;
+        margin: 1px;
+        overflow: hidden;
+        padding: 10px;
+        text-align:center;
+        position: relative;
+
+        &.one-sq{
+          background: #B4BDAD url('../images/landing-page/one.png') no-repeat 15px 10px;
+        }
+        &.two-sq{
+          background: #FAA83F url('../images/landing-page/two.png') no-repeat 15px 10px;
+        }
+        &.three-sq{
+          background: #DFD4C9 url('../images/landing-page/three.png') no-repeat 15px 10px;
+          .info h3{
+            margin-bottom: 10px;
+          }
+        }
+        &.four-sq{
+          margin-bottom: 15px;
+          background: #C70A2B url('../images/landing-page/four.png') no-repeat 15px 10px;
+          .box-info {
+            font-size: 20px;
+          }
+        }
+
+        &:hover {
+          .box-title {
+            font-size: 22px;
+            height: auto;
+            padding: 0 25px;
+          }
+
+          .box-info {
+            top: 50px;
+            @include opacity(1);
+          }
+        }
+
+        .box-title {
+          @include transition;
+          margin: 0 auto;
+          display: table-cell;
+          vertical-align: middle;
+          font-size: 40px;
+          font-weight: 100;
+          color: #fff;
+          letter-spacing: 1px;
+          @include global_font;
+          width: inherit;
+          height: inherit;
+        }
+
+        .box-info {
+          @include transition;
+          @include global_font;
+          text-align: left;
+          padding: 15px;
+          font-weight: 100;
+          color: #fff;
+          font-size: 17px;
+          letter-spacing: 1px;
+          position: absolute;
+          left: 0;
+          top: 220px;
+          opacity: 0;
+        }
+      }
+
+    }
+  }
+}
+
