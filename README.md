@@ -7,13 +7,15 @@ In middle of a iteration you can see notifications when a participant has voted.
 ##API
 
 GET /api/v1/projects
-  [{
-    _id: 0,
-    id: 0,
-    name: "name"
-  }]
+
+    [{
+       _id: 0,
+       id: 0,
+       name: "name"
+    }]
 
 GET /api/v1/projects/:id
+
     {
       _id: 0,
       id: 0,
