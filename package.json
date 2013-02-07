@@ -27,7 +27,8 @@
     "bcrypt" : "0.7.3",
     "jade": "*",
     "lodash" : "1.0.0-rc.3",
-    "commander": "1.1.1"
+    "commander": "1.1.1",
+    "mocha" : "1.8.1"
   }
 }
 
