@@ -6098,9 +6098,12 @@ table.hide-for-medium {
 }
 /* line 3, ../sass/main.scss */
 body {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
   background-color: #F2F1ED;
 }
-/* line 5, ../sass/main.scss */
+/* line 6, ../sass/main.scss */
 body h1, body h2, body h3, body h4, body li, body p, body button, body a {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -6108,11 +6111,11 @@ body h1, body h2, body h3, body h4, body li, body p, body button, body a {
   padding: 0;
   margin: 0;
 }
-/* line 10, ../sass/main.scss */
+/* line 11, ../sass/main.scss */
 body .row {
   width: 940px;
 }
-/* line 14, ../sass/main.scss */
+/* line 15, ../sass/main.scss */
 body .top-bar .egg {
   background: transparent url("../images/poker-face.png") no-repeat 0 bottom;
   position: absolute;
@@ -6125,77 +6128,165 @@ body .top-bar .egg {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 25, ../sass/main.scss */
+/* line 26, ../sass/main.scss */
 body .top-bar .name:hover .egg {
   left: -30px;
 }
 /* line 32, ../sass/main.scss */
-body .top-bar .row ul li.name {
+body .top-bar ul li.name {
   position: relative;
 }
 /* line 35, ../sass/main.scss */
-body .top-bar .row ul li.name > * {
+body .top-bar ul li.name > * {
   float: left;
 }
 /* line 38, ../sass/main.scss */
-body .top-bar .row ul li.name h1 {
+body .top-bar ul li.name h1 {
   padding-left: 60px;
   margin: 0;
 }
 /* line 42, ../sass/main.scss */
-body .top-bar .row ul li.name h1 a {
+body .top-bar ul li.name h1 a {
   font-size: 30px;
   color: #C70A2B;
   font-weight: 800;
 }
 /* line 46, ../sass/main.scss */
-body .top-bar .row ul li.name h1 a span {
+body .top-bar ul li.name h1 a span {
   color: #fff;
 }
 /* line 49, ../sass/main.scss */
-body .top-bar .row ul li.name .slog {
+body .top-bar ul li.name .slog {
   padding: 7px 0;
   margin-left: 5px;
 }
 /* line 53, ../sass/main.scss */
-body .top-bar .row ul li.name .logo {
+body .top-bar ul li.name .logo {
   z-index: 5;
   position: absolute;
 }
 /* line 57, ../sass/main.scss */
-body .top-bar .row ul li.name .logo a {
+body .top-bar ul li.name .logo a {
   padding: 0;
 }
 /* line 65, ../sass/main.scss */
-body .top-bar .row #navigator li a {
+body .top-bar #navigator li a {
   font-size: 18px;
   font-weight: 500;
 }
 /* line 68, ../sass/main.scss */
-body .top-bar .row #navigator li a img {
+body .top-bar #navigator li a img {
   margin: 10px 5px 0 0;
   float: left;
 }
 /* line 72, ../sass/main.scss */
-body .top-bar .row #navigator li a:hover {
+body .top-bar #navigator li a:hover {
   color: #F9A73F;
 }
 /* line 74, ../sass/main.scss */
-body .top-bar .row #navigator li a.logout img {
+body .top-bar #navigator li a.logout img {
   margin-top: 7px;
 }
 /* line 79, ../sass/main.scss */
-body .top-bar .row #navigator li .dropdown {
+body .top-bar #navigator li .dropdown {
   padding: 0;
 }
 /* line 81, ../sass/main.scss */
-body .top-bar .row #navigator li .dropdown li.item {
+body .top-bar #navigator li .dropdown li.item {
   padding: 0;
 }
 /* line 82, ../sass/main.scss */
-body .top-bar .row #navigator li .dropdown li.item a {
+body .top-bar #navigator li .dropdown li.item a {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: 400;
+}
+
+/* line 9, ../sass/home_page.scss */
+#main-content .six.columns .steps .box {
+  height: 225px;
+  width: 225px;
+  float: left;
+  margin: 1px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+/* line 19, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.one-sq {
+  background: #b4bdad url("../images/landing-page/one.png") no-repeat 15px 10px;
+}
+/* line 22, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.two-sq {
+  background: #faa83f url("../images/landing-page/two.png") no-repeat 15px 10px;
+}
+/* line 25, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.three-sq {
+  background: #dfd4c9 url("../images/landing-page/three.png") no-repeat 15px 10px;
+}
+/* line 27, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.three-sq .info h3 {
+  margin-bottom: 10px;
+}
+/* line 31, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.four-sq {
+  margin-bottom: 15px;
+  background: #c70a2b url("../images/landing-page/four.png") no-repeat 15px 10px;
+}
+/* line 34, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.four-sq .box-info {
+  font-size: 20px;
+}
+/* line 40, ../sass/home_page.scss */
+#main-content .six.columns .steps .box:hover .box-title {
+  font-size: 22px;
+  height: auto;
+  padding: 0 25px;
+}
+/* line 46, ../sass/home_page.scss */
+#main-content .six.columns .steps .box:hover .box-info {
+  top: 50px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 52, ../sass/home_page.scss */
+#main-content .six.columns .steps .box .box-title {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 40px;
+  font-weight: 100;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  width: inherit;
+  height: inherit;
+}
+/* line 66, ../sass/home_page.scss */
+#main-content .six.columns .steps .box .box-info {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+  padding: 15px;
+  font-weight: 100;
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 1px;
+  position: absolute;
+  left: 0;
+  top: 220px;
+  opacity: 0;
 }
