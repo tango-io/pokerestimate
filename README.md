@@ -1,10 +1,27 @@
-== styling
+##API
 
-*install zurb-foundation gem
+GET /api/v1/projects
+  [{
+    _id: 0,
+    id: 0,
+    name: "name"
+  }]
 
-  gem install zurb-foundation
+GET /api/v1/projects/:id
+    {
+      _id: 0,
+      id: 0,
+      name: "name"
+    }
 
-*compile Scss file
+
+##styling
+
+Install zurb-foundation gem
+
+    gem install zurb-foundation
+
+Compile Scss file
   
-  compass watch <path>
+    compass watch <path>
 
