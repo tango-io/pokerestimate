@@ -5,7 +5,11 @@ var inspect  = require('eyes').inspector({ stream: null });
 module.exports = {
   projects: function(req, res, next){
     var token = req.user ? req.user.token : null;
-    if(!token){res.send({error: 'Not logged in'});}
+
+    if(!token){
+      res.send({error: 'Not logged in'});
+      return false;
+    }
 
     pivotal.getProjects(token, function(error, data){
       if(error){res.send(error);}
