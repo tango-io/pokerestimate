@@ -2857,7 +2857,7 @@ ul.flyout li.active a, .nav-bar li ul li.active a {
   position: absolute;
   top: 0;
   left: -20px;
-  background: url('/images/foundation/orbit/rotator-black.png?1360194170') no-repeat;
+  background: url('/images/foundation/orbit/rotator-black.png?1360357174') no-repeat;
   z-index: 3;
 }
 /* line 27, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
@@ -2879,7 +2879,7 @@ ul.flyout li.active a, .nav-bar li ul li.active a {
 .orbit-wrapper span.mask.move {
   width: 40px;
   left: 0;
-  background: url('/images/foundation/orbit/timer-black.png?1360194170') repeat 0 0;
+  background: url('/images/foundation/orbit/timer-black.png?1360357174') repeat 0 0;
 }
 /* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
 .orbit-wrapper span.pause {
@@ -2889,13 +2889,13 @@ ul.flyout li.active a, .nav-bar li ul li.active a {
   position: absolute;
   top: 0;
   left: 0;
-  background: url('/images/foundation/orbit/pause-black.png?1360194170') no-repeat;
+  background: url('/images/foundation/orbit/pause-black.png?1360357174') no-repeat;
   z-index: 4;
   opacity: 0;
 }
 /* line 33, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
 .orbit-wrapper span.pause.active {
-  background: url('/images/foundation/orbit/pause-black.png?1360194170') no-repeat 0 -40px;
+  background: url('/images/foundation/orbit/pause-black.png?1360357174') no-repeat 0 -40px;
 }
 /* line 35, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
 .orbit-wrapper .timer:hover span.pause, .orbit-wrapper .timer:focus span.pause, .orbit-wrapper span.pause.active {
@@ -2942,24 +2942,24 @@ ul.flyout li.active a, .nav-bar li ul li.active a {
 }
 /* line 48, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
 .orbit-wrapper .slider-nav span.right {
-  background: url('/images/foundation/orbit/right-arrow.png?1360194170');
+  background: url('/images/foundation/orbit/right-arrow.png?1360357174');
   background-size: 100%;
   right: 0;
 }
 /* line 49, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
 .orbit-wrapper .slider-nav span.left {
-  background: url('/images/foundation/orbit/left-arrow.png?1360194170');
+  background: url('/images/foundation/orbit/left-arrow.png?1360357174');
   background-size: 100%;
   left: 0;
 }
 
 /* line 54, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
 .lt-ie9 .orbit-wrapper .slider-nav span.right {
-  background: url('/images/foundation/orbit/right-arrow-small.png?1360194170');
+  background: url('/images/foundation/orbit/right-arrow-small.png?1360357174');
 }
 /* line 55, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.5/scss/foundation/components/modules/_orbit.scss */
 .lt-ie9 .orbit-wrapper .slider-nav span.left {
-  background: url('/images/foundation/orbit/left-arrow-small.png?1360194170');
+  background: url('/images/foundation/orbit/left-arrow-small.png?1360357174');
 }
 
 /* Bullet Nav ---------------------- */
@@ -2980,7 +2980,7 @@ ul.orbit-bullets li {
   cursor: pointer;
   color: #999999;
   text-indent: -9999px;
-  background: url('/images/foundation/orbit/bullets.jpg?1360194170') no-repeat 4px 0;
+  background: url('/images/foundation/orbit/bullets.jpg?1360357174') no-repeat 4px 0;
   width: 13px;
   height: 12px;
   overflow: hidden;
@@ -6099,14 +6099,12 @@ table.hide-for-medium {
 /* line 3, ../sass/main.scss */
 body {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
-  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   background-color: #F2F1ED;
 }
 /* line 6, ../sass/main.scss */
 body h1, body h2, body h3, body h4, body li, body p, body button, body a {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
-  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   padding: 0;
   margin: 0;
@@ -6115,7 +6113,7 @@ body h1, body h2, body h3, body h4, body li, body p, body button, body a {
 body .row {
   width: 940px;
 }
-/* line 15, ../sass/main.scss */
+/* line 17, ../sass/main.scss */
 body .top-bar .egg {
   background: transparent url("../images/poker-face.png") no-repeat 0 bottom;
   position: absolute;
@@ -6128,74 +6126,74 @@ body .top-bar .egg {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 26, ../sass/main.scss */
+/* line 28, ../sass/main.scss */
 body .top-bar .name:hover .egg {
   left: -30px;
 }
-/* line 32, ../sass/main.scss */
+/* line 34, ../sass/main.scss */
 body .top-bar ul li.name {
   position: relative;
 }
-/* line 35, ../sass/main.scss */
+/* line 37, ../sass/main.scss */
 body .top-bar ul li.name > * {
   float: left;
 }
-/* line 38, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 body .top-bar ul li.name h1 {
   padding-left: 60px;
   margin: 0;
 }
-/* line 42, ../sass/main.scss */
+/* line 44, ../sass/main.scss */
 body .top-bar ul li.name h1 a {
   font-size: 30px;
   color: #C70A2B;
   font-weight: 800;
 }
-/* line 46, ../sass/main.scss */
+/* line 48, ../sass/main.scss */
 body .top-bar ul li.name h1 a span {
   color: #fff;
 }
-/* line 49, ../sass/main.scss */
+/* line 51, ../sass/main.scss */
 body .top-bar ul li.name .slog {
   padding: 7px 0;
   margin-left: 5px;
 }
-/* line 53, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 body .top-bar ul li.name .logo {
   z-index: 5;
   position: absolute;
 }
-/* line 57, ../sass/main.scss */
+/* line 59, ../sass/main.scss */
 body .top-bar ul li.name .logo a {
   padding: 0;
 }
-/* line 65, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 body .top-bar #navigator li a {
   font-size: 18px;
   font-weight: 500;
 }
-/* line 68, ../sass/main.scss */
+/* line 70, ../sass/main.scss */
 body .top-bar #navigator li a img {
   margin: 10px 5px 0 0;
   float: left;
 }
-/* line 72, ../sass/main.scss */
+/* line 74, ../sass/main.scss */
 body .top-bar #navigator li a:hover {
   color: #F9A73F;
 }
-/* line 74, ../sass/main.scss */
+/* line 76, ../sass/main.scss */
 body .top-bar #navigator li a.logout img {
   margin-top: 7px;
 }
-/* line 79, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 body .top-bar #navigator li .dropdown {
   padding: 0;
 }
-/* line 81, ../sass/main.scss */
+/* line 83, ../sass/main.scss */
 body .top-bar #navigator li .dropdown li.item {
   padding: 0;
 }
-/* line 82, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 body .top-bar #navigator li .dropdown li.item a {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -6223,36 +6221,46 @@ body .top-bar #navigator li .dropdown li.item a {
   background: #faa83f url("../images/landing-page/two.png") no-repeat 15px 10px;
 }
 /* line 25, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.two-sq:hover .box-title {
+  font-size: 20px;
+}
+/* line 30, ../sass/home_page.scss */
 #main-content .six.columns .steps .box.three-sq {
   background: #dfd4c9 url("../images/landing-page/three.png") no-repeat 15px 10px;
 }
-/* line 27, ../sass/home_page.scss */
+/* line 32, ../sass/home_page.scss */
 #main-content .six.columns .steps .box.three-sq .info h3 {
   margin-bottom: 10px;
 }
-/* line 31, ../sass/home_page.scss */
+/* line 36, ../sass/home_page.scss */
+#main-content .six.columns .steps .box.three-sq:hover .box-title {
+  font-size: 19px;
+}
+/* line 41, ../sass/home_page.scss */
 #main-content .six.columns .steps .box.four-sq {
   margin-bottom: 15px;
   background: #c70a2b url("../images/landing-page/four.png") no-repeat 15px 10px;
 }
-/* line 34, ../sass/home_page.scss */
+/* line 44, ../sass/home_page.scss */
 #main-content .six.columns .steps .box.four-sq .box-info {
   font-size: 20px;
 }
-/* line 40, ../sass/home_page.scss */
+/* line 50, ../sass/home_page.scss */
 #main-content .six.columns .steps .box:hover .box-title {
   font-size: 22px;
   height: auto;
   padding: 0 25px;
 }
-/* line 46, ../sass/home_page.scss */
+/* line 56, ../sass/home_page.scss */
 #main-content .six.columns .steps .box:hover .box-info {
   top: 50px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 52, ../sass/home_page.scss */
+/* line 62, ../sass/home_page.scss */
 #main-content .six.columns .steps .box .box-title {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
@@ -6264,29 +6272,123 @@ body .top-bar #navigator li .dropdown li.item a {
   font-weight: 100;
   color: #fff;
   letter-spacing: 1px;
-  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  -webkit-font-smoothing: antialiased;
   width: inherit;
   height: inherit;
+  font-weight: 500;
 }
-/* line 66, ../sass/home_page.scss */
+/* line 77, ../sass/home_page.scss */
 #main-content .six.columns .steps .box .box-info {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
-  font-size: 12px;
   -webkit-font-smoothing: antialiased;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
   text-align: left;
   padding: 15px;
   font-weight: 100;
   color: #fff;
-  font-size: 17px;
+  font-size: 13px;
   letter-spacing: 1px;
   position: absolute;
   left: 0;
   top: 220px;
-  opacity: 0;
+  font-weight: 300;
+}
+/* line 98, ../sass/home_page.scss */
+#main-content #work-area .title {
+  color: #C01126;
+  font-weight: 500;
+  font-size: 27px;
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 20px;
+  border-bottom: 4px solid black;
+}
+/* line 105, ../sass/home_page.scss */
+#main-content #work-area .title span {
+  font-size: 13px;
+}
+/* line 109, ../sass/home_page.scss */
+#main-content #work-area #log-form {
+  margin-top: 30px;
+  padding: 15px;
+}
+/* line 112, ../sass/home_page.scss */
+#main-content #work-area #log-form input[type=text], #main-content #work-area #log-form input[type=password] {
+  height: 55px;
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 24px;
+  padding: 0 15px;
+}
+/* line 118, ../sass/home_page.scss */
+#main-content #work-area #log-form input.button {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #FAA83F;
+  float: right;
+  margin-top: 20px;
+  border: 1px solid #fcd39e;
+}
+/* line 124, ../sass/home_page.scss */
+#main-content #work-area #log-form input.button:hover {
+  background: #E39737;
+}
+/* line 128, ../sass/home_page.scss */
+#main-content #work-area #log-form label {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+/* line 135, ../sass/home_page.scss */
+#main-content #work-area #log-form .sign a {
+  font-size: 16px;
+  color: #DFD3C7;
+  font-weight: 800;
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  float: right;
+}
+/* line 144, ../sass/home_page.scss */
+#main-content #work-area .fot {
+  padding: 15px;
+  padding-top: 10px;
+  border-top: 4px solid black;
+  margin-top: 10px;
+}
+/* line 149, ../sass/home_page.scss */
+#main-content #work-area .fot .image-fot {
+  background: transparent url("../images/landing-page/graph-footer.png") repeat-x;
+  height: 50px;
+}
+/* line 156, ../sass/home_page.scss */
+#main-content #work-area #projects .project {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 28px;
+  font-weight: 300;
+}
+/* line 161, ../sass/home_page.scss */
+#main-content #work-area #projects .project {
+  padding: 10px 0;
+  color: #000;
+  overflow: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  cursor: pointer;
+}
+/* line 168, ../sass/home_page.scss */
+#main-content #work-area #projects .project:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 172, ../sass/home_page.scss */
+#main-content #work-area #projects .project img {
+  margin-right: 5px;
+  float: left;
 }

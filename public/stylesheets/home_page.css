@@ -1,11 +1,11 @@
 /*
 Syntax error: Undefined mixin 'opacity'.
-        on line 48 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss, in `opacity'
-        from line 48 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss
+        on line 58 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss, in `opacity'
+        from line 58 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss
 
 Backtrace:
-/Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss:48:in `opacity'
-/Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss:48
+/Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss:58:in `opacity'
+/Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss:58
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:251:in `visit_mixin'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
@@ -130,4 +130,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'opacity'.\A         on line 48 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss, in `opacity'\A         from line 48 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss"; }
+  content: "Syntax error: Undefined mixin 'opacity'.\A         on line 58 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss, in `opacity'\A         from line 58 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/home_page.scss"; }
