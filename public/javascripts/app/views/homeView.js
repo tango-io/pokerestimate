@@ -13,7 +13,7 @@ TXE.Views.HomeView = Backbone.View.extend({
     var template = this.template;
     _.each(this.collection.models,function(model){
       var project = template(model.toJSON());
-      $('dropdown').append(project);
+      $('.dropdown').append(project);
     });
   }
 });

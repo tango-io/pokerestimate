@@ -1,1 +1,1 @@
-TXE.Templates.projectsTopNavListTemplate =" <li class='item'> <a href='#'><%= project.name %></a> </li> ";
+TXE.Templates.projectsTopNavListTemplate =" <li class='item'> <a href='#'><%= name %></a> </li> ";
