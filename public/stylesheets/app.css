@@ -6200,6 +6200,41 @@ body .top-bar #navigator li .dropdown li.item a {
   font-size: 14px;
   font-weight: 400;
 }
+/* line 101, ../sass/main.scss */
+body footer.bottom {
+  border-top: 2px solid #dfd4c8;
+  color: #B5BDAB;
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+/* line 106, ../sass/main.scss */
+body footer.bottom p {
+  text-align: center;
+  width: 460px;
+  margin: 0 auto;
+  height: 24px;
+  padding: 10px;
+  line-height: 28px;
+}
+/* line 113, ../sass/main.scss */
+body footer.bottom p:before {
+  content: " ";
+  background: transparent url("../images/landing-page/footer-1.png") no-repeat center center;
+  height: 26px;
+  width: 25px;
+  display: block;
+  float: left;
+}
+/* line 121, ../sass/main.scss */
+body footer.bottom p:after {
+  content: " ";
+  background: transparent url("../images/landing-page/footer-2.png") no-repeat center center;
+  height: 26px;
+  width: 26px;
+  display: block;
+  float: right;
+}
 
 /* line 9, ../sass/home_page.scss */
 #main-content .six.columns .steps .box {
@@ -6332,12 +6367,13 @@ body .top-bar #navigator li .dropdown li.item a {
   float: right;
   margin-top: 20px;
   border: 1px solid #fcd39e;
+  clear: both;
 }
-/* line 124, ../sass/home_page.scss */
+/* line 125, ../sass/home_page.scss */
 #main-content #work-area #log-form input.button:hover {
   background: #E39737;
 }
-/* line 128, ../sass/home_page.scss */
+/* line 129, ../sass/home_page.scss */
 #main-content #work-area #log-form label {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6345,7 +6381,7 @@ body .top-bar #navigator li .dropdown li.item a {
   font-weight: 800;
   margin-bottom: 5px;
 }
-/* line 135, ../sass/home_page.scss */
+/* line 136, ../sass/home_page.scss */
 #main-content #work-area #log-form .sign a {
   font-size: 16px;
   color: #DFD3C7;
@@ -6354,26 +6390,26 @@ body .top-bar #navigator li .dropdown li.item a {
   -webkit-font-smoothing: antialiased;
   float: right;
 }
-/* line 144, ../sass/home_page.scss */
+/* line 145, ../sass/home_page.scss */
 #main-content #work-area .fot {
   padding: 15px;
   padding-top: 10px;
   border-top: 4px solid black;
   margin-top: 10px;
 }
-/* line 149, ../sass/home_page.scss */
+/* line 150, ../sass/home_page.scss */
 #main-content #work-area .fot .image-fot {
   background: transparent url("../images/landing-page/graph-footer.png") repeat-x;
   height: 50px;
 }
-/* line 156, ../sass/home_page.scss */
+/* line 157, ../sass/home_page.scss */
 #main-content #work-area #projects .project {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 28px;
   font-weight: 300;
 }
-/* line 161, ../sass/home_page.scss */
+/* line 162, ../sass/home_page.scss */
 #main-content #work-area #projects .project {
   padding: 10px 0;
   color: #000;
@@ -6382,12 +6418,12 @@ body .top-bar #navigator li .dropdown li.item a {
   opacity: 0.6;
   cursor: pointer;
 }
-/* line 168, ../sass/home_page.scss */
+/* line 169, ../sass/home_page.scss */
 #main-content #work-area #projects .project:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 172, ../sass/home_page.scss */
+/* line 173, ../sass/home_page.scss */
 #main-content #work-area #projects .project img {
   margin-right: 5px;
   float: left;

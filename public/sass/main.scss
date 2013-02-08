@@ -96,7 +96,37 @@ body {
 
   }
 
+  // ----------------------------------- footer of the layout
+
   footer.bottom{
+    border-top: 2px solid #DFD4C8;
+    color: #B5BDAB;
+    @include global_font;
+    font-size: 16px;
+    p{
+      text-align: center;
+      width: 460px;
+      margin: 0 auto;
+      height: 24px;
+      padding: 10px;
+      line-height: 28px;
+      &:before{
+        content: " ";
+        background: transparent url('../images/landing-page/footer-1.png') no-repeat center center;
+        height: 26px;
+        width: 25px;
+        display:block;
+        float: left;
+      }
+      &:after{
+        content: " ";
+        background: transparent url('../images/landing-page/footer-2.png') no-repeat center center;
+        height: 26px;
+        width: 26px;
+        display:block;
+        float: right;
+      }
+    }
 
   }
 
