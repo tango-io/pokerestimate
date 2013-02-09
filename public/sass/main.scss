@@ -8,6 +8,13 @@ body {
     padding: 0;
     margin: 0;
   }
+  a{
+    color: #F9A73F;
+    @include transition;
+    &:hover{
+      color: #C11127;
+    }
+  }
   .row{
     width: 940px;
   }
@@ -99,10 +106,12 @@ body {
   // ----------------------------------- footer of the layout
 
   footer.bottom{
-    border-top: 2px solid #DFD4C8;
-    color: #B5BDAB;
     @include global_font;
+    border-top: 2px solid #DFD4C8;
     font-size: 16px;
+    color: #000;
+    @include opacity(.5);
+    @include transition;
     p{
       text-align: center;
       width: 460px;
@@ -128,6 +137,9 @@ body {
       }
     }
 
+    &:hover{
+      @include opacity(1);
+    }
   }
 
 }

@@ -6110,10 +6110,22 @@ body h1, body h2, body h3, body h4, body li, body p, body button, body a {
   margin: 0;
 }
 /* line 11, ../sass/main.scss */
+body a {
+  color: #F9A73F;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 14, ../sass/main.scss */
+body a:hover {
+  color: #C11127;
+}
+/* line 18, ../sass/main.scss */
 body .row {
   width: 940px;
 }
-/* line 17, ../sass/main.scss */
+/* line 24, ../sass/main.scss */
 body .top-bar .egg {
   background: transparent url("../images/poker-face.png") no-repeat 0 bottom;
   position: absolute;
@@ -6126,89 +6138,95 @@ body .top-bar .egg {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 28, ../sass/main.scss */
+/* line 35, ../sass/main.scss */
 body .top-bar .name:hover .egg {
   left: -30px;
 }
-/* line 34, ../sass/main.scss */
+/* line 41, ../sass/main.scss */
 body .top-bar ul li.name {
   position: relative;
 }
-/* line 37, ../sass/main.scss */
+/* line 44, ../sass/main.scss */
 body .top-bar ul li.name > * {
   float: left;
 }
-/* line 40, ../sass/main.scss */
+/* line 47, ../sass/main.scss */
 body .top-bar ul li.name h1 {
   padding-left: 60px;
   margin: 0;
 }
-/* line 44, ../sass/main.scss */
+/* line 51, ../sass/main.scss */
 body .top-bar ul li.name h1 a {
   font-size: 30px;
   color: #C70A2B;
   font-weight: 800;
 }
-/* line 48, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 body .top-bar ul li.name h1 a span {
   color: #fff;
 }
-/* line 51, ../sass/main.scss */
+/* line 58, ../sass/main.scss */
 body .top-bar ul li.name .slog {
   padding: 7px 0;
   margin-left: 5px;
 }
-/* line 55, ../sass/main.scss */
+/* line 62, ../sass/main.scss */
 body .top-bar ul li.name .logo {
   z-index: 5;
   position: absolute;
 }
-/* line 59, ../sass/main.scss */
+/* line 66, ../sass/main.scss */
 body .top-bar ul li.name .logo a {
   padding: 0;
 }
-/* line 67, ../sass/main.scss */
+/* line 74, ../sass/main.scss */
 body .top-bar #navigator li a {
   font-size: 18px;
   font-weight: 500;
 }
-/* line 70, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 body .top-bar #navigator li a img {
   margin: 10px 5px 0 0;
   float: left;
 }
-/* line 74, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 body .top-bar #navigator li a:hover {
   color: #F9A73F;
 }
-/* line 76, ../sass/main.scss */
+/* line 83, ../sass/main.scss */
 body .top-bar #navigator li a.logout img {
   margin-top: 7px;
 }
-/* line 81, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 body .top-bar #navigator li .dropdown {
   padding: 0;
 }
-/* line 83, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 body .top-bar #navigator li .dropdown li.item {
   padding: 0;
 }
-/* line 84, ../sass/main.scss */
+/* line 91, ../sass/main.scss */
 body .top-bar #navigator li .dropdown li.item a {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: 400;
 }
-/* line 101, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 body footer.bottom {
-  border-top: 2px solid #dfd4c8;
-  color: #B5BDAB;
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  border-top: 2px solid #dfd4c8;
   font-size: 16px;
+  color: #000;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 }
-/* line 106, ../sass/main.scss */
+/* line 115, ../sass/main.scss */
 body footer.bottom p {
   text-align: center;
   width: 460px;
@@ -6217,7 +6235,7 @@ body footer.bottom p {
   padding: 10px;
   line-height: 28px;
 }
-/* line 113, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 body footer.bottom p:before {
   content: " ";
   background: transparent url("../images/landing-page/footer-1.png") no-repeat center center;
@@ -6226,7 +6244,7 @@ body footer.bottom p:before {
   display: block;
   float: left;
 }
-/* line 121, ../sass/main.scss */
+/* line 130, ../sass/main.scss */
 body footer.bottom p:after {
   content: " ";
   background: transparent url("../images/landing-page/footer-2.png") no-repeat center center;
@@ -6234,6 +6252,11 @@ body footer.bottom p:after {
   width: 26px;
   display: block;
   float: right;
+}
+/* line 140, ../sass/main.scss */
+body footer.bottom:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
 
 /* line 9, ../sass/home_page.scss */
