@@ -16,7 +16,7 @@ TXE.Router = Backbone.Router.extend({
 
   home: function(){
     if(this.user.logged){
-      this.homeView = new TXE.Views.HomeView();
+      this.homeView = new TXE.Views.HomeView({el: '.dropdown'});
     }
   }
 
