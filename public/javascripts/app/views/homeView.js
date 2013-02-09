@@ -1,5 +1,7 @@
 TXE.Views.HomeView = Backbone.View.extend({
 
+  template: _.template(TXE.Templates.projectsTopNavListTemplate),  
+
   collection: new TXE.Collections.Projects(),
 
   initialize: function(){
@@ -7,6 +9,11 @@ TXE.Views.HomeView = Backbone.View.extend({
   },
 
   render: function(){
-    console.log(this.collection);
+    var template = this.template;
+    var $list = this.$el;
+    _.each(this.collection.models,function(model){
+      var project = template(model.toJSON());
+      $list.append(project);
+    });
   }
 });
