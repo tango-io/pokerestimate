@@ -48,7 +48,8 @@ passport.use(new LocalStrategy(
       if (err) { return done(err); }
 
       if (!user) {
-        User.create({email: username, password: password}, function(err, newUser){
+        User.create({email: username, password: password}, function(er, newUser){
+          if(er){return done(err, false, er.message);}
           if(newUser.message){
             return done(err, false, { message: newUser.message });
           }
