@@ -154,27 +154,36 @@
     }
     #projects{
 
-      .project{
-        @include global_font;
-        font-size: 28px;
-        font-weight: 300;
-      }
-      .project{
+      height: 388px;
+      overflow-y: auto;
+
+      .item{
+        text-indent: 30px; 
         padding: 10px 0;
-        color: #000;
-        overflow: hidden;
+        background: transparent url('../images/landing-page/project-carts.png') no-repeat left center;
         @include opacity(.6);
-        cursor: pointer;
+
+        a{
+
+          @include global_font;
+          font-size: 28px;
+          font-weight: 300;
+          color: #000;
+          overflow: hidden;
+
+        }
 
         &:hover{
           @include opacity(1);
         }
 
-        img{
-          margin-right: 5px;
-          float:left;
-        }
       }
+    }
+
+    .titles{
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 4px;
     }
   }
   

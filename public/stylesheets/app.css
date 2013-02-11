@@ -6425,29 +6425,36 @@ body footer.bottom:hover {
   background: transparent url("../images/landing-page/graph-footer.png") repeat-x;
   height: 50px;
 }
-/* line 157, ../sass/home_page.scss */
-#main-content #work-area #projects .project {
+/* line 155, ../sass/home_page.scss */
+#main-content #work-area #projects {
+  height: 388px;
+  overflow-y: auto;
+}
+/* line 160, ../sass/home_page.scss */
+#main-content #work-area #projects .item {
+  text-indent: 30px;
+  padding: 10px 0;
+  background: transparent url("../images/landing-page/project-carts.png") no-repeat left center;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+/* line 166, ../sass/home_page.scss */
+#main-content #work-area #projects .item a {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 28px;
   font-weight: 300;
-}
-/* line 162, ../sass/home_page.scss */
-#main-content #work-area #projects .project {
-  padding: 10px 0;
   color: #000;
   overflow: hidden;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-  cursor: pointer;
 }
-/* line 169, ../sass/home_page.scss */
-#main-content #work-area #projects .project:hover {
+/* line 176, ../sass/home_page.scss */
+#main-content #work-area #projects .item:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 173, ../sass/home_page.scss */
-#main-content #work-area #projects .project img {
-  margin-right: 5px;
-  float: left;
+/* line 183, ../sass/home_page.scss */
+#main-content #work-area .titles {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 4px;
 }
