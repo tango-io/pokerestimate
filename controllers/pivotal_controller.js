@@ -12,7 +12,16 @@ module.exports = {
     }
 
     pivotal.getProjects({token: token}, function(error, data){
-      if(error){res.send(error);}
+
+      if(error){
+        res.send(error);
+        return false;
+      }
+
+      if(data.message){
+        res.send(data);
+        return false;
+      }
 
       var projects = data.projects ? data.projects.project : [];
 
@@ -39,7 +48,16 @@ module.exports = {
     }
 
     pivotal.getProjects({token: token, id: id}, function(error, data){
-      if(error){res.send(error);}
+
+      if(error){
+        res.send(error);
+        return false;
+      }
+
+      if(data.message){
+        res.send(data);
+        return false;
+      }
 
       var project = _.map(data, function(field){
         return {
@@ -64,7 +82,16 @@ module.exports = {
     }
 
     pivotal.getTasks({project: project, token: token}, function(error, data){
-      if(error){res.send(error);}
+
+      if(error){
+        res.send(error);
+        return false;
+      }
+
+      if(data.message){
+        res.send(data);
+        return false;
+      }
 
       var stories = typeof data.stories === 'object' ? data.stories.story : [];
 
@@ -88,7 +115,46 @@ module.exports = {
       res.send(_.compact(list));
 
     });
+  },
 
+  task: function(req, res, next){
+    var token   = req.user ? req.user.token : null;
+    var project = req.params.project;
+    var id      = req.params.id;
+
+    if(!token){
+      res.send({error: 'Not logged in'});
+      return false;
+    }
+
+    pivotal.getTasks({project: project, token: token, id: id}, function(error, data){
+
+      if(error){
+        res.send(error);
+        return false;
+      }
+
+      if(data.message){
+        res.send(data);
+        return false;
+      }
+
+      var storie = _.map(data, function(field){
+        return {
+          id:           field.id.pop()._,
+          project_id:   field.project_id.pop()._,
+          title:        field.name.pop(),
+          url:          field.url.pop(),
+          description:  field.description.pop(),
+          requested_by: field.requested_by.pop(),
+          owned_by:     field.owned_by ? field.owned_by.pop() : field.owned_by,
+          labels:       field.labels
+        };
+      }).pop();
+
+      res.send(storie);
+
+    });
   }
 
 };
