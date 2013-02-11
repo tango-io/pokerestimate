@@ -1,15 +1,18 @@
 .six.columns#work-area
   input#user(type="hidden", value="#{user}")
-  .row.title LOGIN 
-    span WITH YOUR 
-    r PIVOTAL TRACKER 
-    span ACCOUNT
-  .row#log-form
-    - if(user)
-        p Welcome 
-          i #{user}
-        a(href="/logout") Log out
-    - else
+  - if(user)
+    .row.title PROJECTS
+    .row#projects
+      // this content is for the projects template
+      .project-items
+      ul.projects-list
+            
+  - else
+    .row.title LOGIN 
+      span WITH YOUR 
+      r PIVOTAL TRACKER 
+      span ACCOUNT
+    .row#log-form
       form(action="/login", method="post", id="login-form")
         div
           label Mail
