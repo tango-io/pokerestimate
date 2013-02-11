@@ -87,8 +87,9 @@ module.exports.getProjects = function(data, callback){
 module.exports.getTasks = function(data, callback){
   var parser  = new xml2js.Parser();
   var options = new RequestOptions('GET');
+  var id      = data.id ? '/' + data.id : '';
 
-  options.extend('path', '/services/v3/projects/'+data.project+'/stories');
+  options.extend('path', '/services/v3/projects/'+data.project+'/stories' + id);
   options.extend('headers', { 'X-TrackerToken': data.token });
 
   parser.addListener('end', function(result) {
