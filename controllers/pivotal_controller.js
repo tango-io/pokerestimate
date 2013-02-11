@@ -52,5 +52,43 @@ module.exports = {
       res.send(project);
 
     });
+  },
+
+  tasks: function(req, res, next){
+    var token   = req.user ? req.user.token : null;
+    var project = req.params.project;
+
+    if(!token){
+      res.send({error: 'Not logged in'});
+      return false;
+    }
+
+    pivotal.getTasks({project: project, token: token}, function(error, data){
+      if(error){res.send(error);}
+
+      var stories = typeof data.stories === 'object' ? data.stories.story : [];
+
+      var list = _.map(stories, function(field){
+
+        var points = field.estimate ? field.estimate.pop()._ : 'bug';
+
+        return points === '-1' ? {
+          id:           field.id.pop()._,
+          project_id:   field.project_id.pop()._,
+          title:        field.name.pop(),
+          url:          field.url.pop(),
+          description:  field.description.pop(),
+          requested_by: field.requested_by.pop(),
+          owned_by:     field.owned_by ? field.owned_by.pop() : field.owned_by,
+          labels:       field.labels
+        } : false;
+
+      });
+
+      res.send(_.compact(list));
+
+    });
+
   }
+
 };
