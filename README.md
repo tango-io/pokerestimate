@@ -36,6 +36,20 @@ GET /api/v1/projects/:id/tasks
       labels: ""
     }]
 
+GET /api/v1/projects/:id/tasks/:id
+
+    {
+      _id: 0,
+      id: 0,
+      project_id: 0,
+      title: "",
+      url: "",
+      description: "",
+      requested_by: "",
+      owned_by: "",
+      labels: ""
+    }
+
 ##styling
 
 Install zurb-foundation gem:
