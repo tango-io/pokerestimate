@@ -2,11 +2,10 @@
   input#user(type="hidden", value="#{user}")
   - if(user)
     .row.title PROJECTS
+    .row.titles Project Name
     .row#projects
-      // this content is for the projects template
-      .project-items
       ul.projects-list
-            
+        // this content is for the projects template
   - else
     .row.title LOGIN 
       span WITH YOUR 
