@@ -30,6 +30,8 @@ module.exports = {
     });
 
     pivotal.access({username: data.email, password: data.password}, function(error, result){
+      if(error){return callback({message: error.stack});}
+
       if(result.message){ return callback(error, result); }
 
       data.id    = result.token.id[0]._;
