@@ -81,3 +81,40 @@ module.exports.getProjects = function(data, callback){
   });
 
 };
+
+module.exports.getTasks = function(data, callback){
+  var parser = new xml2js.Parser();
+
+  var options = {
+    host: 'www.pivotaltracker.com',
+    port: 80,
+    path: '/services/v3/projects/'+data.project+'/stories',
+    method: 'GET',
+    headers: {  
+      'X-TrackerToken': data.token
+    }  
+  };
+
+  parser.addListener('end', function(result) {
+    return callback(null, result);
+  });
+
+  var req = http.request(options, function(res) {
+    res.on('data', function(d) {
+
+      if(noAccess.test(d.toString())){
+        return callback.call(this, null, {message: d.toString()});
+      }
+
+      parser.parseString(d);
+    });
+
+  });
+
+  req.end();
+
+  req.on('error', function(e) {
+    return callback(err);
+  });
+  
+};
