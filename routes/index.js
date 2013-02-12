@@ -5,7 +5,7 @@
 var homeController     = require('../controllers/home_controller');
 var pivotalController  = require('../controllers/pivotal_controller');
 var authController     = require('../controllers/authentication_controller');
-var projectsController = require('../controllers/projects_controller');
+var userController     = require('../controllers/user_controller');
 
 /*
  * Routes
@@ -20,7 +20,7 @@ module.exports = function(app, passport){
   app.post('/login', authenticate);
   app.get('/logout', authController.logout);
 
-  app.get('/projects/:id', projectsController.show);
+  app.get('/api/v1/me', userController.me);
 
   app.get('/api/v1/projects',     pivotalController.projects);
   app.get('/api/v1/projects/:id', pivotalController.project);
