@@ -1,8 +1,13 @@
-TXE.Views.HomeView = Backbone.View.extend({
+TXE.Views.HomeView = TXE.Views.MainView.extend({
 
   template: _.template(TXE.Templates.projectsTopNavListTemplate),  
 
   collection: new TXE.Collections.Projects(),
+
+  events: {
+    'click a' : 'preventDefault',
+    'click .item': 'navigate' 
+  },
 
   initialize: function(){
     this.collection.bind('reset', this.render, this).fetch();
@@ -15,5 +20,11 @@ TXE.Views.HomeView = Backbone.View.extend({
       var project = template(model.toJSON());
       $list.append(project);
     });
+  },
+
+  navigate: function(event){
+    var id = $(event.currentTarget).attr('data-id');
+    TXE.router.navigate('projects/'+id, true);
   }
+
 });

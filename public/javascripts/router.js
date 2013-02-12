@@ -1,7 +1,8 @@
 TXE.Router = Backbone.Router.extend({ 
 
   routes: {
-    '' : 'home'
+    '' : 'home',
+    'projects/:id'  : 'showProject'
   },
 
   initialize: function(){
@@ -18,6 +19,9 @@ TXE.Router = Backbone.Router.extend({
     if(this.user.logged){
       this.homeView = new TXE.Views.HomeView({el: '.projects-list'});
     }
+  },
+
+  showProject: function(id){
   }
 
 });
