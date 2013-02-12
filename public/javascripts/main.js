@@ -1,15 +1,25 @@
-var TXE = {
-  Models: {},
-  Collections: {},
-  Views: {},
-  Templates: {},
+require.config({
 
-  Initialize: function(){
-    this.router = new TXE.Router();
-    Backbone.history.start({pushState: true});
-  }
-};
+  //Shorcut alias
+  paths: {
+    // Core Libraries
+    jQuery: 'libs/jquery',
+    Backbone: 'libs/backbone.loader',
+    Underscore: 'libs/underscore',
+    domReady: 'libs/domready',
+  },
 
-$(function(){
-  TXE.Initialize();
+  // Sets the configuration for your third party scripts that are not AMD compatible
+  shim: {
+    'Backbone': {
+      deps: ['jQuery', 'Underscore']
+    }
+
+  },
+
+  waitSeconds: 15
+});
+
+require(['domReady', 'router'], function(doc, Router){
+  Router.initialize();
 });
