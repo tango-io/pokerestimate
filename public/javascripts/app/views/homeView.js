@@ -24,7 +24,8 @@ TXE.Views.HomeView = TXE.Views.MainView.extend({
 
   navigate: function(event){
     var id = $(event.currentTarget).attr('data-id');
-    TXE.router.navigate('projects/'+id, true);
+    window.location.assign('projects/'+id);
+    // TXE.router.navigate('projects/'+id, true);
   }
 
 });
