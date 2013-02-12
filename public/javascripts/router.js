@@ -1,28 +1,56 @@
-TXE.Router = Backbone.Router.extend({ 
+define([
 
-  routes: {
-    '' : 'home',
-    'projects/:id'  : 'showProject'
-  },
+  'Backbone',
 
-  initialize: function(){
-    var user = $('#user').val();
+  //Models
+  'app/models/account',
 
-    this.user = {
-      logged: user === 'null' ? false : true,
-      email:  user
-    };
+  //Views
+  'app/views/topNavView',
+  'app/views/homeView'
 
-  },
+], function(
 
-  home: function(){
-    if(this.user.logged){
-      this.homeView = new TXE.Views.HomeView({el: '.projects-list'});
+  Backbone,
+
+  //Models
+  Account,
+
+  //Views
+  TopNavView,
+  HomeView
+
+){
+  var Router = Backbone.Router.extend({
+    routes: {
+
+      //Home
+      '' : 'home'
+
+    },
+
+    initialize: function(){
+      this.account = new Account();
+      
+      this.topNav  = new TopNavView({
+        el: '#navigator',
+        model: this.account
+      });
+    },
+
+    home: function(){
+      this.home = new HomeView({
+        account: this.account,
+        el: '#main-content'
+      });
     }
-  },
 
-  showProject: function(id){
-  }
+  });
 
+  return {
+    initialize: function(){
+      var router = new Router();
+      Backbone.history.start();
+    }
+  };
 });
-
