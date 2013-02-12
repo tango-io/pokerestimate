@@ -1,31 +1,40 @@
-TXE.Views.HomeView = TXE.Views.MainView.extend({
+define([
+  'Backbone',
 
-  template: _.template(TXE.Templates.projectsTopNavListTemplate),  
+  //Views
+  'app/views/projectsView',
 
-  collection: new TXE.Collections.Projects(),
+  //Templates
+  'text!templates/home/boxesTemplate.html'
+], function(
+  
+  Backbone,
 
-  events: {
-    'click a' : 'preventDefault',
-    'click .item': 'navigate' 
-  },
+  projectsView,
 
-  initialize: function(){
-    this.collection.bind('reset', this.render, this).fetch();
-  },
+  //Template
+  boxesTemplate
+){
 
-  render: function(){
-    var template = this.template;
-    var $list = this.$el;
-    _.each(this.collection.models,function(model){
-      var project = template(model.toJSON());
-      $list.append(project);
-    });
-  },
+  var HomeView = Backbone.View.extend({
 
-  navigate: function(event){
-    var id = $(event.currentTarget).attr('data-id');
-    window.location.assign('projects/'+id);
-    // TXE.router.navigate('projects/'+id, true);
-  }
+    template: _.template(boxesTemplate),
+
+    initialize: function(){
+      this.render();
+
+      this.projects = new projectsView({
+        el: '.js-projects',
+        account: this.options.account
+      });
+
+    },
+
+    render: function(){
+      this.$el.html(this.template());
+    }
+  });
+
+  return HomeView;
 
 });
