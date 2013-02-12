@@ -18,7 +18,14 @@ define([
       this.collection.bind('reset', this.render, this);
     },
 
+    start: function(){
+      var loading = this.template({name: 'Loading...', id: 1});
+      this.$el.append(loading);
+      this.collection.fetch();
+    },
+
     render: function(){
+      this.$el.empty();
       var template = this.template;
       var $el = this.$el;
 
