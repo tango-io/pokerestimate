@@ -3,33 +3,13 @@ html
   head
     link(rel='stylesheet', href='/stylesheets/app.css')
 
-    script(src='/javascripts/libs/jquery.js')
-    script(src='/javascripts/libs/underscore.js')
-    script(src='/javascripts/libs/Backbone.js')
-
-    script(src='/javascripts/main.js')
-    script(src='/javascripts/router.js')
-
-
-    script(src='/javascripts/app/collections/projects.js')
-
-    script(type='text/javascript', src='/javascripts/app/templates/projectsTopNavListTemplate.js')
-
-    script(src='/javascripts/app/views/mainView.js')
-    script(src='/javascripts/app/views/homeView.js')
-
-
-
-    script(src="/javascripts/foundation/modernizr.foundation.js")
-
     // Set the viewport width to device width for mobile
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-
 
      // Included CSS Files
     link(rel="stylesheet", href="/stylesheets/app.css")
 
-
+    script(data-main="/javascripts/main", src='/javascripts/libs/require.js')
       
   body
     block content
