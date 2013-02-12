@@ -1,0 +1,35 @@
+<ul class='right'>
+
+  <% if(user){ %>
+
+    <li class='has-dropdown'>
+
+      <a href='#'>Projects</a>
+      <ul class='dropdown projects-list'></ul>
+
+      <li>
+        <a href='#'>
+          <img src='images/user.png'>
+          <span>
+            <%= user%>
+          </span>
+        </a>
+      </li>
+
+    </li>
+
+    <li>
+      <a href='#' class='logout'>
+        <img src='images/exit.png'>
+      </a>
+    </li>
+
+  <% }else{ %>
+
+    <li class='item'>
+      <a href='#' class='login'>Login</a>
+    </li>
+  
+  <% } %>
+
+</ul>

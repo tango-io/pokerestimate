@@ -1,0 +1,57 @@
+<div id='work-area' class='six columns'>
+
+  <% if(user){ %>
+
+    <div class='row title'>
+      PROJECTS
+    </div>
+
+    <div class='row titles'>
+      Project Name
+    </div>
+
+    <div id='projects' class='row'>
+      <ul class='projects-list'>
+      </ul>
+    </div>
+
+  <% }else{ %>
+
+    <div class='row title'> LOGIN
+
+      <span>WITH YOUR</span>
+      <r>PIVOTAL TRACKER</r>
+      <span>ACCOUNT</span>
+
+    </div>
+
+    <div id='log-form' class='row'>
+      <form id='login-form'>
+        <div>
+
+          <label>Mail</label>
+          <input type='text' name='username' placeholder='EXAMPLE@DOMAIN.COM' />
+
+          </br>
+
+          <label>Password</label>
+          <input type='password' name='password' placeholder='********' />
+
+          <div class='sign'>
+            <a href='https://www.pivotaltracker.com/signup/new'>OR SIGN UP</a>
+          </div>
+
+          <input class='button' type='submit' value='LOGIN' />
+
+        </div>
+      </form>
+    </div>
+
+  <% } %>
+
+  <div class='row fot'>
+    <div class='image-fot'>
+    </div>
+  </div>
+
+</div>
