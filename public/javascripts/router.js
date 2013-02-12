@@ -7,6 +7,7 @@ define([
 
   //Views
   'app/views/topNavView',
+  'app/views/flash',
   'app/views/homeView'
 
 ], function(
@@ -18,6 +19,7 @@ define([
 
   //Views
   TopNavView,
+  Flash,
   HomeView
 
 ){
@@ -31,11 +33,17 @@ define([
 
     initialize: function(){
       this.account = new Account();
-      
+
       this.topNav  = new TopNavView({
         el: '#navigator',
         model: this.account
       });
+
+      this.flash = new Flash({
+        el: '#flash-messages',
+        model: this.account
+      });
+
     },
 
     home: function(){
