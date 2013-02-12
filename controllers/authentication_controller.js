@@ -14,14 +14,11 @@ module.exports = {
 
       if (!user) { 
         if(info){ return res.send(info); }
-
-        //TODO Need to improve this
-        return res.redirect('/');
       }
 
       req.logIn(user, function(err) {
         if (err) { return next(err); }
-        return res.redirect('/');
+        return res.send({user: user.email});
       });
 
     })(req, res, next);
@@ -29,8 +26,8 @@ module.exports = {
   },
 
   logout: function(req, res){
-    req.logout();
-    res.redirect('/');
+    req.session.destroy();
+    res.send({user: false});
   }
 
 
