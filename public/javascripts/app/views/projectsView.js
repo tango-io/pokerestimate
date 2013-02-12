@@ -44,6 +44,7 @@ define([
 
     login: function(event){
       event.preventDefault();
+      this.options.account.clear({silent: true});
       var form = this.$(event.currentTarget).serialize();
       this.options.account.login(form);
     },
@@ -54,7 +55,7 @@ define([
 
       if(user){
         this.projectsList.setElement('.projects-list');
-        this.collection.fetch();
+        this.projectsList.start();
       }
     }
 
