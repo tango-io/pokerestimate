@@ -6203,16 +6203,18 @@ body .top-bar #navigator li .dropdown {
 }
 /* line 90, ../sass/main.scss */
 body .top-bar #navigator li .dropdown li.item {
+  cursor: pointer;
+  overflow: hidden;
   padding: 0;
 }
-/* line 91, ../sass/main.scss */
+/* line 93, ../sass/main.scss */
 body .top-bar #navigator li .dropdown li.item a {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: 400;
 }
-/* line 108, ../sass/main.scss */
+/* line 110, ../sass/main.scss */
 body footer.bottom {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6226,7 +6228,7 @@ body footer.bottom {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 115, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 body footer.bottom p {
   text-align: center;
   width: 460px;
@@ -6235,7 +6237,7 @@ body footer.bottom p {
   padding: 10px;
   line-height: 28px;
 }
-/* line 122, ../sass/main.scss */
+/* line 124, ../sass/main.scss */
 body footer.bottom p:before {
   content: " ";
   background: transparent url("../images/landing-page/footer-1.png") no-repeat center center;
@@ -6244,7 +6246,7 @@ body footer.bottom p:before {
   display: block;
   float: left;
 }
-/* line 130, ../sass/main.scss */
+/* line 132, ../sass/main.scss */
 body footer.bottom p:after {
   content: " ";
   background: transparent url("../images/landing-page/footer-2.png") no-repeat center center;
@@ -6253,7 +6255,7 @@ body footer.bottom p:after {
   display: block;
   float: right;
 }
-/* line 140, ../sass/main.scss */
+/* line 142, ../sass/main.scss */
 body footer.bottom:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -6437,8 +6439,9 @@ body footer.bottom:hover {
   background: transparent url("../images/landing-page/project-carts.png") no-repeat left center;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
+  cursor: pointer;
 }
-/* line 166, ../sass/home_page.scss */
+/* line 167, ../sass/home_page.scss */
 #main-content #work-area #projects .item a {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6447,12 +6450,12 @@ body footer.bottom:hover {
   color: #000;
   overflow: hidden;
 }
-/* line 176, ../sass/home_page.scss */
+/* line 177, ../sass/home_page.scss */
 #main-content #work-area #projects .item:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 183, ../sass/home_page.scss */
+/* line 184, ../sass/home_page.scss */
 #main-content #work-area .titles {
   font-size: 16px;
   font-weight: bold;

@@ -162,6 +162,7 @@
         padding: 10px 0;
         background: transparent url('../images/landing-page/project-carts.png') no-repeat left center;
         @include opacity(.6);
+        cursor: pointer;
 
         a{
 
