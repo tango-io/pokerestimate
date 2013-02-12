@@ -36,6 +36,7 @@ define([
     },
 
     login: function(){
+      this.model.clear({silent: true});
       var form = $('#login-form').serialize();
       this.model.login(form);
     },
