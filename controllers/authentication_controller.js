@@ -13,6 +13,7 @@ module.exports = {
       if (err) { return next(err); }
 
       if (!user) { 
+        info.user = false;
         if(info){ return res.send(info); }
       }
 
