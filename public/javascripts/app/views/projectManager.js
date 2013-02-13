@@ -5,8 +5,12 @@ define([
   //Model
   'app/models/project',
 
+  //Collection
+  'app/collections/projects',
+
   //View
   'app/views/taskController',
+  'app/views/projectsController',
 
   //Templates
   'text!templates/project-page/gamePageTemplate.html',
@@ -19,8 +23,12 @@ define([
   //Model
   Project,
 
+  //Collection
+  Projects,
+
   //Views
   taskController,
+  projectsController,
 
   //Templates
   gamePageTemplate,
@@ -35,11 +43,16 @@ define([
     model: new Project(),
 
     initialize: function(){
-      this.model.clear({silent: true});
+      this.model.clear({silent: true}).off();
       this.model.bind('change:error', this.error, this);
       this.model.bind('change:name', this.render, this);
 
       this.model.fetch({data: {id: this.options.projectId}});
+
+      this.projectsList = new projectsController({
+        collection: new Projects(),
+        router: this.options.router
+      });
 
       this.taskList = new taskController({
         projectId: this.options.projectId
@@ -55,6 +68,12 @@ define([
       this.$el.html(this.template({project: {name: this.model.get('name')}}));
       this.taskList.setElement('.fn-taskList');
       this.taskList.collection.fetch();
+
+      if(!$('.projects-list li')[0]){
+        this.projectsList.setElement('.projects-list');
+        this.projectsList.start();
+      }
+
     }
   });
 
