@@ -6,3 +6,205 @@
     margin: 0 auto;
   }
 }
+
+@import "mixins";
+#game-container{
+
+  h1.name{
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .container.row{
+    width: 940px;
+    margin: 0 auto;
+    background: transparent url('../images/games/line-bg.jpg') repeat-y 235px;
+
+    .head{
+      border: 1px solid #DFD4C8;
+      overflow: hidden;
+
+      h1{
+        float: left;
+        line-height: 22px;
+        font-size: 18px;
+      }
+
+    }
+    .item{
+      @include global_font;
+      font-size: 12px;
+      color: #999999;
+      padding: 7px 0 7px 15px;
+      margin: 2px 0;
+    }
+
+    #list-games{
+      float: left;
+
+      h1{
+        padding-left: 30px;
+        background: transparent url('../images/games/title-games.png') no-repeat left center;
+      }
+
+      .head{
+        border-left: none;
+        padding: 7px 10px 7px 0;
+      }
+
+      .button{
+        float: right;
+      }
+
+      .nametask{
+       width: 225px;
+       margin: 0;
+      }
+
+      .list{
+        padding: 10px 10px 0 0;
+
+        .item{
+          border: 1px dashed #E3DACE;
+          background: #E9E8E5;
+          &.closed{
+            text-decoration:line-through;
+          }
+
+          &.opened{
+            padding-bottom: 0;
+          }
+
+          .edit{
+            float: right;
+            height: 10px;
+            width: 10px;
+            display: block;
+            background: transparent url('../images/games/edit.png') no-repeat center center;
+            border: none;
+            margin-right: 10px;
+            margin-top: 1px;
+            cursor: pointer;
+          }
+
+          .delete{
+            float: right;
+            height: 10px;
+            width: 10px;
+            display: block;
+            background: transparent url('../images/games/delete.png') no-repeat center center;
+            border: none;
+            margin: 1px 8px 0 8px;
+            cursor: pointer;
+          }
+
+          .play{
+            float: right;
+            height: 27px;
+            width: 27px;
+            float:right;
+            display: block;
+            background: transparent url('../images/games/playgame.png') no-repeat center center;
+            border: none;
+            margin-top: -8px;
+            cursor: pointer;
+          }
+
+          .list-tasks-group{
+            margin-left: 0;
+            border-top: 1px solid #DFD4C7;
+            margin-top: 5px;
+            li{
+              padding: 7px 0;
+            }
+
+
+          }
+
+          &:hover{
+            background: #fff;
+            .play{
+              background: transparent url('../images/games/play.png') no-repeat center center;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+    #list-tasks{
+      float: left;
+
+      .head{
+        border-right: none;
+        padding: 5px 0 5px 10px;
+
+        h1{
+          margin-top: 4px;
+        }
+
+      }
+
+      nav{
+        float: right;
+
+        a.button{
+          float: left;
+          margin: 2px 5px 0 5px;
+        }
+
+        #filter{
+          float: right;
+          width: 272px;
+          margin: 0;
+          height: 27px;
+          padding-left: 30px;
+          background: #fff url('../images/search.png') no-repeat 10px center;
+          @include global_font;
+        }
+
+      }
+
+      .list{
+        padding-top: 10px;
+
+        .item{
+          @include transition;
+          float: left;
+          border-right: 1px solid #DFD4C7;
+          width: 32.8%;
+          margin-left: 3px;
+
+          .drag{
+            float: right;
+            height: 10px;
+            width: 10px;
+            display: block;
+            background: transparent url('../images/games/drag.png') no-repeat center center;
+            border: none;
+            margin: 1px 8px 0 8px;
+            opacity: .4;
+            cursor: move;
+          }
+
+          &.selected{
+            background: #fff;
+          }
+
+          &:hover{
+            background: #FAF9F8;
+            color: #000;
+            border-right: 3px solid #DFD4C7;
+            .drag{
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
