@@ -38,7 +38,8 @@ define([
       this.options.account.bind('change', this.render, this);
 
       this.projectsList = new projectsController({
-        collection: this.collection
+        collection: this.collection,
+        router: this.options.router
       });
     },
 
