@@ -14,14 +14,26 @@ define([
 
     template: _.template(projectTemplate),
 
+    events: {
+      'click .item' : 'navigate'
+    },
+
     initialize: function(){
       this.collection.bind('reset', this.render, this);
     },
 
     start: function(){
-      var loading = this.template({name: 'Loading...', id: 1});
+      var loading = this.template({name: 'Loading...', id: 'loadind'});
       this.$el.append(loading);
       this.collection.fetch();
+    },
+
+    navigate: function(event){
+      var id = this.$(event.currentTarget).attr('data-id');
+
+      if(id !== 'loading'){
+        this.options.router.navigate('project/'+id, true);
+      }
     },
 
     render: function(){
