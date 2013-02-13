@@ -11,6 +11,7 @@ define([
   //View
   'app/views/taskController',
   'app/views/projectsController',
+  'app/views/filterController',
 
   //Templates
   'text!templates/project-page/gamePageTemplate.html',
@@ -29,6 +30,7 @@ define([
   //Views
   taskController,
   projectsController,
+  filterController,
 
   //Templates
   gamePageTemplate,
@@ -57,6 +59,10 @@ define([
       this.taskList = new taskController({
         projectId: this.options.projectId
       });
+
+      this.filter = new filterController({
+        collection: this.taskList.collection
+      });
     },
 
     error: function(){
@@ -66,14 +72,14 @@ define([
 
     render: function(){
       this.$el.html(this.template({project: {name: this.model.get('name')}}));
-      this.taskList.setElement('.fn-taskList');
+      this.taskList.setElement('.js-taskList');
       this.taskList.collection.fetch();
 
       if(!$('.projects-list li')[0]){
-        this.projectsList.setElement('.projects-list');
-        this.projectsList.start();
+        this.projectsList.setElement('.projects-list').start();
       }
 
+      this.filter.setElement('.fn-filter-task');
     }
   });
 
