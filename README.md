@@ -14,7 +14,7 @@ GET /api/v1/projects
        name: "name"
     }]
 
-GET /api/v1/projects/:id
+GET /api/v1/projects?id=id
 
     {
       _id: 0,
