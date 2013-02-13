@@ -62,9 +62,6 @@ define([
     },
 
     projectManager: function(id){
-      this.account.clear({silent: true});
-      this.account.fetch();
-
       this.project = new ProjectManager({
         el: '#main-content'
       });
