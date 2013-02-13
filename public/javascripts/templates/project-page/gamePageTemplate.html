@@ -1,0 +1,40 @@
+<div id='game-container' class='row'>
+
+  <h1 class='name'><%= project.name%></h1>
+
+  <div class='container row'>
+    <div id='list-games' class='three'>
+
+      <div class='head'>
+        <h1>GAMES</h1>
+        <a href='#' class='tiny alert button js-createGame'>Add +</a>
+        <div class='clear'></div>
+      </div>
+
+      <ul class='list js-game-list'>
+        <input class='nametask js-game-name' type='text' name='nametask' placeholder='Name of your game...'></input>
+      </ul>
+
+    </div>
+
+    <div id='list-tasks' class='nine'>
+
+      <div class='head'>
+        <h1 class='four'>STORIES</h1>
+
+        <div class='nav eight'>
+          <a href='#' class='tiny alert button'>Select All</a>
+          <a href='#' class='tiny alert button'>Unselect All</a>
+          <input class='nametask fn-game-name' type='text' name='nametask' placeholder='Filter'/>
+        </div>
+
+      </div>
+
+      <ul class='list fn-taskList'>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
