@@ -62,7 +62,8 @@ define([
 
     projectManager: function(id){
       this.project = new ProjectManager({
-        el: '#main-content'
+        el: '#main-content',
+        projectId: id
       });
     }
 
