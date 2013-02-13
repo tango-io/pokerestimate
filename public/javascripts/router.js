@@ -8,7 +8,8 @@ define([
   //Views
   'app/views/topNavView',
   'app/views/flash',
-  'app/views/homeView'
+  'app/views/homeView',
+  'app/views/projectManager'
 
 ], function(
 
@@ -20,7 +21,8 @@ define([
   //Views
   TopNavView,
   Flash,
-  HomeView
+  HomeView,
+  ProjectManager
 
 ){
   var Router = Backbone.Router.extend({
@@ -51,6 +53,7 @@ define([
     home: function(){
       this.account.clear({silent: true});
       this.account.fetch();
+
       this.home = new HomeView({
         account: this.account,
         el: '#main-content',
@@ -59,7 +62,12 @@ define([
     },
 
     projectManager: function(id){
-      console.log(id);
+      this.account.clear({silent: true});
+      this.account.fetch();
+
+      this.project = new ProjectManager({
+        el: '#main-content'
+      });
     }
 
   });
