@@ -27,8 +27,9 @@ define([
     routes: {
 
       //Home
-      '' : 'home'
+      '' : 'home',
 
+      'project/:id': 'projectManager'
     },
 
     initialize: function(){
@@ -44,13 +45,21 @@ define([
         model: this.account
       });
 
+      this.account.fetch();
     },
 
     home: function(){
+      this.account.clear({silent: true});
+      this.account.fetch();
       this.home = new HomeView({
         account: this.account,
-        el: '#main-content'
+        el: '#main-content',
+        router: this
       });
+    },
+
+    projectManager: function(id){
+      console.log(id);
     }
 
   });
