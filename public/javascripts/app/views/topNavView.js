@@ -24,7 +24,7 @@ define([
     template: _.template(topNavTemplate),
 
     initialize: function(){
-      this.model.bind('change', this.render, this).fetch();
+      this.model.bind('change', this.render, this);
     },
 
     preventDefault: function(event){
