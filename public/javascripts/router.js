@@ -51,8 +51,7 @@ define([
     },
 
     home: function(){
-      this.account.clear({silent: true});
-      this.account.fetch();
+      this.account.reload();
 
       this.home = new HomeView({
         account: this.account,
