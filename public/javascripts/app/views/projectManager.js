@@ -5,6 +5,9 @@ define([
   //Model
   'app/models/project',
 
+  //View
+  'app/views/taskController',
+
   //Templates
   'text!templates/project-page/gamePageTemplate.html',
   'text!templates/project-page/errorTemplate.html'
@@ -15,6 +18,9 @@ define([
 
   //Model
   Project,
+
+  //Views
+  taskController,
 
   //Templates
   gamePageTemplate,
@@ -34,6 +40,10 @@ define([
       this.model.bind('change:name', this.render, this);
 
       this.model.fetch({data: {id: this.options.projectId}});
+
+      this.taskList = new taskController({
+        projectId: this.options.projectId
+      });
     },
 
     error: function(){
@@ -43,6 +53,8 @@ define([
 
     render: function(){
       this.$el.html(this.template({project: {name: this.model.get('name')}}));
+      this.taskList.setElement('.fn-taskList');
+      this.taskList.collection.fetch();
     }
   });
 
