@@ -6466,3 +6466,14 @@ body footer.bottom:hover {
   font-weight: bold;
   margin-top: 4px;
 }
+
+/* line 1, ../sass/project_page.scss */
+.error-message {
+  float: none;
+  text-align: center;
+}
+/* line 5, ../sass/project_page.scss */
+.error-message .columns {
+  float: none;
+  margin: 0 auto;
+}
