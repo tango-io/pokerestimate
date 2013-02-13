@@ -23,7 +23,6 @@ module.exports = function(app, passport){
   app.get('/api/v1/me', userController.me);
 
   app.get('/api/v1/projects',     pivotalController.projects);
-  app.get('/api/v1/projects/:id', pivotalController.project);
 
   app.get('/api/v1/projects/:project/tasks',     pivotalController.tasks);
   app.get('/api/v1/projects/:project/tasks/:id', pivotalController.task);
