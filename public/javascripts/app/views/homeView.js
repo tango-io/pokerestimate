@@ -25,7 +25,8 @@ define([
 
       this.projects = new projectsView({
         el: '.js-projects',
-        account: this.options.account
+        account: this.options.account,
+        router: this.options.router
       });
 
     },
