@@ -12,6 +12,12 @@ define(['Backbone'], function(Backbone){
     logout: function(){
       this.url = "/logout";
       this.fetch();
+    },
+
+    reload: function(){
+      this.clear({silent: true});
+      this.url = 'api/v1/me';
+      this.fetch();
     }
 
   });
