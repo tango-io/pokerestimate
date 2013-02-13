@@ -25,6 +25,23 @@ define([
     initialize: function(){
       this.collection =  new Tasks(this.options.projectId);
       this.collection.bind('reset', this.render, this);
+      this.collection.bind('search', this.searchResult, this);
+    },
+
+    searchResult: function(result){
+      this.$el.html('');
+
+      var template = this.template;
+      var $list    = this.$el;
+      var title;
+
+      _.each(result, function(model){
+        title = model.get('title');
+
+        if(title){
+          $list.append(template({title: model.get('title')}));
+        }
+      });
     },
 
     render: function(){
