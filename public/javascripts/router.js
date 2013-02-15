@@ -39,7 +39,8 @@ define([
 
       this.topNav  = new TopNavView({
         el: '#navigator',
-        model: this.account
+        model: this.account,
+        router: this
       });
 
       this.flash = new Flash({
