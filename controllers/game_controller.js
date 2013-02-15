@@ -26,11 +26,19 @@ module.exports = {
       project_id: req.body.projectId
     };
 
-    console.log(inspect(game));
-
     process.database.games.save(game, function(error, savedGame){
       if(error){res.send(error); return false;}
+      res.send({sucess: true});
+    });
 
+  },
+
+  update: function(req, res, next){
+    var _id = req.body._id;
+    var name = req.body.name;
+
+    process.database.games.update({_id: _id},{ $set: {name: name} },  function(error, savedGame){
+      if(error){res.send(error); return false;}
       res.send({sucess: true});
     });
 
