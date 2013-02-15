@@ -23,7 +23,9 @@ define([
     template: _.template(gameTemplate),
 
     events: {
-      'keyup .js-create-game' : 'create'
+      'keyup .js-create-game' : 'create',
+      'click .js-editGame'    : 'editGame',
+      'keyup .js-edit'        : 'edit'
     },
 
     initialize: function(){
@@ -52,6 +54,38 @@ define([
     addGame: function(newModel){
       var newGame = newModel.toJSON();
       this.$el.append(this.template(newGame));
+    },
+
+    editGame: function(event){
+      var $target  = $(event.currentTarget);
+      var $element = $target.siblings('.name');
+      var input    = document.createElement('input');
+      var $input   = $(input);
+
+      input.value = $element.text();
+      $input.addClass('js-edit');
+
+      $element.replaceWith(input);
+      input.focus();
+    },
+
+    edit: function(event){
+      if(event.keyCode === 13){
+        var $target = $(event.currentTarget);
+        var span    = document.createElement('span');
+        var $span   = $(span);
+        var model   = this.collection.get($target.parent().attr('data-id')); 
+
+        $span.text($target.val());
+        $span.addClass('name');
+
+        $target.replaceWith(span);
+
+        model.save({
+          name: $target.val(),
+          project_id: this.options.projectId
+        });
+      }
     },
 
     render: function(){
