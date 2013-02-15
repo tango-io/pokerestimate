@@ -1,8 +1,7 @@
-define(['Backbone'], function(Backbone){
+define(['Backbone', 'app/models/game'], function(Backbone, model){
   var Games = Backbone.Collection.extend({
-    initialize: function(projectId){
-      this.url = '/api/v1/projects/'+projectId+'/games';
-    }
+    url: '/api/v1/project/games',
+    model: model
   });
 
   return Games;
