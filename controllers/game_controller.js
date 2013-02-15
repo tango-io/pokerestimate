@@ -26,6 +26,8 @@ module.exports = {
       project_id: req.body.projectId
     };
 
+    console.log(inspect(game));
+
     process.database.games.save(game, function(error, savedGame){
       if(error){res.send(error); return false;}
 
