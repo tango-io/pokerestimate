@@ -32,7 +32,10 @@ define([
     },
 
     logout: function(){
-      this.model.logout();
+      var router = this.options.router;
+      this.model.logout(function(){
+        router.navigate('', true);
+      });
     },
 
     login: function(){
