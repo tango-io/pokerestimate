@@ -1,4 +1,3 @@
-var database = require("../config/database");
 var pivotal  = require("../libs/pivotal");
 var bcrypt   = require('bcrypt');
 var inspect  = require('eyes').inspector({ stream: null });
@@ -6,25 +5,24 @@ var inspect  = require('eyes').inspector({ stream: null });
 module.exports = {
 
   getByUsername: function(username, callback){
-    if(!this.collection){return callback('Damn! mongo is not ready, please try again');}
+    if(!process.database){return callback('Damn! mongo is not ready, please try again');}
 
-    this.collection.findOne({email: username}, function(err, user){
+    process.database.users.findOne({email: username}, function(err, user){
       return callback(err, user);
     });
   },
 
   getById: function(id, callback){
-    if(!this.collection){return callback('Damn! mongo is not ready, please try again');}
+    if(!process.database){return callback('Damn! mongo is not ready, please try again');}
 
-    this.collection.findOne({id: id}, function(err, user){
+    process.database.users.findOne({id: id}, function(err, user){
       return callback(err, user);
     });
   },
 
   create: function(data, callback){
-    if(!this.collection){return callback('Damn! mongo is not ready, please try again');}
+    if(!process.database){return callback('Damn! mongo is not ready, please try again');}
 
-    var self = this;
     bcrypt.hash(data.password, 10, function(err, hash) {
       data.password = hash;
     });
@@ -37,7 +35,7 @@ module.exports = {
       data.id    = result.token.id[0]._;
       data.token = result.token.guid[0];
 
-      self.collection.save(data, {safe: true}, function(err, user){
+      process.database.users.save(data, {safe: true}, function(err, user){
         return callback(err, user);
       });
 
