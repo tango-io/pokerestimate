@@ -79,14 +79,16 @@ define([
     render: function(){
       this.$el.html(this.template({project: {name: this.model.get('name')}}));
       this.taskList.setElement('.js-taskList');
+      this.filter.setElement('.fn-filter-task');
+      this.games.setElement('.js-game-list');
+
       this.taskList.collection.fetch();
+      this.games.collection.fetch({data: {project_id: this.options.projectId}});
 
       if(!$('.projects-list li')[0]){
         this.projectsList.setElement('.projects-list').start();
       }
 
-      this.filter.setElement('.fn-filter-task');
-      this.games.setElement('.js-game-list');
     }
   });
 
