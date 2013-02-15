@@ -21,8 +21,8 @@ var database = require("./config/database");
 database.open(function(err, db){
   console.log(inspect('Database Ready!'));
 
-  // Set up database for models
-  User.collection = db.users;
+  // Set up database
+  process.database = db;
 });
 
 var findUser = function(username, callback) {
