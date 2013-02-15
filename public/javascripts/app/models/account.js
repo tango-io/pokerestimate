@@ -9,9 +9,13 @@ define(['Backbone'], function(Backbone){
       this.fetch({data: data, type: "POST"});
     },
 
-    logout: function(){
+    logout: function(cb){
       this.url = "/logout";
-      this.fetch();
+      var request = this.fetch();
+
+      request.done(function(){
+        return cb(true);
+      });
     },
 
     reload: function(){
