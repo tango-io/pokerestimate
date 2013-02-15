@@ -12,6 +12,7 @@ define([
   'app/views/taskController',
   'app/views/projectsController',
   'app/views/filterController',
+  'app/views/gameController',
 
   //Templates
   'text!templates/project-page/gamePageTemplate.html',
@@ -31,6 +32,7 @@ define([
   taskController,
   projectsController,
   filterController,
+  gameController,
 
   //Templates
   gamePageTemplate,
@@ -54,6 +56,10 @@ define([
       this.projectsList = new projectsController({
         collection: new Projects(),
         router: this.options.router
+      });
+
+      this.games = new gameController({
+        projectId: this.options.projectId
       });
 
       this.taskList = new taskController({
@@ -80,6 +86,7 @@ define([
       }
 
       this.filter.setElement('.fn-filter-task');
+      this.games.setElement('.js-game-list');
     }
   });
 
