@@ -6,6 +6,7 @@ var homeController     = require('../controllers/home_controller');
 var pivotalController  = require('../controllers/pivotal_controller');
 var authController     = require('../controllers/authentication_controller');
 var userController     = require('../controllers/user_controller');
+var gameController     = require('../controllers/game_controller');
 
 /*
  * Routes
@@ -26,4 +27,6 @@ module.exports = function(app, passport){
 
   app.get('/api/v1/projects/:project/tasks',     pivotalController.tasks);
   app.get('/api/v1/projects/:project/tasks/:id', pivotalController.task);
+
+  app.get('/api/v1/projects/:id/games', gameController.index);
 };
