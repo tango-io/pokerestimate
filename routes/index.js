@@ -29,5 +29,6 @@ module.exports = function(app, passport){
   app.get('/api/v1/projects/:project/tasks/:id', pivotalController.task);
 
   app.get('/api/v1/project/games',  gameController.index);
-  app.put('/api/v1/project/games/:id', gameController.create);
+  app.post('/api/v1/project/games/:id', gameController.create);
+  app.put('/api/v1/project/games/:id', gameController.update);
 };
