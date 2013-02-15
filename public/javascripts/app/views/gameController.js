@@ -45,7 +45,7 @@ define([
           _id: this.guid(),
           name: event.currentTarget.value, 
           projectId: this.options.projectId
-        });
+        }, {type: 'POST'});
 
         event.currentTarget.value='';
       }
