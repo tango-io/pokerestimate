@@ -31,4 +31,6 @@ module.exports = function(app, passport){
   app.get('/api/v1/project/games',  gameController.index);
   app.post('/api/v1/project/games/:id', gameController.create);
   app.put('/api/v1/project/games/:id', gameController.update);
+
+  app.delete('/api/v1/games/remove', gameController.remove);
 };
