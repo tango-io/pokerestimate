@@ -7,6 +7,9 @@ define([
 
   //Template
   'text!templates/project-page/gameTemplate.html',
+  'text!templates/modalTemplate.html',
+
+  'reveal'
 ], function(
 
   Backbone,
@@ -15,17 +18,22 @@ define([
   Games,
 
   //Template
-  gameTemplate
+  gameTemplate,
+  modalTemplate
 ){
 
   var GameController = Backbone.View.extend({
 
     template: _.template(gameTemplate),
+    modal: _.template(modalTemplate),
 
     events: {
       'keyup .js-create-game' : 'create',
       'click .js-editGame'    : 'editGame',
-      'keyup .js-edit'        : 'edit'
+      'keyup .js-edit'        : 'edit',
+      'click .js-removeGame'  : 'destroy',
+      'click .js-confirm'     : 'removeGame',
+      'click .js-cancel'      : 'cancel'
     },
 
     initialize: function(){
@@ -88,9 +96,50 @@ define([
       }
     },
 
+    destroy: function(event){
+      var $target = $(event.currentTarget);
+      var name    = $target.siblings('.name').text();
+      var model   = this.collection.get($target.parent().attr('data-id')); 
+
+      this.$('.reveal-modal .lead').text(name);
+      this.$('.reveal-modal').data('model', model);
+      this.$('.reveal-modal').reveal();
+    },
+
+    removeGame: function(event){
+      event.preventDefault();
+      var model = this.$('.reveal-modal').data('model');
+      var id    = model.get('_id');
+      var item  = this.$('.item[data-id='+id+']');
+      var modal = this.$('.reveal-modal');
+
+      modal.removeData('model');
+
+      var request = model.destroy({
+        contentType: "application/json",
+        url: '/api/v1/games/remove',
+        data: JSON.stringify({_id: id})
+      });
+
+      request.done(function(){
+        item.remove();
+        modal.trigger('reveal:close');
+      });
+
+    },
+
+    cancel: function(event){
+      event.preventDefault();
+    },
+
     render: function(){
       var template = this.template;
       var $list = this.$el;
+
+      this.$el.append(this.modal({
+        title: 'Destroy Game',
+        message: 'Are you sure ?'
+      }));
 
       _.each(this.collection.models, function(model){
         var game = template(model.toJSON());
