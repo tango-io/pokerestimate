@@ -7,13 +7,17 @@ require.config({
     Backbone: 'libs/backbone.loader',
     Underscore: 'libs/underscore',
     domReady: 'libs/domready',
+
+    reveal: 'foundation/jquery.foundation.reveal'
   },
 
   // Sets the configuration for your third party scripts that are not AMD compatible
   shim: {
     'Backbone': {
       deps: ['jQuery', 'Underscore']
-    }
+    },
+
+    'reveal': ['jQuery'],
 
   },
 
