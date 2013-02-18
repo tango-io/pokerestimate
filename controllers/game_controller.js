@@ -18,30 +18,26 @@ module.exports = {
 
   },
 
-  create: function(req, res, next){
-
-    var game = {
-      _id: req.body._id,
-      name: req.body.name,
-      project_id: req.body.projectId
-    };
-
+  create: function(game){
     process.database.games.save(game, function(error, savedGame){
-      if(error){res.send(error); return false;}
-      res.send({sucess: true});
-    });
+      if(error){
+        process.io.sockets.emit('error', error);
+        return false;
+      }
 
+      process.io.sockets.emit('populate game', null, game);
+    });
   },
 
-  update: function(req, res, next){
-    var _id = req.body._id;
-    var name = req.body.name;
+  update: function(game){
+    process.database.games.update({_id: game._id},{ $set: {name: game.name} },  function(error, savedGame){
+      if(error){
+        process.io.sockets.emit('error', error);
+        return false;
+      }
 
-    process.database.games.update({_id: _id},{ $set: {name: name} },  function(error, savedGame){
-      if(error){res.send(error); return false;}
-      res.send({sucess: true});
+      process.io.sockets.emit('updated game', null, game);
     });
-
   },
 
   remove: function(req, res, next){
