@@ -8,6 +8,7 @@ exports.start = function(){
 
     socket.on('create game', gameController.create);
     socket.on('update game', gameController.update);
+    socket.on('delete game', gameController.delete);
 
   });
 
