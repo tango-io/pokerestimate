@@ -72,7 +72,8 @@ define([
   });
 
   return {
-    initialize: function(){
+    initialize: function(socket){
+      window.socket = socket.connect();
       var router = new Router();
       Backbone.history.start();
     }
