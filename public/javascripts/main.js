@@ -8,6 +8,8 @@ require.config({
     Underscore: 'libs/underscore',
     domReady: 'libs/domready',
 
+    socket: '/socket.io/socket.io',
+
     reveal: 'foundation/jquery.foundation.reveal'
   },
 
@@ -24,6 +26,6 @@ require.config({
   waitSeconds: 15
 });
 
-require(['domReady', 'router'], function(doc, Router){
-  Router.initialize();
+require(['domReady', 'router', 'socket'], function(doc, Router, socket){
+  Router.initialize(socket);
 });
