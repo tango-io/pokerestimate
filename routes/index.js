@@ -12,7 +12,7 @@ var gameController     = require('../controllers/game_controller');
  * Routes
  */
 
-module.exports = function(app, passport){
+module.exports = function(app, passport, socket){
 
   var authenticate = authController.setUp(authController, passport);
 
@@ -28,9 +28,7 @@ module.exports = function(app, passport){
   app.get('/api/v1/projects/:project/tasks',     pivotalController.tasks);
   app.get('/api/v1/projects/:project/tasks/:id', pivotalController.task);
 
-  app.get('/api/v1/project/games',  gameController.index);
-  app.post('/api/v1/project/games/:id', gameController.create);
-  app.put('/api/v1/project/games/:id', gameController.update);
 
-  app.delete('/api/v1/games/remove', gameController.remove);
+  app.get('/api/v1/project/games',  gameController.index);
+  // app.delete('/api/v1/games/remove', gameController.remove);
 };
