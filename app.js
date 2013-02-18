@@ -92,6 +92,11 @@ app.configure('development', function(){
 
 require('./routes/index')(app, passport);
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
   console.log(inspect("Express server listening on port " + app.get('port')));
 });
+
+process.io = require('socket.io').listen(server);
+var sockets = require('./libs/socket');
+
+sockets.start();
