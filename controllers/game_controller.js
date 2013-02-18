@@ -40,14 +40,15 @@ module.exports = {
     });
   },
 
-  remove: function(req, res, next){
-    var _id = req.body._id;
-
+  delete: function(_id){
     process.database.games.remove({_id: _id},  function(error, deletedGame){
-      if(error){res.send(error); return false;}
-      res.send({sucess: true});
-    });
+      if(error){
+        process.io.sockets.emit('error', error);
+        return false;
+      }
 
+      process.io.sockets.emit('unpopulate game', null, _id);
+    });
   }
 
 };
