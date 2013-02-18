@@ -42,6 +42,7 @@ define([
 
       socket.on('populate game', this.addGame.call(this));
       socket.on('updated game', this.updateGame.call(this));
+      socket.on('unpopulate game', this.unpopulate.call(this));
     },
 
     guid: function(){
@@ -119,33 +120,31 @@ define([
     destroy: function(event){
       var $target = $(event.currentTarget);
       var name    = $target.siblings('.name').text();
-      var model   = this.collection.get($target.parent().attr('data-id')); 
+      var _id     = $target.parent().attr('data-id');
 
       this.$('.reveal-modal .lead').text(name);
-      this.$('.reveal-modal').data('model', model);
+      this.$('.reveal-modal').data('_id', _id);
       this.$('.reveal-modal').reveal();
     },
 
     removeGame: function(event){
       event.preventDefault();
-      var model = this.$('.reveal-modal').data('model');
-      var id    = model.get('_id');
-      var item  = this.$('.item[data-id='+id+']');
-      var modal = this.$('.reveal-modal');
+      var id = $('.reveal-modal').data('_id');
+      socket.emit('delete game', id);
+    },
 
-      modal.removeData('model');
+    unpopulate: function(){
+      var view = this;
 
-      var request = model.destroy({
-        contentType: "application/json",
-        url: '/api/v1/games/remove',
-        data: JSON.stringify({_id: id})
-      });
+      return function(error, id){
+        var modal = view.$('.reveal-modal');
+        var item  = view.$('.item[data-id='+id+']');
 
-      request.done(function(){
+        modal.removeData('_id');
+
         item.remove();
         modal.trigger('reveal:close');
-      });
-
+      };
     },
 
     cancel: function(event){
