@@ -38,8 +38,10 @@ define([
 
     initialize: function(){
       this.collection = new Games(this.options.projectId);
-      this.collection.bind('add', this.addGame, this);
       this.collection.bind('reset', this.render, this);
+
+      socket.on('populate game', this.addGame.call(this));
+      socket.on('updated game', this.updateGame.call(this));
     },
 
     guid: function(){
@@ -52,16 +54,19 @@ define([
         this.collection.create({
           _id: this.guid(),
           name: event.currentTarget.value, 
-          projectId: this.options.projectId
-        }, {type: 'POST'});
+          project_id: this.options.projectId
+        });
 
         event.currentTarget.value='';
       }
     },
 
-    addGame: function(newModel){
-      var newGame = newModel.toJSON();
-      this.$el.append(this.template(newGame));
+    addGame: function(){
+      var view = this;
+      return function(error, game){
+        if(error){console.log(error); return false;}
+        view.$el.append(view.template(game));
+      };
     },
 
     editGame: function(event){
@@ -79,21 +84,36 @@ define([
 
     edit: function(event){
       if(event.keyCode === 13){
-        var $target = $(event.currentTarget);
+
+        var game = {
+          _id: $(event.currentTarget).parent().attr('data-id'),
+          name: event.currentTarget.value,
+          project_id: this.options.projectId
+        };
+
+        socket.emit('update game', game);
+      }
+    },
+
+    updateGame: function(){
+
+      return function(error, game){
+        var $target = $('[data-id='+game._id+']');
+        var $input  = $target.find('.js-edit');
         var span    = document.createElement('span');
         var $span   = $(span);
-        var model   = this.collection.get($target.parent().attr('data-id')); 
 
-        $span.text($target.val());
+        $span.text(game.name);
         $span.addClass('name');
 
-        $target.replaceWith(span);
+        if($input[0]){
+          $input.replaceWith(span);
+        }else{
+          $target.find('.name').text(game.name);
+        }
 
-        model.save({
-          name: $target.val(),
-          project_id: this.options.projectId
-        });
-      }
+      };
+
     },
 
     destroy: function(event){
