@@ -5,6 +5,9 @@ define([
   //Collection
   'app/collections/tasks',
 
+  //View
+  'app/views/taskItemView',
+
   //Template
   'text!templates/project-page/taskItemTemplate.html',
 ], function(
@@ -13,6 +16,9 @@ define([
 
   //Collection
   Tasks,
+
+  //View
+  taskItemView,
 
   //Template
   itemTemplate
@@ -49,9 +55,11 @@ define([
 
       var template = this.template;
       var $list    = this.$el;
+      var task;
 
       _.each(this.collection.models, function(model){
-        $list.append(template({title: model.get('title')}));
+        task = new taskItemView({ model: model });
+        $list.append(task.el);
       });
     }
   });
