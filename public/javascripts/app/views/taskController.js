@@ -45,7 +45,8 @@ define([
         title = model.get('title');
 
         if(title){
-          $list.append(template({title: model.get('title')}));
+          task = new taskItemView({ model: model });
+          $list.append(task.el);
         }
       });
     },
