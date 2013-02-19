@@ -10,7 +10,9 @@ require.config({
 
     socket: '/socket.io/socket.io',
 
-    reveal: 'foundation/jquery.foundation.reveal'
+    reveal: 'foundation/jquery.foundation.reveal',
+
+    'jquery-ui' : 'libs/jquery.ui'
   },
 
   // Sets the configuration for your third party scripts that are not AMD compatible
@@ -19,8 +21,8 @@ require.config({
       deps: ['jQuery', 'Underscore']
     },
 
-    'reveal': ['jQuery'],
-
+    'reveal'   : ['jQuery'],
+    'jquery-ui': ['jQuery']
   },
 
   waitSeconds: 15
