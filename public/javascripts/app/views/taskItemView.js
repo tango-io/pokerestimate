@@ -33,8 +33,11 @@ define([
         cursorAt: { top: 25, left: 10 },
 
         helper: function(event){
-          var num = $('.selected').length || '';
-          var helper = $(event.currentTarget).clone();
+          var $target = $(event.currentTarget);
+          $target.find('li').addClass('selected');
+
+          var num = $('.selected').length - 1 || '';
+          var helper = $target.clone();
           var span   = helper.find('span');
           var name   = span.text();
 
@@ -42,11 +45,6 @@ define([
 
           if(num){ span.text(name + ' + ' + num); }
           return helper;
-        },
-
-        start: function(event, ui){
-          var $target = $(event.currentTarget);
-          $target.find('li').addClass('selected');
         }
       });
 
