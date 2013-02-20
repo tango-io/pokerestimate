@@ -1,18 +1,16 @@
-<div id='game-container' class='row'>
+<div id='player-container' class='row'>
 
   <h1 class='name'><%= project.name%></h1>
 
   <div class='container row'>
-    <div id='list-games' class='three'>
+    <div id='list-players' class='three'>
 
       <div class='head'>
-        <h1>GAMES</h1>
-        <a href='#' class='tiny alert button js-createGame'>Add +</a>
+        <h1>PLAYERS</h1>
         <div class='clear'></div>
       </div>
 
-      <ul class='list js-game-list'>
-        <input class='nametask js-create-game' type='text' placeholder='Name of your game...'></input>
+      <ul class='list js-player-list'>
       </ul>
 
     </div>
@@ -21,13 +19,7 @@
 
       <div class='head'>
         <h1 class='four'>STORIES</h1>
-
-        <div class='nav eight'>
-          <a href='#' class='tiny alert button'>Select All</a>
-          <a href='#' class='tiny alert button'>Unselect All</a>
-          <input class='nametask fn-filter-task' type='text' placeholder='Filter'/>
-        </div>
-
+        <input id='filter' class='nametask fn-filter-task' type='text' placeholder='Filter'/>
       </div>
 
       <ul class='list js-taskList'>

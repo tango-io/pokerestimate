@@ -10,7 +10,6 @@ body {
   }
   a{
     color: #F9A73F;
-    @include transition;
     &:hover{
       color: #C11127;
     }

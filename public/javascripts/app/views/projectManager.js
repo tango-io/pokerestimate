@@ -12,7 +12,6 @@ define([
   'app/views/taskController',
   'app/views/projectsController',
   'app/views/filterController',
-  'app/views/gameController',
 
   //Templates
   'text!templates/project-page/gamePageTemplate.html',
@@ -32,7 +31,6 @@ define([
   taskController,
   projectsController,
   filterController,
-  gameController,
 
   //Templates
   gamePageTemplate,
@@ -58,10 +56,6 @@ define([
         router: this.options.router
       });
 
-      this.games = new gameController({
-        projectId: this.options.projectId
-      });
-
       this.taskList = new taskController({
         projectId: this.options.projectId
       });
@@ -80,10 +74,8 @@ define([
       this.$el.html(this.template({project: {name: this.model.get('name')}}));
       this.taskList.setElement('.js-taskList');
       this.filter.setElement('.fn-filter-task');
-      this.games.setElement('.js-game-list');
 
       this.taskList.collection.fetch();
-      this.games.collection.fetch({data: {project_id: this.options.projectId}});
 
       if(!$('.projects-list li')[0]){
         this.projectsList.setElement('.projects-list').start();
