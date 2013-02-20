@@ -32,6 +32,10 @@ define([
       var id = this.$(event.currentTarget).attr('data-id');
 
       if(id !== 'loading'){
+        var project = this.$(event.currentTarget).find('a').text();
+
+        socket.emit('switch project', project);
+
         this.options.router.navigate('project/'+id, true);
       }
     },
