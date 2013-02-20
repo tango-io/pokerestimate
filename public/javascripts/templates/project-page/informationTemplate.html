@@ -1,0 +1,23 @@
+<div class="popover">
+
+  <div class="arrow">
+  </div>
+
+  <h3 class="popover-title"></h3>
+
+  <%if(typeof description === 'string'){ %>
+    <section>
+      <p>Description: <%= description %> </p>
+    </section>
+  <%}%>
+
+  <%if(typeof requested_by === 'string'){ %>
+    <section>
+      <p>Requested by: <%= requested_by %> </p>
+    </section>
+  <%}%>
+
+  <div class="popover-content">
+  </div>
+
+</div>
