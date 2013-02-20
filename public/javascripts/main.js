@@ -12,7 +12,7 @@ require.config({
 
     reveal: 'foundation/jquery.foundation.reveal',
 
-    'jquery-ui' : 'libs/jquery.ui'
+    'bootstrap' : 'libs/bootstrap'
   },
 
   // Sets the configuration for your third party scripts that are not AMD compatible
@@ -22,7 +22,7 @@ require.config({
     },
 
     'reveal'   : ['jQuery'],
-    'jquery-ui': ['jQuery']
+    'bootstrap': ['jQuery']
   },
 
   waitSeconds: 15
