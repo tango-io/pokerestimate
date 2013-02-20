@@ -63,6 +63,7 @@ define([
       this.filter = new filterController({
         collection: this.taskList.collection
       });
+
     },
 
     error: function(){
@@ -71,7 +72,12 @@ define([
     },
 
     render: function(){
-      this.$el.html(this.template({project: {name: this.model.get('name')}}));
+      var project = this.model.get('name');
+      var player  = this.options.router.account.get('user');
+
+      socket.emit('add player', player, project);
+
+      this.$el.html(this.template({project: {name: project}}));
       this.taskList.setElement('.js-taskList');
       this.filter.setElement('.fn-filter-task');
 
