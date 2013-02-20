@@ -49,6 +49,10 @@ define([
       });
 
       this.account.fetch();
+
+      socket.on('update players', function(){
+        console.log(arguments);
+      });
     },
 
     home: function(){
