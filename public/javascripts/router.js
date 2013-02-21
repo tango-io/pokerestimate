@@ -4,6 +4,10 @@ define([
 
   //Models
   'app/models/account',
+  'app/models/playerMessage',
+
+  //Collection
+  'app/collections/players',
 
   //Views
   'app/views/topNavView',
@@ -17,6 +21,10 @@ define([
 
   //Models
   Account,
+  PlayerMessage,
+
+  //Collection
+  Players,
 
   //Views
   TopNavView,
@@ -36,6 +44,8 @@ define([
 
     initialize: function(){
       this.account = new Account();
+      this.players = new Players();
+      this.playerMessage = new PlayerMessage();
 
       this.topNav  = new TopNavView({
         el: '#navigator',
@@ -50,8 +60,15 @@ define([
 
       this.account.fetch();
 
-      socket.on('update players', function(){
-        console.log(arguments);
+      var players = this.players;
+      var playerMessage = this.playerMessage;
+
+      socket.on('update players', function(message, list){
+        playerMessage.set({
+          message: message
+        });
+        var pls = _.map(list, function(v, k){return v;});
+        players.update(pls);
       });
     },
 
@@ -69,6 +86,8 @@ define([
       this.project = new ProjectManager({
         el: '#main-content',
         projectId: id,
+        players: this.players,
+        playerMessage: this.playerMessage,
         router: this
       });
     }
