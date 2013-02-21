@@ -8,8 +8,9 @@
 }
 
 @import "mixins";
-@import "status/*.png";
-@include all-status-sprites;
+@import "colors";
+// @import "status/*.png";
+// @include all-status-sprites;
 $experimental-support-for-svg: true;
 
 #player-container{
@@ -204,6 +205,12 @@ $experimental-support-for-svg: true;
       .list{
         padding-top: 10px;
         .popover{
+          @include background-image(linear-gradient(white,#eee));
+          .arrow{
+            &:after{
+              border-right-color: #f7f7f7;
+            }
+          }
           .popover-title{
             @include background-image(linear-gradient(#555,black));
             color: white;
