@@ -12,6 +12,7 @@ define([
   'app/views/taskController',
   'app/views/projectsController',
   'app/views/filterController',
+  'app/views/playersController',
 
   //Templates
   'text!templates/project-page/gamePageTemplate.html',
@@ -31,6 +32,7 @@ define([
   taskController,
   projectsController,
   filterController,
+  playersController,
 
   //Templates
   gamePageTemplate,
@@ -50,6 +52,12 @@ define([
       this.model.bind('change:name', this.render, this);
 
       this.model.fetch({data: {id: this.options.projectId}});
+
+      this.players = new playersController({
+        collection: this.options.players,
+        message: this.options.playerMessage,
+        project: this.model
+      });
 
       this.projectsList = new projectsController({
         collection: new Projects(),
@@ -80,6 +88,8 @@ define([
       this.$el.html(this.template({project: {name: project}}));
       this.taskList.setElement('.js-taskList');
       this.filter.setElement('.fn-filter-task');
+      this.players.setElement('.js-player-list');
+      this.players.options.message.trigger('change');
 
       this.taskList.collection.fetch();
 
