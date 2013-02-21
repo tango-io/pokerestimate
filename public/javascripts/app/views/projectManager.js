@@ -92,6 +92,7 @@ define([
       this.players.options.message.trigger('change');
 
       this.taskList.collection.fetch();
+      this.taskList.taskDetail.setElement('#play-area');
 
       if(!$('.projects-list li')[0]){
         this.projectsList.setElement('.projects-list').start();
