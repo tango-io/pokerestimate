@@ -28,7 +28,7 @@ define([
 
       var task = selectedTask.toJSON();
       task.labels = task.labels || [];
-      task.description = typeof task.description === 'string' ? task.description : '';
+      task.description = typeof task.description === 'string' ? task.description : 'No description';
 
       this.$el.html(this.template(task));
     }
