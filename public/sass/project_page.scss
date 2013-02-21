@@ -208,7 +208,7 @@ $experimental-support-for-svg: true;
           @include background-image(linear-gradient(white,#eee));
           .arrow{
             &:after{
-              border-right-color: #f7f7f7;
+              border-right-color: $gray-f7;
             }
           }
           .popover-title{
