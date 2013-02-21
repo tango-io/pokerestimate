@@ -8,6 +8,9 @@
 }
 
 @import "mixins";
+@import "status/*.png";
+@include all-status-sprites;
+
 #player-container{
 
   h1.name{
@@ -94,6 +97,15 @@
 
           &.opened{
             padding-bottom: 0;
+          }
+
+          .name{
+            i{
+              height: 16px;
+              width:  16px;
+              float: left;
+              margin: 2px 3px 0 -7px;
+            }
           }
 
           .edit{
