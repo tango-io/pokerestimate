@@ -40,7 +40,10 @@ define([
     },
 
     selected: function(event){
+      this.model.set({ selected: true });
+
       var $target = $(event.currentTarget).find('li');
+      $('.selected').removeClass('selected');
       $target.toggleClass('selected');
     }
 
