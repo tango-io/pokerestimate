@@ -6504,47 +6504,51 @@ body footer.bottom:hover {
   padding: 7px 0 7px 15px;
   margin: 2px 0;
 }
-/* line 42, ../sass/project_page.scss */
+/* line 43, ../sass/project_page.scss */
+#player-container .container.row .js-player-list .alert-box {
+  text-align: center;
+}
+/* line 48, ../sass/project_page.scss */
 #player-container .container.row #list-players {
   float: left;
 }
-/* line 45, ../sass/project_page.scss */
+/* line 51, ../sass/project_page.scss */
 #player-container .container.row #list-players h1 {
   padding-left: 30px;
   background: transparent url("../images/games/title-games.png") no-repeat left center;
 }
-/* line 50, ../sass/project_page.scss */
+/* line 56, ../sass/project_page.scss */
 #player-container .container.row #list-players .head {
   border-left: none;
   padding: 7px 10px 7px 0;
 }
-/* line 55, ../sass/project_page.scss */
+/* line 61, ../sass/project_page.scss */
 #player-container .container.row #list-players .button {
   float: right;
 }
-/* line 59, ../sass/project_page.scss */
+/* line 65, ../sass/project_page.scss */
 #player-container .container.row #list-players .nametask {
   width: 225px;
   margin: 0;
 }
-/* line 64, ../sass/project_page.scss */
+/* line 70, ../sass/project_page.scss */
 #player-container .container.row #list-players .list {
   padding: 10px 10px 0 0;
 }
-/* line 67, ../sass/project_page.scss */
+/* line 73, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item {
   border: 1px dashed #e3dace;
   background: #E9E8E5;
 }
-/* line 70, ../sass/project_page.scss */
+/* line 76, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.closed {
   text-decoration: line-through;
 }
-/* line 74, ../sass/project_page.scss */
+/* line 80, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.opened {
   padding-bottom: 0;
 }
-/* line 78, ../sass/project_page.scss */
+/* line 84, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .edit {
   float: right;
   height: 10px;
@@ -6556,7 +6560,7 @@ body footer.bottom:hover {
   margin-top: 1px;
   cursor: pointer;
 }
-/* line 90, ../sass/project_page.scss */
+/* line 96, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .delete {
   float: right;
   height: 10px;
@@ -6567,7 +6571,7 @@ body footer.bottom:hover {
   margin: 1px 8px 0 8px;
   cursor: pointer;
 }
-/* line 101, ../sass/project_page.scss */
+/* line 107, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .play {
   float: right;
   height: 27px;
@@ -6579,38 +6583,38 @@ body footer.bottom:hover {
   margin-top: -8px;
   cursor: pointer;
 }
-/* line 113, ../sass/project_page.scss */
+/* line 119, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group {
   margin-left: 0;
   border-top: 1px solid #dfd4c7;
   margin-top: 5px;
 }
-/* line 117, ../sass/project_page.scss */
+/* line 123, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group li {
   padding: 7px 0;
 }
-/* line 124, ../sass/project_page.scss */
+/* line 130, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover {
   background: #fff;
 }
-/* line 126, ../sass/project_page.scss */
+/* line 132, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover .play {
   background: transparent url("../images/games/play.png") no-repeat center center;
 }
-/* line 137, ../sass/project_page.scss */
+/* line 143, ../sass/project_page.scss */
 #player-container .container.row #list-tasks {
   float: left;
 }
-/* line 140, ../sass/project_page.scss */
+/* line 146, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head {
   border-right: none;
   padding: 5px 0 5px 10px;
 }
-/* line 144, ../sass/project_page.scss */
+/* line 150, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head h1 {
   margin-top: 4px;
 }
-/* line 150, ../sass/project_page.scss */
+/* line 156, ../sass/project_page.scss */
 #player-container .container.row #list-tasks #filter {
   float: right;
   width: 272px;
@@ -6621,32 +6625,32 @@ body footer.bottom:hover {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-/* line 160, ../sass/project_page.scss */
+/* line 166, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav {
   float: right;
 }
-/* line 163, ../sass/project_page.scss */
+/* line 169, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav a.button {
   float: left;
   margin: 2px 5px 0 5px;
 }
-/* line 170, ../sass/project_page.scss */
+/* line 176, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list {
   padding-top: 10px;
 }
-/* line 174, ../sass/project_page.scss */
+/* line 180, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover section {
   padding: 10px;
   overflow: hidden;
 }
-/* line 180, ../sass/project_page.scss */
+/* line 186, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item {
   float: left;
   border-right: 1px solid #dfd4c7;
   width: 32.8%;
   margin-left: 3px;
 }
-/* line 186, ../sass/project_page.scss */
+/* line 192, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item .drag {
   float: right;
   height: 10px;
@@ -6658,17 +6662,17 @@ body footer.bottom:hover {
   opacity: .4;
   cursor: move;
 }
-/* line 198, ../sass/project_page.scss */
+/* line 204, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item.selected {
   background: #fff;
 }
-/* line 202, ../sass/project_page.scss */
+/* line 208, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover {
   background: #FAF9F8;
   color: #000;
   border-right: 3px solid #dfd4c7;
 }
-/* line 206, ../sass/project_page.scss */
+/* line 212, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover .drag {
   opacity: 1;
 }
