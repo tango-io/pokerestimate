@@ -10,6 +10,7 @@
 @import "mixins";
 @import "status/*.png";
 @include all-status-sprites;
+$experimental-support-for-svg: true;
 
 #player-container{
 
@@ -202,8 +203,13 @@
 
       .list{
         padding-top: 10px;
-
         .popover{
+          .popover-title{
+            @include background-image(linear-gradient(#555,black));
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+          }
           section{
             padding: 10px;
             overflow: hidden;
