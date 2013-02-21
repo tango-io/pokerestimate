@@ -14,13 +14,16 @@ exports.start = function(){
       socket.room     = project;
 
       //Add the player to the global list
-      players[player] = player;
+      players[player] = {
+        project: project,
+        email:   player
+      };
 
       //Send player to project room
       socket.join(project);
 
-      socket.emit('update players', 'SERVER', 'You have join ' + project);
-      socket.broadcast.to(project).emit('update players', 'SERVER', player + ' has connected to this project');
+      socket.emit('update players', 'You have join ' + project, players);
+      socket.broadcast.to(project).emit('update players', player + ' has connected to this project', players);
     });
 
     socket.on('switch project', function(project){
@@ -28,23 +31,31 @@ exports.start = function(){
       if(!socket.username){return false;}
       if(socket.room === project){return false;}
 
+      //Update player to the global list
+      players[socket.username] = {
+        project: project,
+        email:   socket.username
+      };
+
       socket.leave(socket.room);
       socket.join(project);
 
-      socket.emit('update players', 'SERVER', 'You have join ' + project);
-      socket.broadcast.to(socket.room).emit('update players', 'SERVER', socket.username+' has left this project');
+      socket.emit('update players', 'You have join ' + project, players);
+      socket.broadcast.to(socket.room).emit('update players', socket.username+' has left this project', players);
 
       socket.room = project;
-      socket.broadcast.to(project).emit('update players', 'SERVER', socket.username + ' has connected to this project');
+      socket.broadcast.to(project).emit('update players', socket.username + ' has connected to this project', players);
     });
 
     socket.on('disconnect', function(){
 		// remove the username from global usernames list
 		delete players[socket.username];
+    
 		// update list of users in chat, client-side
-		process.io.sockets.emit('update players', players);
+		// process.io.sockets.emit('update players', players);
 		// echo globally that this client has left
-		socket.broadcast.emit('update players', 'SERVER', socket.username + ' has disconnected');
+    
+		socket.broadcast.to(socket.room).emit('update players', socket.username + ' has disconnected', players);
 		socket.leave(socket.room);
 	});
 
