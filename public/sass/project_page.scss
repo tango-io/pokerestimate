@@ -137,6 +137,7 @@
         }
 
       }
+      
 
     }
 
@@ -175,6 +176,7 @@
 
       .list{
         padding-top: 10px;
+        float: left;
 
         .popover{
           section{
@@ -215,6 +217,11 @@
           }
         }
       }
+
+      #taks-expand{
+        float: right;
+      }
+
     }
   }
 }
