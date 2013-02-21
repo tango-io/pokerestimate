@@ -6201,21 +6201,22 @@ body .top-bar #navigator li .dropdown {
 body .top-bar #navigator li .dropdown li.item {
   cursor: pointer;
   overflow: hidden;
+  border-bottom: 1px solid #333333;
   padding: 0;
 }
-/* line 92, ../sass/main.scss */
+/* line 93, ../sass/main.scss */
 body .top-bar #navigator li .dropdown li.item a {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: 400;
 }
-/* line 109, ../sass/main.scss */
+/* line 110, ../sass/main.scss */
 body #flash-messages {
   width: 500px;
   margin: 0 auto;
 }
-/* line 116, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 body footer.bottom {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6229,7 +6230,7 @@ body footer.bottom {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 123, ../sass/main.scss */
+/* line 124, ../sass/main.scss */
 body footer.bottom p {
   text-align: center;
   width: 460px;
@@ -6238,7 +6239,7 @@ body footer.bottom p {
   padding: 10px;
   line-height: 28px;
 }
-/* line 130, ../sass/main.scss */
+/* line 131, ../sass/main.scss */
 body footer.bottom p:before {
   content: " ";
   background: transparent url("../images/landing-page/footer-1.png") no-repeat center center;
@@ -6247,7 +6248,7 @@ body footer.bottom p:before {
   display: block;
   float: left;
 }
-/* line 138, ../sass/main.scss */
+/* line 139, ../sass/main.scss */
 body footer.bottom p:after {
   content: " ";
   background: transparent url("../images/landing-page/footer-2.png") no-repeat center center;
@@ -6256,7 +6257,7 @@ body footer.bottom p:after {
   display: block;
   float: right;
 }
-/* line 148, ../sass/main.scss */
+/* line 149, ../sass/main.scss */
 body footer.bottom:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -6498,29 +6499,29 @@ body footer.bottom:hover {
   background-position: 0 -32px;
 }
 
-/* line 17, ../sass/project_page.scss */
+/* line 18, ../sass/project_page.scss */
 #player-container h1.name {
   font-size: 30px;
   margin-bottom: 30px;
 }
-/* line 22, ../sass/project_page.scss */
+/* line 23, ../sass/project_page.scss */
 #player-container .container.row {
   width: 940px;
   margin: 0 auto;
   background: transparent url("../images/games/line-bg.jpg") repeat-y 235px;
 }
-/* line 27, ../sass/project_page.scss */
+/* line 28, ../sass/project_page.scss */
 #player-container .container.row .head {
   border: 1px solid #dfd4c8;
   overflow: hidden;
 }
-/* line 31, ../sass/project_page.scss */
+/* line 32, ../sass/project_page.scss */
 #player-container .container.row .head h1 {
   float: left;
   line-height: 22px;
   font-size: 18px;
 }
-/* line 38, ../sass/project_page.scss */
+/* line 39, ../sass/project_page.scss */
 #player-container .container.row .item {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6529,73 +6530,73 @@ body footer.bottom:hover {
   padding: 7px 0 7px 15px;
   margin: 2px 0;
 }
-/* line 47, ../sass/project_page.scss */
+/* line 48, ../sass/project_page.scss */
 #player-container .container.row .js-player-list .alert-box {
   text-align: center;
 }
-/* line 52, ../sass/project_page.scss */
+/* line 53, ../sass/project_page.scss */
 #player-container .container.row #task-detail {
   float: left;
 }
-/* line 55, ../sass/project_page.scss */
+/* line 56, ../sass/project_page.scss */
 #player-container .container.row #task-detail h1 {
   padding-left: 30px;
   background: transparent url("../images/games/title-games.png") no-repeat left center;
 }
-/* line 60, ../sass/project_page.scss */
+/* line 61, ../sass/project_page.scss */
 #player-container .container.row #task-detail .head {
   border-right: none;
   padding: 7px 10px 7px 0;
   height: 39px;
 }
-/* line 67, ../sass/project_page.scss */
+/* line 68, ../sass/project_page.scss */
 #player-container .container.row #list-players {
   float: left;
 }
-/* line 70, ../sass/project_page.scss */
+/* line 71, ../sass/project_page.scss */
 #player-container .container.row #list-players h1 {
   padding-left: 40px;
   background: transparent url("../images/estimation-game/people.png") no-repeat left center;
 }
-/* line 75, ../sass/project_page.scss */
+/* line 76, ../sass/project_page.scss */
 #player-container .container.row #list-players .head {
   border-left: none;
   padding: 7px 10px 7px 0;
 }
-/* line 80, ../sass/project_page.scss */
+/* line 81, ../sass/project_page.scss */
 #player-container .container.row #list-players .button {
   float: right;
 }
-/* line 84, ../sass/project_page.scss */
+/* line 85, ../sass/project_page.scss */
 #player-container .container.row #list-players .nametask {
   width: 225px;
   margin: 0;
 }
-/* line 89, ../sass/project_page.scss */
+/* line 90, ../sass/project_page.scss */
 #player-container .container.row #list-players .list {
   padding: 10px 10px 0 0;
 }
-/* line 92, ../sass/project_page.scss */
+/* line 93, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item {
   border: 1px dashed #e3dace;
   background: #E9E8E5;
 }
-/* line 95, ../sass/project_page.scss */
+/* line 96, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.closed {
   text-decoration: line-through;
 }
-/* line 99, ../sass/project_page.scss */
+/* line 100, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.opened {
   padding-bottom: 0;
 }
-/* line 104, ../sass/project_page.scss */
+/* line 105, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .name i {
   height: 16px;
   width: 16px;
   float: left;
   margin: 2px 3px 0 -7px;
 }
-/* line 112, ../sass/project_page.scss */
+/* line 113, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .edit {
   float: right;
   height: 10px;
@@ -6607,7 +6608,7 @@ body footer.bottom:hover {
   margin-top: 1px;
   cursor: pointer;
 }
-/* line 124, ../sass/project_page.scss */
+/* line 125, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .delete {
   float: right;
   height: 10px;
@@ -6618,7 +6619,7 @@ body footer.bottom:hover {
   margin: 1px 8px 0 8px;
   cursor: pointer;
 }
-/* line 135, ../sass/project_page.scss */
+/* line 136, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .play {
   float: right;
   height: 27px;
@@ -6630,38 +6631,38 @@ body footer.bottom:hover {
   margin-top: -8px;
   cursor: pointer;
 }
-/* line 147, ../sass/project_page.scss */
+/* line 148, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group {
   margin-left: 0;
   border-top: 1px solid #dfd4c7;
   margin-top: 5px;
 }
-/* line 151, ../sass/project_page.scss */
+/* line 152, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group li {
   padding: 7px 0;
 }
-/* line 158, ../sass/project_page.scss */
+/* line 159, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover {
   background: #fff;
 }
-/* line 160, ../sass/project_page.scss */
+/* line 161, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover .play {
   background: transparent url("../images/games/play.png") no-repeat center center;
 }
-/* line 171, ../sass/project_page.scss */
+/* line 172, ../sass/project_page.scss */
 #player-container .container.row #list-tasks {
   float: left;
 }
-/* line 174, ../sass/project_page.scss */
+/* line 175, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head {
   border-right: none;
   padding: 5px 0 5px 10px;
 }
-/* line 178, ../sass/project_page.scss */
+/* line 179, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head h1 {
   margin-top: 4px;
 }
-/* line 184, ../sass/project_page.scss */
+/* line 185, ../sass/project_page.scss */
 #player-container .container.row #list-tasks #filter {
   float: right;
   width: 272px;
@@ -6672,20 +6673,34 @@ body footer.bottom:hover {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-/* line 194, ../sass/project_page.scss */
+/* line 195, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav {
   float: right;
 }
-/* line 197, ../sass/project_page.scss */
+/* line 198, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav a.button {
   float: left;
   margin: 2px 5px 0 5px;
 }
-/* line 204, ../sass/project_page.scss */
+/* line 205, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list {
   padding-top: 10px;
 }
 /* line 207, ../sass/project_page.scss */
+#player-container .container.row #list-tasks .list .popover {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
+  background-image: -moz-linear-gradient(#ffffff, #eeeeee);
+  background-image: -o-linear-gradient(#ffffff, #eeeeee);
+  background-image: linear-gradient(#ffffff, #eeeeee);
+}
+/* line 210, ../sass/project_page.scss */
+#player-container .container.row #list-tasks .list .popover .arrow:after {
+  border-right-color: #f7f7f7;
+}
+/* line 214, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover .popover-title {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU1NTU1NSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -6698,19 +6713,20 @@ body footer.bottom:hover {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 213, ../sass/project_page.scss */
+/* line 220, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover section {
   padding: 10px;
   overflow: hidden;
 }
-/* line 219, ../sass/project_page.scss */
+/* line 226, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item {
   float: left;
   border-right: 1px solid #dfd4c7;
   width: 49%;
   margin-left: 3px;
+  cursor: pointer;
 }
-/* line 225, ../sass/project_page.scss */
+/* line 233, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item .drag {
   float: right;
   height: 10px;
@@ -6722,17 +6738,17 @@ body footer.bottom:hover {
   opacity: .4;
   cursor: move;
 }
-/* line 237, ../sass/project_page.scss */
+/* line 245, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item.selected {
   background: #fff;
 }
-/* line 241, ../sass/project_page.scss */
+/* line 249, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover {
   background: #FAF9F8;
   color: #000;
   border-right: 3px solid #dfd4c7;
 }
-/* line 245, ../sass/project_page.scss */
+/* line 253, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover .drag {
   opacity: 1;
 }

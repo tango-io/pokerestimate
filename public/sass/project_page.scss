@@ -9,8 +9,8 @@
 
 @import "mixins";
 @import "colors";
-// @import "status/*.png";
-// @include all-status-sprites;
+@import "status/*.png";
+@include all-status-sprites;
 $experimental-support-for-svg: true;
 
 #player-container{
@@ -228,6 +228,7 @@ $experimental-support-for-svg: true;
           border-right: 1px solid #DFD4C7;
           width: 49%;
           margin-left: 3px;
+          cursor: pointer;
 
           .drag{
             float: right;
