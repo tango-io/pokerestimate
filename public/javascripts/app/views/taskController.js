@@ -7,6 +7,7 @@ define([
 
   //View
   'app/views/taskItemView',
+  'app/views/TaskDetail',
 
   //Template
   'text!templates/project-page/taskItemTemplate.html',
@@ -19,6 +20,7 @@ define([
 
   //View
   taskItemView,
+  TaskDetail,
 
   //Template
   itemTemplate
@@ -32,6 +34,11 @@ define([
       this.collection =  new Tasks(this.options.projectId);
       this.collection.bind('reset', this.render, this);
       this.collection.bind('search', this.searchResult, this);
+
+      this.taskDetail = new TaskDetail({
+        collection: this.collection
+      });
+
     },
 
     searchResult: function(result){
@@ -39,7 +46,7 @@ define([
 
       var template = this.template;
       var $list    = this.$el;
-      var title;
+      var title, task;
 
       _.each(result, function(model){
         title = model.get('title');
