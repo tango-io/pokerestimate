@@ -63,6 +63,90 @@ $experimental-support-for-svg: true;
         padding: 7px 10px 7px 0;
         height: 39px;
       }
+
+      .title{
+        font-size: 18px;
+        text-align: center;
+        margin: 10px;
+      }
+
+      .labels{
+        display: inline-block;
+        margin-bottom: 5px;
+
+        label{
+          float: right;
+          border: 1px solid;
+          margin: 0 4px;
+          padding: 1px;
+          font-size: 11px;
+        }
+      }
+
+      .description{
+        border: 1px dashed #e3dace;
+        background: #E9E8E5;
+        padding: 7px;
+      }
+
+      .owner{
+        float: right;
+        font-style: italic;
+        font-size: 11px;
+        margin: 6px 0;
+      }
+
+      .who{
+        overflow: hidden;
+        float: left;
+        margin-top: 10px;
+
+        .player{
+          border: 1px dashed #E3DACE;
+          padding: 8px 0  0 40px;
+          background: transparent url('../images/estimation-game/cart.png') no-repeat left center;
+          background-size: 15%;
+          height: 42px;
+        }
+
+      }
+
+      .cards{
+        clear: both;
+        margin: 10px;
+        text-align: center;
+
+        .list{
+
+          .card{
+            background: transparent url('../images/estimation-game/cart-bg.png') no-repeat center center;
+            display: inline-block;
+            width: 40px;
+            height: 50px;
+            background-size: 100%;
+            padding: 15px;
+            margin: 3px;
+            cursor: pointer;
+
+            input{
+              width: 15px;
+              font-size: 9px;
+              padding: 0;
+            }
+
+            &.selected{
+              background: #666;
+            }
+          }
+
+        }
+
+      }
+
+      .update{
+        float: right;
+      }
+
     }
 
     #list-players{
