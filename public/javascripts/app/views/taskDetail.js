@@ -14,8 +14,28 @@ define([
 
     template: _.template(taskDetailTemplate),
 
+    events: {
+      'click .card'      : 'play',
+      'click .js-save'   : 'save',
+      'click .js-cancel' : 'cancel'
+    },
+
     initialize: function(){
       this.collection.bind('change:selected', this.render, this);
+    },
+
+    play: function(event){
+      event.preventDefault();
+      this.$('.selected').removeClass('selected');
+      $(event.currentTarget).addClass('selected');
+    },
+
+    cancel: function(event){
+      event.preventDefault();
+    },
+
+    save: function(event){
+      event.preventDefault();
     },
 
     render: function(){
@@ -27,7 +47,8 @@ define([
       });
 
       var task = selectedTask.toJSON();
-      task.labels = task.labels || [];
+      task.labels = task.labels ? task.labels[0].split(',') : [];
+
       task.description = typeof task.description === 'string' ? task.description : 'No description';
 
       this.$el.html(this.template(task));
