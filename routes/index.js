@@ -11,7 +11,7 @@ var userController     = require('../controllers/user_controller');
  * Routes
  */
 
-module.exports = function(app, passport, socket){
+module.exports = function(app, passport){
 
   var authenticate = authController.setUp(authController, passport);
 
