@@ -22,6 +22,7 @@ define([
 
     initialize: function(){
       this.collection.bind('change:selected', this.render, this);
+      this.collection.bind('change:estimated', this.updateEstimations, this);
     },
 
     play: function(event){
@@ -40,15 +41,25 @@ define([
 
       if(card[0]){
         var estimated = this.selectedTask.get('estimated') || [];
+        var task      = this.selectedTask.get('id');
         var player    = this.options.router.account.get('user');
         var num       = card.find('a')[0] ? card.find('a').text() : card.find('input').val();
 
-        estimated.push({
-          player: player,
-          card: num
-        });
+        var me  = _.findWhere(estimated, {player: player}) || {player: player};
+        me.card = num;
+        socket.emit('estimate', task, _.union(estimated, me));
+      }
+    },
 
-        this.selectedTask.save({estimated: estimated});
+    updateEstimations: function(){
+      if(this.selectedTask){
+        var estimations = this.selectedTask.get('estimated');
+        var list = this.$('.players');
+        list.html('');
+
+        _.each(estimations, function(estimation){
+          list.append('<li class="player">'+estimation.player+'</li>');
+        });
       }
     },
 
