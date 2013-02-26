@@ -65,7 +65,8 @@ define([
       });
 
       this.taskList = new taskController({
-        projectId: this.options.projectId
+        projectId: this.options.projectId,
+        router: this.options.router
       });
 
       this.filter = new filterController({
