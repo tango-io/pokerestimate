@@ -113,7 +113,9 @@ module.exports = {
     process.database.tasks.update({id: id}, { $set: { 
       project_id: project,
       estimated:  estimated
-    } }, { upsert: true });
+    } }, { upsert: true }, function(){
+      res.send({success: true});
+    });
 
   }
 
