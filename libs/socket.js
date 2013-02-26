@@ -59,7 +59,11 @@ exports.start = function(){
 		socket.leave(socket.room);
 	});
 
+  socket.on('estimate', function(task, estimations){
+    socket.emit('update estimations', 'You have estimated', task, estimations);
+    socket.broadcast.to(socket.room).emit('update estimations', socket.username+' has estimated', task, estimations);
+  });
+
   });
 
 }
-
