@@ -36,7 +36,8 @@ define([
       this.collection.bind('search', this.searchResult, this);
 
       this.taskDetail = new TaskDetail({
-        collection: this.collection
+        collection: this.collection,
+        router: this.options.router
       });
 
     },
