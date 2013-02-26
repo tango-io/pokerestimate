@@ -100,7 +100,11 @@ $experimental-support-for-svg: true;
       .who{
         overflow: hidden;
         float: left;
-        margin-top: 10px;
+
+        h3{
+          margin: 12px 0;
+          font-size: 20px;
+        }
 
         .player{
           border: 1px dashed #E3DACE;
@@ -146,6 +150,8 @@ $experimental-support-for-svg: true;
 
       .update{
         float: right;
+        width: 100%;
+        text-align: center;
       }
 
     }
