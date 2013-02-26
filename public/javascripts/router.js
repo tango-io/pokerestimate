@@ -62,6 +62,7 @@ define([
 
       var players = this.players;
       var playerMessage = this.playerMessage;
+      var self = this;
 
       socket.on('update players', function(message, list){
         playerMessage.set({
@@ -69,6 +70,15 @@ define([
         });
         var pls = _.map(list, function(v, k){return v;});
         players.update(pls);
+      });
+
+      socket.on('update estimations', function(message, task, estimations){
+        playerMessage.set({
+          message: message
+        });
+
+        var card = self.project.taskList.collection.get(task);
+        card.save({estimated: estimations});
       });
     },
 
