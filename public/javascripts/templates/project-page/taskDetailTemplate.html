@@ -1,43 +1,3 @@
-<h3 class='title'>
-  <%= title%>
-</h3>
-
-<section class='labels'>
-  <% _.each(labels, function(label){ %>
-    <label><%= label%></label>
-  <%}) %>
-</section>
-
-<section class='description'>
-  <%= description%>
-</section>
-
-<section class='owner'>
-  <%= requested_by%>
-</section>
-
-<section class='who'>
-
-  <h3>Players <small>(all ready bet)</small></h3>
-  <h4><small>Examples (<strong>Beta</strong>)</small></h4>
-  <ul class='players'>
-
-    <li class='player'>
-      Narciso
-    </li>
-
-    <li class='player'>
-      Jaime
-    </li>
-
-    <li class='player'>
-      Antonio
-    </li>
-
-  </ul>
-
-</section>
-
 <section class='cards'>
 
   <ul class='list'>
@@ -73,4 +33,35 @@
 <section class='update'>
   <a href='#' class='tiny button js-save'>Save</a>
   <a href='#' class='tiny alert button js-cancel'>Cancel</a>
+</section>
+
+<section class='who'>
+  <h3>Players <small>(all ready bet)</small></h3>
+  <ul class='players'>
+
+    <li class='player'>
+      Narciso
+    </li>
+
+  </ul>
+</section>
+
+
+<h4><small>Aditional information</small></h4>
+<h3 class='title'>
+  <%= title%>
+</h3>
+
+<section class='labels'>
+  <% _.each(labels, function(label){ %>
+  <label><%= label%></label>
+  <%}) %>
+</section>
+
+<section class='description'>
+  <%= description%>
+</section>
+
+<section class='owner'>
+  <%= requested_by%>
 </section>
