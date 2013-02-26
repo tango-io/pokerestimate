@@ -25,6 +25,5 @@ module.exports = function(app, passport, socket){
   app.get('/api/v1/projects',     pivotalController.projects);
 
   app.get('/api/v1/projects/:project/tasks',     pivotalController.tasks);
-  app.get('/api/v1/projects/:project/tasks/:id', pivotalController.task);
-
+  app.put('/api/v1/projects/:project/tasks/:id', pivotalController.saveTask);
 };
