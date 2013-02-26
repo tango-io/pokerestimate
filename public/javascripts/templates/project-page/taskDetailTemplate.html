@@ -39,9 +39,9 @@
   <h3>Players <small>(all ready bet)</small></h3>
   <ul class='players'>
 
-    <li class='player'>
-      Narciso
-    </li>
+    <% _.each(estimated, function(estimation){ %>
+      <li class='player'> <%= estimation.player%> </li>
+    <% })%>
 
   </ul>
 </section>
