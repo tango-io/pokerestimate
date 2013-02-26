@@ -52,80 +52,69 @@ module.exports = {
       return false;
     }
 
+    var list = {};
+
+    process.database.tasks.find({project_id: project}, function(err, tasks){
+      tasks.toArray(function(err, elements){
+        _.each(elements, function(element){
+          list[element.id] = element;
+        });
+      });
+    });
+
     pivotal.getTasks({project: project, token: token}, function(error, data){
+      if(error){ res.send(error); return false; }
 
-      if(error){
-        res.send(error);
-        return false;
-      }
-
-      if(data.message){
-        res.send(data);
-        return false;
-      }
+      if(data.message){ res.send(data); return false; }
 
       var stories = typeof data.stories === 'object' ? data.stories.story : [];
 
-      var list = _.map(stories, function(field){
+      _.each(stories, function(storie, index){
+        var points = storie.estimate ? storie.estimate.pop()._ : 'bug';
 
-        var points = field.estimate ? field.estimate.pop()._ : 'bug';
+        if(points === '-1'){
+          var id = storie.id.pop()._;
 
-        return points === '-1' ? {
-          id:           field.id.pop()._,
-          project_id:   field.project_id.pop()._,
-          title:        field.name.pop(),
-          url:          field.url.pop(),
-          description:  field.description.pop(),
-          requested_by: field.requested_by.pop(),
-          owned_by:     field.owned_by ? field.owned_by.pop() : field.owned_by,
-          labels:       field.labels
-        } : false;
+          var data = {
+            id:           id,
+            project_id:   storie.project_id.pop()._,
+            title:        storie.name.pop(),
+            url:          storie.url.pop(),
+            description:  storie.description.pop(),
+            requested_by: storie.requested_by.pop(),
+            owned_by:     storie.owned_by ? storie.owned_by.pop() : storie.owned_by,
+            labels:       storie.labels
+          };
 
+          list[id] = list[id] ? _.extend(list[id], data) : data;
+        }
+
+        if(index === stories.length - 1){
+          var result = _.map(list, function(t){return t;});
+          res.send(result);
+        }
       });
 
-      res.send(_.compact(list));
-
     });
+
   },
 
-  task: function(req, res, next){
-    var token   = req.user ? req.user.token : null;
-    var project = req.params.project;
-    var id      = req.params.id;
+  saveTask: function(req, res, next){
+    var estimated  = req.body.estimated;
+    var token      = req.user ? req.user.token : null;
+    var project    = req.params.project;
+    var id         = req.params.id;
 
     if(!token){
       res.send({error: 'Not logged in'});
       return false;
     }
 
-    pivotal.getTasks({project: project, token: token, id: id}, function(error, data){
+    process.database.tasks.update({id: id}, { $set: { 
+      project_id: project,
+      estimated:  estimated
+    } }, { upsert: true });
 
-      if(error){
-        res.send(error);
-        return false;
-      }
-
-      if(data.message){
-        res.send(data);
-        return false;
-      }
-
-      var storie = _.map(data, function(field){
-        return {
-          id:           field.id.pop()._,
-          project_id:   field.project_id.pop()._,
-          title:        field.name.pop(),
-          url:          field.url.pop(),
-          description:  field.description.pop(),
-          requested_by: field.requested_by.pop(),
-          owned_by:     field.owned_by ? field.owned_by.pop() : field.owned_by,
-          labels:       field.labels
-        };
-      }).pop();
-
-      res.send(storie);
-
-    });
   }
 
 };
