@@ -2,11 +2,17 @@ define([
 
   'Backbone',
 
+  //Views
+  'app/views/gameController',
+
   //Template
   'text!templates/project-page/taskDetailTemplate.html'
 ], function(
 
   Backbone,
+
+  //Views
+  GameController,
 
   taskDetailTemplate
 ){
@@ -17,12 +23,14 @@ define([
     events: {
       'click .card'      : 'play',
       'click .js-save'   : 'save',
-      'click .js-cancel' : 'cancel'
+      'click .js-close'  : 'close'
     },
 
     initialize: function(){
       this.collection.bind('change:selected', this.render, this);
       this.collection.bind('change:estimated', this.updateEstimations, this);
+
+      this.game = new GameController();
     },
 
     play: function(event){
@@ -31,8 +39,8 @@ define([
       $(event.currentTarget).addClass('selected');
     },
 
-    cancel: function(event){
-      event.preventDefault();
+    close: function(event){
+      this.game.close(event);
     },
 
     save: function(event){
@@ -76,7 +84,14 @@ define([
       task.description = typeof task.description === 'string' ? task.description : 'No description';
       task.estimated = task.estimated || [];
 
-      this.$el.html(this.template(task));
+      this.game.selectedTask = this.selectedTask;
+      this.game.setElement(this.el);
+
+      if(this.selectedTask.get('closed')){
+        this.game.render();
+      }else{
+        this.$el.html(this.template(task));
+      }
     }
 
   });
