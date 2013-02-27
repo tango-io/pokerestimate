@@ -6,9 +6,12 @@
       <li>
         <li class='player open'> 
           <span class='points'><%= estimation.card%></span>
-          <span class='name'><%= estimation.player.substring(0,25)%></span>
+          <span class='name'><%= estimation.player.substring(0,20)%></span>
         </li>
       </li>
     <% })%>
   </ul>
+
+  <label>Remaining time</label>
+  <h2><%= time%></h2>
 </section>
