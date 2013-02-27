@@ -29,6 +29,7 @@ define([
     initialize: function(){
       this.collection.bind('change:selected', this.render, this);
       this.collection.bind('change:estimated', this.updateEstimations, this);
+      this.collection.bind('timer', this.closed, this);
 
       this.game = new GameController();
     },
@@ -68,6 +69,14 @@ define([
         _.each(estimations, function(estimation){
           list.append('<li class="player">'+estimation.player+'</li>');
         });
+      }
+    },
+
+    closed: function(){
+      if(this.selectedTask){
+        if(this.selectedTask.get('time')){
+          this.game.render();
+        }
       }
     },
 
