@@ -64,6 +64,24 @@ exports.start = function(){
     socket.broadcast.to(socket.room).emit('update estimations', socket.username+' has estimated', task, estimations);
   });
 
+  socket.on('close game', function(task){
+    var seconds = 10;
+
+    var timer = setInterval(function(){
+
+      socket.emit('closing', 'You have close a game', task, seconds+'');
+      socket.broadcast.to(socket.room).emit('closing', socket.username+' has close a game', task, seconds+'');
+
+      if(seconds === 0){
+        clearInterval(timer);
+      }
+
+      seconds-=1;
+
+    }, 1000);
+
+  });
+
   });
 
 }
