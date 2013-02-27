@@ -77,9 +77,20 @@ define([
           message: message
         });
 
-        var card = self.project.taskList.collection.get(task);
-        card.save({estimated: estimations});
+        if(card){
+          var card = self.project.taskList.collection.get(task);
+          card.save({estimated: estimations});
+        }
       });
+
+      socket.on('closing', function(message, task, time){
+        var card   = self.project.taskList.collection.get(task);
+        if(card){
+          var closed = card.get('estimated') ? true : false;
+          card.set({closed: closed, time: time}).trigger('timer');
+        }
+      });
+
     },
 
     home: function(){
