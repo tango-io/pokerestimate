@@ -19,23 +19,22 @@ define([
 
     close: function(event){
       event.preventDefault();
-      this.selectedTask.set({closed: true});
-      this.render();
+      var task = this.selectedTask.get('id');
+      socket.emit('close game', task);
     },
 
     render: function(){
       var estimations = this.selectedTask.get('estimated') || [];
+      var time = this.selectedTask.get('time');
 
       if(!estimations[0]){
         estimations.push({
           player: 'No one estimated',
           card: '?'
         });
-
-        this.selectedTask.set({closed: false});
       }
 
-      this.$el.html(this.template({estimations: estimations}));
+      this.$el.html(this.template({estimations: estimations, time: time}));
     }
 
   });
