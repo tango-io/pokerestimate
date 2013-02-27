@@ -15,8 +15,6 @@ define([
 
     template: _.template(closeGameTemplate),
 
-    initialize: function(){ },
-
     close: function(event){
       event.preventDefault();
       var task = this.selectedTask.get('id');
@@ -25,7 +23,16 @@ define([
 
     render: function(){
       var estimations = this.selectedTask.get('estimated') || [];
-      var time = this.selectedTask.get('time');
+      var time        = this.selectedTask.get('time');
+      var total       = _.countBy(estimations, function(estimation){
+        return estimation.card;
+      });
+
+      var max    = _.max(total, function(point){return point;});
+
+      var result = _.compact(_.map(total, function(count, point){
+        return count === max ? point : false; 
+      })).pop();
 
       if(!estimations[0]){
         estimations.push({
@@ -34,7 +41,12 @@ define([
         });
       }
 
-      this.$el.html(this.template({estimations: estimations, time: time}));
+      this.$el.html(this.template({
+        estimations: estimations, 
+        time: time, 
+        result: result
+      }));
+
     }
 
   });
