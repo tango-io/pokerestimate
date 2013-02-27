@@ -1,0 +1,14 @@
+<section class='who'>
+  <h3 class='title'>Results</h3>
+
+  <ul class='players'>
+    <% _.each(estimations, function(estimation){ %>
+      <li>
+        <li class='player open'> 
+          <span class='points'><%= estimation.card%></span>
+          <span class='name'><%= estimation.player.substring(0,25)%></span>
+        </li>
+      </li>
+    <% })%>
+  </ul>
+</section>
