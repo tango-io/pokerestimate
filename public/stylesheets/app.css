@@ -6600,13 +6600,28 @@ body footer.bottom:hover {
   background-size: 15%;
   height: 42px;
 }
-/* line 119, ../sass/project_page.scss */
+/* line 117, ../sass/project_page.scss */
+#player-container .container.row #task-detail .who .player.open {
+  padding: 0;
+  background: transparent url("../images/estimation-game/show-cart.png") no-repeat left center;
+}
+/* line 124, ../sass/project_page.scss */
+#player-container .container.row #task-detail .who .points {
+  padding: 9px 17px;
+  float: left;
+}
+/* line 128, ../sass/project_page.scss */
+#player-container .container.row #task-detail .who .name {
+  float: left;
+  padding: 8px 10px;
+}
+/* line 135, ../sass/project_page.scss */
 #player-container .container.row #task-detail .cards {
   clear: both;
   margin: 10px;
   text-align: center;
 }
-/* line 126, ../sass/project_page.scss */
+/* line 142, ../sass/project_page.scss */
 #player-container .container.row #task-detail .cards .list .card {
   background: transparent url("../images/estimation-game/cart-bg.png") no-repeat center center;
   display: inline-block;
@@ -6617,70 +6632,79 @@ body footer.bottom:hover {
   margin: 3px;
   cursor: pointer;
 }
-/* line 136, ../sass/project_page.scss */
+/* line 152, ../sass/project_page.scss */
 #player-container .container.row #task-detail .cards .list .card input {
   width: 15px;
   font-size: 9px;
   padding: 0;
 }
-/* line 142, ../sass/project_page.scss */
+/* line 158, ../sass/project_page.scss */
 #player-container .container.row #task-detail .cards .list .card.selected {
   background: #666;
 }
-/* line 151, ../sass/project_page.scss */
+/* line 167, ../sass/project_page.scss */
+#player-container .container.row #task-detail .close-game {
+  text-align: center;
+  margin: 10px;
+}
+/* line 170, ../sass/project_page.scss */
+#player-container .container.row #task-detail .close-game .js-close {
+  margin: 0 auto;
+}
+/* line 175, ../sass/project_page.scss */
 #player-container .container.row #task-detail .update {
   float: right;
   width: 100%;
   text-align: center;
 }
-/* line 159, ../sass/project_page.scss */
+/* line 183, ../sass/project_page.scss */
 #player-container .container.row #list-players {
   float: left;
 }
-/* line 162, ../sass/project_page.scss */
+/* line 186, ../sass/project_page.scss */
 #player-container .container.row #list-players h1 {
   padding-left: 40px;
   background: transparent url("../images/estimation-game/people.png") no-repeat left center;
 }
-/* line 167, ../sass/project_page.scss */
+/* line 191, ../sass/project_page.scss */
 #player-container .container.row #list-players .head {
   border-left: none;
   padding: 7px 10px 7px 0;
 }
-/* line 172, ../sass/project_page.scss */
+/* line 196, ../sass/project_page.scss */
 #player-container .container.row #list-players .button {
   float: right;
 }
-/* line 176, ../sass/project_page.scss */
+/* line 200, ../sass/project_page.scss */
 #player-container .container.row #list-players .nametask {
   width: 225px;
   margin: 0;
 }
-/* line 181, ../sass/project_page.scss */
+/* line 205, ../sass/project_page.scss */
 #player-container .container.row #list-players .list {
   padding: 10px 10px 0 0;
 }
-/* line 184, ../sass/project_page.scss */
+/* line 208, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item {
   border: 1px dashed #e3dace;
   background: #E9E8E5;
 }
-/* line 187, ../sass/project_page.scss */
+/* line 211, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.closed {
   text-decoration: line-through;
 }
-/* line 191, ../sass/project_page.scss */
+/* line 215, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.opened {
   padding-bottom: 0;
 }
-/* line 196, ../sass/project_page.scss */
+/* line 220, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .name i {
   height: 16px;
   width: 16px;
   float: left;
   margin: 2px 3px 0 -7px;
 }
-/* line 204, ../sass/project_page.scss */
+/* line 228, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .edit {
   float: right;
   height: 10px;
@@ -6692,7 +6716,7 @@ body footer.bottom:hover {
   margin-top: 1px;
   cursor: pointer;
 }
-/* line 216, ../sass/project_page.scss */
+/* line 240, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .delete {
   float: right;
   height: 10px;
@@ -6703,7 +6727,7 @@ body footer.bottom:hover {
   margin: 1px 8px 0 8px;
   cursor: pointer;
 }
-/* line 227, ../sass/project_page.scss */
+/* line 251, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .play {
   float: right;
   height: 27px;
@@ -6715,38 +6739,38 @@ body footer.bottom:hover {
   margin-top: -8px;
   cursor: pointer;
 }
-/* line 239, ../sass/project_page.scss */
+/* line 263, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group {
   margin-left: 0;
   border-top: 1px solid #dfd4c7;
   margin-top: 5px;
 }
-/* line 243, ../sass/project_page.scss */
+/* line 267, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group li {
   padding: 7px 0;
 }
-/* line 250, ../sass/project_page.scss */
+/* line 274, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover {
   background: #fff;
 }
-/* line 252, ../sass/project_page.scss */
+/* line 276, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover .play {
   background: transparent url("../images/games/play.png") no-repeat center center;
 }
-/* line 263, ../sass/project_page.scss */
+/* line 287, ../sass/project_page.scss */
 #player-container .container.row #list-tasks {
   float: left;
 }
-/* line 266, ../sass/project_page.scss */
+/* line 290, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head {
   border-right: none;
   padding: 5px 0 5px 10px;
 }
-/* line 270, ../sass/project_page.scss */
+/* line 294, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head h1 {
   margin-top: 4px;
 }
-/* line 276, ../sass/project_page.scss */
+/* line 300, ../sass/project_page.scss */
 #player-container .container.row #list-tasks #filter {
   float: right;
   width: 272px;
@@ -6757,20 +6781,20 @@ body footer.bottom:hover {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-/* line 286, ../sass/project_page.scss */
+/* line 310, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav {
   float: right;
 }
-/* line 289, ../sass/project_page.scss */
+/* line 313, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav a.button {
   float: left;
   margin: 2px 5px 0 5px;
 }
-/* line 296, ../sass/project_page.scss */
+/* line 320, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list {
   padding-top: 10px;
 }
-/* line 298, ../sass/project_page.scss */
+/* line 322, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -6780,11 +6804,11 @@ body footer.bottom:hover {
   background-image: -o-linear-gradient(#ffffff, #eeeeee);
   background-image: linear-gradient(#ffffff, #eeeeee);
 }
-/* line 301, ../sass/project_page.scss */
+/* line 325, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover .arrow:after {
   border-right-color: #f7f7f7;
 }
-/* line 305, ../sass/project_page.scss */
+/* line 329, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover .popover-title {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU1NTU1NSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -6797,12 +6821,12 @@ body footer.bottom:hover {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 311, ../sass/project_page.scss */
+/* line 335, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover section {
   padding: 10px;
   overflow: hidden;
 }
-/* line 317, ../sass/project_page.scss */
+/* line 341, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item {
   float: left;
   border-right: 1px solid #dfd4c7;
@@ -6810,7 +6834,7 @@ body footer.bottom:hover {
   margin-left: 3px;
   cursor: pointer;
 }
-/* line 324, ../sass/project_page.scss */
+/* line 348, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item .drag {
   float: right;
   height: 10px;
@@ -6822,17 +6846,17 @@ body footer.bottom:hover {
   opacity: .4;
   cursor: move;
 }
-/* line 336, ../sass/project_page.scss */
+/* line 360, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item.selected {
   background: #fff;
 }
-/* line 340, ../sass/project_page.scss */
+/* line 364, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover {
   background: #FAF9F8;
   color: #000;
   border-right: 3px solid #dfd4c7;
 }
-/* line 344, ../sass/project_page.scss */
+/* line 368, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover .drag {
   opacity: 1;
 }

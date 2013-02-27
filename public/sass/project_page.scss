@@ -114,6 +114,22 @@ $experimental-support-for-svg: true;
           height: 42px;
         }
 
+        .player.open{
+          padding: 0;
+          background: transparent url('../images/estimation-game/show-cart.png') no-repeat left center;
+
+
+        }
+
+        .points{
+          padding: 9px 17px;
+          float: left;
+        }
+        .name{
+          float: left;
+          padding: 8px 10px;
+        }
+
       }
 
       .cards{
@@ -146,6 +162,14 @@ $experimental-support-for-svg: true;
 
         }
 
+      }
+
+      .close-game{
+        text-align: center;
+        margin: 10px;
+        .js-close{
+          margin: 0 auto;
+        }
       }
 
       .update{
