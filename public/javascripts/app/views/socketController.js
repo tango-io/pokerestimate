@@ -53,7 +53,7 @@ define(['Backbone', 'socket'], function(Backbone, io){
 
       //Update task if selected
       if(taskModel){
-        taskModel.set({estimated: estimations});
+        taskModel.save({estimated: estimations});
       }
 
     },
