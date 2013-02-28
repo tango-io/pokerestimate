@@ -117,6 +117,35 @@ module.exports = {
       res.send({success: true});
     });
 
+  },
+
+  deleteTask: function(req, res, next){
+    var project = req.params.project;
+    var token   = req.user ? req.user.token : null;
+    var id      = req.params.id;
+    var point   = req.body.result;
+
+    if(!token){
+      res.send({error: 'Not logged in'});
+      return false;
+    }
+
+    pivotal.estimate({project: project, id: id, point: point, token: token}, function(error, data){
+      console.log(inspect(data));
+
+      if(error){
+        res.send(error);
+        return false;
+      }
+
+      if(data.message){
+        res.send(data);
+        return false;
+      }
+
+      res.send(data);
+    });
+
   }
 
 };
