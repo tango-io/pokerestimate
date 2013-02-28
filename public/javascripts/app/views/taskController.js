@@ -32,7 +32,7 @@ define([
 
     initialize: function(){
       this.collection =  new Tasks(this.options.projectId);
-      this.collection.bind('reset', this.render, this);
+      this.collection.bind('reset add remove change', this.render, this);
       this.collection.bind('search', this.searchResult, this);
 
       this.taskDetail = new TaskDetail({
