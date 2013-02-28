@@ -130,6 +130,8 @@ module.exports = {
       return false;
     }
 
+    process.database.tasks.remove({id: id}, function(){ });
+
     pivotal.estimate({project: project, id: id, point: point, token: token}, function(error, data){
       console.log(inspect(data));
 
