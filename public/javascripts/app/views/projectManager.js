@@ -55,8 +55,8 @@ define([
 
       this.players = new playersController({
         collection: this.options.players,
-        message: this.options.playerMessage,
-        project: this.model
+        project: this.model,
+        socket: this.options.router.socket
       });
 
       this.projectsList = new projectsController({
@@ -90,7 +90,6 @@ define([
       this.taskList.setElement('.js-taskList');
       this.filter.setElement('.fn-filter-task');
       this.players.setElement('.js-player-list');
-      this.players.options.message.trigger('change');
 
       this.taskList.collection.fetch();
       this.taskList.taskDetail.setElement('#play-area');
