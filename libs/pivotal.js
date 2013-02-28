@@ -115,3 +115,51 @@ module.exports.getTasks = function(data, callback){
   });
   
 };
+
+module.exports.estimate = function(data, callback){
+  var point      = data.point;
+  var info       = '<story><estimate>'+point+'</estimate></story>';
+  var parser     = new xml2js.Parser();
+  var options    = new RequestOptions('PUT');
+  var project    = data.project;
+  var id         = data.id;
+
+  if(!id){
+    return callback(null, {message: 'Missing ID'});
+  }
+
+  if(!point){
+    return callback(null, {message: 'Missing point'});
+  }
+
+  options.extend('path', '/services/v3/projects/'+project+'/stories/'+id);
+  options.extend('headers', {
+    'X-TrackerToken': data.token,
+    'Content-Type'  : 'application/xml',
+    'Content-Length': info.length  
+  });
+
+  parser.addListener('end', function(result) {
+    return callback(null, result);
+  });
+
+  var req = http.request(options, function(res) {
+    res.on('data', function(d) {
+
+      if(noAccess.test(d.toString())){
+        return callback.call(this, null, {message: d.toString()});
+      }
+
+      parser.parseString(d);
+    });
+
+  });
+
+  req.write(info);
+  req.end();
+
+  req.on('error', function(e) {
+    return callback(err);
+  });
+
+};
