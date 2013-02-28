@@ -6,7 +6,8 @@ define(['Backbone', 'socket'], function(Backbone, io){
     socketEvents: {
       'update estimations' : 'updateEstimations',
       'update players'     : 'updatePlayers',
-      'closing'            : 'closeGame'
+      'closing'            : 'closeGame',
+      'remove task'        : 'removeTask'
     },
 
     __initialize: function(){
@@ -67,6 +68,19 @@ define(['Backbone', 'socket'], function(Backbone, io){
       if(taskModel){
         var closed = taskModel.get('estimated') ? true : false;
         taskModel.set({closed: closed, time: time}).trigger('timer');
+      }
+
+    },
+
+    removeTask: function(task){
+      var router = this.options.router;
+      var tasks  = router.project.taskList.collection;
+
+      var taskModel = tasks.get(task);
+
+      if(taskModel){
+        var result = taskModel.get('result');
+        taskModel.destroy({data: 'result='+result});
       }
 
     }
