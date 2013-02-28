@@ -16,7 +16,6 @@ define([
     template: _.template(closeGameTemplate),
 
     close: function(event){
-      event.preventDefault();
       var task = this.selectedTask.get('id');
       socket.emit('close game', task);
     },

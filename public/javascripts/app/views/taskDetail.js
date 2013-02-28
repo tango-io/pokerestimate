@@ -41,7 +41,10 @@ define([
     },
 
     close: function(event){
-      this.game.close(event);
+      event.preventDefault();
+      if(this.selectedTask.get('estimated')){
+        this.game.close(event);
+      }
     },
 
     save: function(event){
