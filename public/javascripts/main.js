@@ -28,6 +28,6 @@ require.config({
   waitSeconds: 15
 });
 
-require(['domReady', 'router', 'socket'], function(doc, Router, socket){
-  Router.initialize(socket);
+require(['domReady', 'router'], function(doc, Router){
+  Router.initialize();
 });
