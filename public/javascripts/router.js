@@ -13,7 +13,8 @@ define([
   'app/views/topNavView',
   'app/views/flash',
   'app/views/homeView',
-  'app/views/projectManager'
+  'app/views/projectManager',
+  'app/views/socketController'
 
 ], function(
 
@@ -30,7 +31,8 @@ define([
   TopNavView,
   Flash,
   HomeView,
-  ProjectManager
+  ProjectManager,
+  socketController
 
 ){
   var Router = Backbone.Router.extend({
@@ -42,11 +44,12 @@ define([
       'project/:id': 'projectManager'
     },
 
-    initialize: function(){
-      this.account = new Account();
-      this.players = new Players();
-      this.playerMessage = new PlayerMessage();
+    account: new Account(),
+    players: new Players(),
 
+    playerMessage: new PlayerMessage(),
+
+    initialize: function(){
       this.topNav  = new TopNavView({
         el: '#navigator',
         model: this.account,
@@ -60,37 +63,8 @@ define([
 
       this.account.fetch();
 
-      var players = this.players;
-      var playerMessage = this.playerMessage;
-      var self = this;
-
-      socket.on('update players', function(message, list){
-        playerMessage.set({
-          message: message
-        });
-        var pls = _.map(list, function(v, k){return v;});
-        players.update(pls);
-      });
-
-      socket.on('update estimations', function(message, task, estimations){
-        playerMessage.set({
-          message: message
-        });
-
-        if(card){
-          var card = self.project.taskList.collection.get(task);
-          card.save({estimated: estimations});
-        }
-      });
-
-      socket.on('closing', function(message, task, time){
-        var card   = self.project.taskList.collection.get(task);
-        if(card){
-          var closed = card.get('estimated') ? true : false;
-          card.set({closed: closed, time: time}).trigger('timer');
-        }
-      });
-
+      //Socket controller
+      this.socket = new socketController({ router: this });
     },
 
     home: function(){
@@ -108,7 +82,6 @@ define([
         el: '#main-content',
         projectId: id,
         players: this.players,
-        playerMessage: this.playerMessage,
         router: this
       });
     }
@@ -116,8 +89,7 @@ define([
   });
 
   return {
-    initialize: function(socket){
-      window.socket = socket.connect();
+    initialize: function(){
       var router = new Router();
       Backbone.history.start();
     }
