@@ -21,8 +21,12 @@ define([
     },
 
     killTask: function(){
-      var result = this.selectedTask.get('result');
-      this.selectedTask.destroy({data: 'result='+result});
+      var task = this.selectedTask.get('id');
+      var kill = _.once(function(){
+        socket.emit('kill task', task);
+      });
+
+      kill();
     },
 
     render: function(){
