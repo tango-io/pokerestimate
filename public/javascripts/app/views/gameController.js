@@ -20,6 +20,11 @@ define([
       socket.emit('close game', task);
     },
 
+    killTask: function(){
+      var result = this.selectedTask.get('result');
+      this.selectedTask.destroy({data: 'result='+result});
+    },
+
     render: function(){
       var estimations = this.selectedTask.get('estimated') || [];
       var time        = this.selectedTask.get('time');
@@ -40,11 +45,18 @@ define([
         });
       }
 
+      if(time === '0'){
+        this.killTask();
+      }
+
+      this.selectedTask.set({result: result}, {silent: true});
+
       this.$el.html(this.template({
         estimations: estimations, 
         time: time, 
         result: result
       }));
+
 
     }
 
