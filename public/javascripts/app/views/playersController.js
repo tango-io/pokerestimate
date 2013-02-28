@@ -16,17 +16,11 @@ define([
 
     initialize: function(){
       this.collection.off();
-      this.options.message.off();
 
       this.collection.on('add remove', this.render, this);
       this.options.project.on('change', this.render, this);
-      this.options.message.on('change', this.showMessage, this);
     },
 
-    showMessage: function(){
-      var message = this.options.message.get('message');
-      this.$('.js-message').text(message);
-    },
 
     render: function(){
       this.$('.list').html('');
@@ -38,6 +32,9 @@ define([
       _.each(players, function(player){
         $list.append(template({player: player.get('email')}));
       });
+
+      //Display last message
+      this.options.socket.message.trigger('change');
     }
   });
 
