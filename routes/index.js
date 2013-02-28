@@ -26,4 +26,5 @@ module.exports = function(app, passport){
 
   app.get('/api/v1/projects/:project/tasks',     pivotalController.tasks);
   app.put('/api/v1/projects/:project/tasks/:id', pivotalController.saveTask);
+  app.delete('/api/v1/projects/:project/tasks/:id', pivotalController.deleteTask);
 };
