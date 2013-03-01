@@ -83,6 +83,7 @@ exports.start = function(){
   });
 
   socket.on('kill task', function(task){
+    socket.emit('remove task', task);
     socket.broadcast.to(socket.room).emit('remove task', task);
   });
 
