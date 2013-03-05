@@ -21,19 +21,14 @@ define([
     template: _.template(boxesTemplate),
 
     initialize: function(){
-      this.render();
-
       this.projects = new projectsView({
         el: '.js-projects',
         account: this.options.account,
         router: this.options.router
       });
 
-    },
-
-    render: function(){
-      this.$el.html(this.template());
     }
+
   });
 
   return HomeView;
