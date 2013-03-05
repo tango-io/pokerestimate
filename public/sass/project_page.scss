@@ -9,6 +9,7 @@
 
 @import "mixins";
 @import "colors";
+@import "animations";
 // @import "status/*.png";
 // @include all-status-sprites;
 $experimental-support-for-svg: true;
@@ -140,10 +141,12 @@ $experimental-support-for-svg: true;
 
         .rem-time{
           color: red;
+          margin-top: 5px;
         }
 
         .time-val{
           color: red;
+          @include animation(flash-alert 1s infinite);
         }
 
         .player{
