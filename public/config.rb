@@ -1,4 +1,5 @@
 require 'zurb-foundation'
+require "animate"
 # Require any additional compass plugins here.
 
 
