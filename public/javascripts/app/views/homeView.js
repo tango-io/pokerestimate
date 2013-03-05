@@ -2,23 +2,16 @@ define([
   'Backbone',
 
   //Views
-  'app/views/projectsView',
-
-  //Templates
-  'text!templates/home/boxesTemplate.html'
+  'app/views/projectsView'
 ], function(
   
   Backbone,
 
-  projectsView,
-
-  //Template
-  boxesTemplate
+  //Views
+  projectsView
 ){
 
   var HomeView = Backbone.View.extend({
-
-    template: _.template(boxesTemplate),
 
     initialize: function(){
       this.projects = new projectsView({
