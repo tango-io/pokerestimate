@@ -80,23 +80,24 @@ $experimental-support-for-svg: true;
           float: right;
           margin: 0 4px;
           font-size: 11px;
-          background: black;
+          background: $red-99;
           @include border-radius(5px);
           padding: 3px 5px;
-          color: #888;
+          color: white;
           @include transition(.5s);
           &:hover{
-            background: #333;
+            background: $red-c7;
           }
         }
       }
       #play-area{
         border: 3px solid black;
         padding: 15px;
-        @include background-image(linear-gradient($red-c7,$red-99));
+        @include background-image(linear-gradient($black-55,black));
         @include border-radius(10px);
         margin: 2px;
         color: white;
+        overflow: hidden;
 
         .alert-box{
           background: none;
@@ -134,7 +135,15 @@ $experimental-support-for-svg: true;
           small{
             color: $gray-dd;
           }
+          
+        }
 
+        .rem-time{
+          color: red;
+        }
+
+        .time-val{
+          color: red;
         }
 
         .player{
@@ -148,16 +157,19 @@ $experimental-support-for-svg: true;
 
         .player.open{
           padding: 0;
-          background: transparent url('../images/estimation-game/show-cart.png') no-repeat left center;
+          overflow: hidden;
+          background: rgba(255,255,255,0.1);
         }
 
         .points{
           padding: 9px 17px;
           float: left;
+          width: 20%;
         }
         .name{
           float: left;
           padding: 8px 10px;
+          width: 80%;
         }
 
       }
