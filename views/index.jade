@@ -5,28 +5,7 @@ block content
   include header
   #flash-messages
   #main-content.row
-    .container
-      .row
-        .six.columns
-          ul.side-nav.steps
-            li.one-sq.box
-              .box-title Login
-              .box-info
-                | In order to use this App you would need a Pivotal Tracker Account to fetch all your projects. Otherwise, you should create one.
-
-            li.two-sq.box
-              .box-title Choose a Project
-              .box-info Once you have logged in, you will be able to navigate between Pivotal Tracker projects.
-
-            li.three-sq.box
-              .box-title Estimate
-              .box-info After selecting a project, you can start to estimate by picking a card from the deck.
-
-            li.four-sq.box
-              .box-title Play
-              .box-info Wait for all the participants to estimate and PLAY! 
-
-        .six.columns#work-area
-
-        .js-projects
+    .loading
+      .panel.radius
+        h4 Loading page <small>it's in there, I swear !</small>
   include footer

@@ -18,6 +18,10 @@ body {
     width: 940px;
   }
 
+  #main-content{
+    height: 548px;
+  }
+
   // - --------------------------------------- header styling
   .top-bar {
     .egg {
@@ -149,6 +153,26 @@ body {
     &:hover{
       @include opacity(1);
     }
+  }
+
+  // ------------------------------- Loading
+  .loading {
+    position: relative;
+    text-align: center;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 940px;
+      height: 548px;
+      background: rgba(0,0,0, 0.2) url('/images/loading-trans.gif') no-repeat 50% 50%;
+      z-index: 998;
+    }
+
   }
 
 }
