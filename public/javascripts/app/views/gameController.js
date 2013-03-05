@@ -20,15 +20,6 @@ define([
       socket.emit('close game', task);
     },
 
-    killTask: function(){
-      var task = this.selectedTask.get('id');
-      var kill = _.once(function(){
-        socket.emit('kill task', task);
-      });
-
-      kill();
-    },
-
     render: function(){
       var estimations = this.selectedTask.get('estimated') || [];
       var time        = this.selectedTask.get('time');
@@ -42,18 +33,11 @@ define([
         return count === max ? point : false; 
       })).pop();
 
-      if(!estimations[0]){
-        estimations.push({
-          player: 'No one estimated',
-          card: '?'
-        });
-      }
+      this.selectedTask.set({result: result}, {silent: true});
 
       if(time === '0'){
-        this.killTask();
+        time = 'Ended'; 
       }
-
-      this.selectedTask.set({result: result}, {silent: true});
 
       this.$el.html(this.template({
         estimations: estimations, 
