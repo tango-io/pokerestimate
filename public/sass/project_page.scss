@@ -9,8 +9,9 @@
 
 @import "mixins";
 @import "colors";
-@import "status/*.png";
-@include all-status-sprites;
+@import "animations";
+// @import "status/*.png";
+// @include all-status-sprites;
 $experimental-support-for-svg: true;
 
 #player-container{
@@ -69,6 +70,7 @@ $experimental-support-for-svg: true;
         font-size: 18px;
         text-align: center;
         margin: 10px;
+        color: white;
       }
 
       .labels{
@@ -77,57 +79,100 @@ $experimental-support-for-svg: true;
 
         label{
           float: right;
-          border: 1px solid;
           margin: 0 4px;
-          padding: 1px;
           font-size: 11px;
+          background: $red-99;
+          @include border-radius(5px);
+          padding: 3px 5px;
+          color: white;
+          @include transition(.5s);
+          &:hover{
+            background: $red-c7;
+          }
         }
+      }
+      #play-area{
+        border: 3px solid black;
+        padding: 15px;
+        @include background-image(linear-gradient($black-55,black));
+        @include border-radius(10px);
+        margin: 2px;
+        color: white;
+        overflow: hidden;
+
+        .alert-box{
+          background: none;
+          color: white;
+          margin: 0;
+          text-align: center;
+          border: none;
+        }
+
       }
 
       .description{
         border: 1px dashed #e3dace;
-        background: #E9E8E5;
         padding: 7px;
       }
 
       .owner{
-        float: right;
         font-style: italic;
         font-size: 11px;
+        margin: 6px 0 0 0;
+        text-align: right;
         margin: 6px 0;
       }
 
       .who{
         overflow: hidden;
         float: left;
+        width: 100%;
 
         h3{
           margin: 12px 0;
           font-size: 20px;
+          color: $gray-bb;
+
+          small{
+            color: $gray-dd;
+          }
+          
+        }
+
+        .rem-time{
+          color: red;
+          margin-top: 5px;
+        }
+
+        .time-val{
+          color: red;
+          @include animation(flash-alert 1s infinite);
         }
 
         .player{
-          border: 1px dashed #E3DACE;
-          padding: 8px 0  0 40px;
-          background: transparent url('../images/estimation-game/cart.png') no-repeat left center;
+          border: 1px dashed #e3dace;
+          padding: 4px 0 0 40px;
+          background: transparent url("../images/estimation-game/cart.png") no-repeat left center;
           background-size: 15%;
-          height: 42px;
+          word-wrap: break-word;
+          line-height: 28px;
         }
 
         .player.open{
           padding: 0;
-          background: transparent url('../images/estimation-game/show-cart.png') no-repeat left center;
-
-
+          overflow: hidden;
+          background: rgba(255,255,255,0.1);
         }
 
         .points{
           padding: 9px 17px;
           float: left;
+          width: 20%;
         }
         .name{
           float: left;
           padding: 8px 10px;
+          width: 80%;
         }
 
       }
