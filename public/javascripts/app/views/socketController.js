@@ -66,8 +66,11 @@ define(['Backbone', 'socket'], function(Backbone, io){
       var taskModel = tasks.get(task);
 
       if(taskModel){
-        var closed = taskModel.get('estimated') ? true : false;
-        taskModel.set({closed: closed, time: time}).trigger('timer');
+        taskModel.set({time: time}).trigger('timer');
+      }
+
+      if(time === '0'){
+        socket.emit('kill task', task);
       }
 
     },
