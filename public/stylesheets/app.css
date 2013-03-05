@@ -6071,7 +6071,7 @@ body .row {
 }
 /* line 21, ../sass/main.scss */
 body #main-content {
-  height: 548px;
+  min-height: 548px;
 }
 /* line 27, ../sass/main.scss */
 body .top-bar .egg {
