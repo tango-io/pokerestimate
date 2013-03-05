@@ -1,0 +1,11 @@
+@import "animate";
+
+@include keyframes(flash-alert) {
+  0%, 100% {
+    color: black;
+  }
+  50% {
+    color: red;
+    @include text-shadow(red 1px 1px 3px);
+  }
+}
