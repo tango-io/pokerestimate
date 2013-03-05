@@ -56,6 +56,12 @@ Install zurb-foundation gem:
 
     gem install zurb-foundation
 
+Install animation and animate gems:
+
+    gem install animation --pre
+
+    gem install animate --pre
+
 Compile Scss file;
   
     compass watch <path>
