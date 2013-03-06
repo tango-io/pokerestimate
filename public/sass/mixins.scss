@@ -6,4 +6,10 @@
   -webkit-font-smoothing : antialiased;
 }
 
-
+.button{
+  @include global_font;
+  background: #FAA83F;
+  &:hover{
+    background: #E39737;
+  }
+}
