@@ -1,0 +1,10 @@
+/* line 9, ../sass/mixins.scss */
+.button {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #FAA83F;
+}
+/* line 12, ../sass/mixins.scss */
+.button:hover {
+  background: #E39737;
+}
