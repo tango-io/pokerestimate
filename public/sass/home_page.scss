@@ -116,15 +116,10 @@
         padding: 0 15px;
       }
       input.button{
-        @include global_font;
-        background: #FAA83F;
         float: right;
         margin-top: 20px;
-        border: 1px solid #FCD39E;
         clear: both;
-        &:hover{
-          background: #E39737;
-        }
+        border: 1px solid #FCD39E;
       }
       label{
         @include global_font;
