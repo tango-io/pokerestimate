@@ -55,7 +55,7 @@ define([
         var estimated = this.selectedTask.get('estimated') || [];
         var task      = this.selectedTask.get('id');
         var player    = this.options.router.account.get('user');
-        var num       = card.find('a')[0] ? card.find('a').text() : card.find('input').val();
+        var num       = card.find('input')[0] ? card.find('input').val() : card.attr('data-value');
 
         var me  = _.findWhere(estimated, {player: player}) || {player: player};
         me.card = num;
