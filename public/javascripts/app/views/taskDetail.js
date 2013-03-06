@@ -99,7 +99,7 @@ define([
       this.game.selectedTask = this.selectedTask;
       this.game.setElement(this.el);
 
-      if(this.selectedTask.get('closed')){
+      if(this.selectedTask.get('time')){
         this.game.render();
       }else{
         this.$el.html(this.template(task));
