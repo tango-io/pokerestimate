@@ -183,25 +183,36 @@ $experimental-support-for-svg: true;
         text-align: center;
 
         .list{
+          overflow: hidden;
+          margin-top: 12px;
 
           .card{
-            background: transparent url('../images/estimation-game/cart-bg.png') no-repeat center center;
-            display: inline-block;
-            width: 40px;
-            height: 50px;
-            background-size: 100%;
+            background: transparent url('../images/poker_cards.png') no-repeat;
+            width: 45px;
+            height: 63px;
             padding: 15px;
-            margin: 3px;
+            margin: 6px;
             cursor: pointer;
+            float: left;
+
+            &.p1{ background-position: 0 0; }
+            &.p2{ background-position: -45px 0; }
+            &.p3{ background-position: -90px 0; }
+            &.p5{ background-position: -180px 0; }
+            &.p8{ background-position: -315px 0; }
+            &.pq{ background-position: 0 0; }
 
             input{
-              width: 15px;
+              width: 20px;
               font-size: 9px;
               padding: 0;
+              height: 30px;
+              margin-top: 3px;
+              margin-left: -2px;
             }
 
             &.selected{
-              background: #666;
+              @include opacity(0.5);
             }
           }
 
