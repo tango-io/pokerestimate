@@ -94,7 +94,10 @@ $experimental-support-for-svg: true;
       #play-area{
         border: 3px solid black;
         padding: 15px;
+        //black
         @include background-image(linear-gradient($black-55,black));
+        // red wine
+        // @include background-image(linear-gradient(#720909,#380202));
         @include border-radius(10px);
         margin: 2px;
         color: white;
@@ -200,7 +203,14 @@ $experimental-support-for-svg: true;
             &.p3{ background-position: -90px 0; }
             &.p5{ background-position: -180px 0; }
             &.p8{ background-position: -315px 0; }
-            &.pq{ background-position: 0 0; }
+            &.pq{ background-position: -450 0; }
+
+            // &.p1{ background-position: 0 -63px; }
+            // &.p2{ background-position: -45px  -63px; }
+            // &.p3{ background-position: -90px  -63px; }
+            // &.p5{ background-position: -180px -63px; }
+            // &.p8{ background-position: -315px -63px; }
+            // &.pq{ background-position: -450px -63px; }
 
             input{
               width: 20px;
@@ -213,6 +223,9 @@ $experimental-support-for-svg: true;
 
             &.selected{
               @include opacity(0.5);
+              &.pq {
+                @include opacity(1);
+              }
             }
           }
 

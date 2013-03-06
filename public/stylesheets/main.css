@@ -1,11 +1,13 @@
 /*
-Syntax error: Undefined mixin 'transition'.
-        on line 30 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss, in `transition'
-        from line 30 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss
+Syntax error: Undefined mixin 'text-shadow'.
+        on line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss, in `text-shadow'
+        from line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss
+        from line 1 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss
 
 Backtrace:
-/Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss:30:in `transition'
-/Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss:30
+/Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss:12:in `text-shadow'
+/Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss:12
+/Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss:1
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:251:in `visit_mixin'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
@@ -19,24 +21,9 @@ Backtrace:
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:225:in `block in visit_import'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:225:in `map'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:225:in `visit_import'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
 /Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -86,4 +73,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'transition'.\A         on line 30 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss, in `transition'\A         from line 30 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss"; }
+  content: "Syntax error: Undefined mixin 'text-shadow'.\A         on line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss, in `text-shadow'\A         from line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss\A         from line 1 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/main.scss"; }

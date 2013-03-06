@@ -1,10 +1,69 @@
-/* line 9, ../sass/mixins.scss */
-.button {
-  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background: #FAA83F;
-}
-/* line 12, ../sass/mixins.scss */
-.button:hover {
-  background: #E39737;
-}
+/*
+Syntax error: Undefined mixin 'text-shadow'.
+        on line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss, in `text-shadow'
+        from line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss
+
+Backtrace:
+/Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss:12:in `text-shadow'
+/Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss:12
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:251:in `visit_mixin'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:318:in `visit_rule'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:126:in `visit_root'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/tree/root_node.rb:20:in `render'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/engine.rb:315:in `_render'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.5/lib/sass/engine.rb:262:in `render'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:146:in `block (2 levels) in compile'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:132:in `timed'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:145:in `block in compile'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/logger.rb:46:in `red'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:144:in `compile'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:124:in `compile_if_required'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:109:in `block (2 levels) in run'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:107:in `each'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:107:in `block in run'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:132:in `timed'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/compiler.rb:106:in `run'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/compiler.rb:24:in `compile'
+/Users/jaime/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/forwardable.rb:201:in `compile'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/project_watcher.rb:89:in `sass_modified'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/project_watcher.rb:82:in `sass_callback'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/watch.rb:17:in `call'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/watch.rb:17:in `run_callback'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/project_watcher.rb:75:in `block (2 levels) in listen_callback'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/project_watcher.rb:74:in `each'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/project_watcher.rb:74:in `block in listen_callback'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/project_watcher.rb:73:in `each'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/compass-0.13.alpha.2/lib/compass/watcher/project_watcher.rb:73:in `listen_callback'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/listen-0.5.3/lib/listen/listener.rb:190:in `call'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/listen-0.5.3/lib/listen/listener.rb:190:in `on_change'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/listen-0.5.3/lib/listen/listener.rb:199:in `block in initialize_adapter'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/listen-0.5.3/lib/listen/adapter.rb:196:in `call'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/listen-0.5.3/lib/listen/adapter.rb:196:in `report_changes'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/listen-0.5.3/lib/listen/adapter.rb:208:in `poll_changed_dirs'
+/Users/jaime/.rvm/gems/ruby-1.9.3-p194/gems/listen-0.5.3/lib/listen/adapters/darwin.rb:38:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'text-shadow'.\A         on line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss, in `text-shadow'\A         from line 12 of /Users/jaime/work/node-projects/PokerEstimate/public/sass/mixins.scss"; }
