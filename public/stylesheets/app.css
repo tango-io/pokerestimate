@@ -6044,6 +6044,17 @@ table.hide-for-medium {
     margin: 0;
   }
 }
+/* line 9, ../sass/mixins.scss */
+.button {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #FAA83F;
+}
+/* line 12, ../sass/mixins.scss */
+.button:hover {
+  background: #E39737;
+}
+
 /* line 3, ../sass/main.scss */
 body {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
@@ -6211,6 +6222,17 @@ body footer.bottom:hover {
   opacity: 1;
 }
 
+/* line 9, ../sass/mixins.scss */
+.button {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #FAA83F;
+}
+/* line 12, ../sass/mixins.scss */
+.button:hover {
+  background: #E39737;
+}
+
 /* line 9, ../sass/home_page.scss */
 #main-content .six.columns .steps .box {
   height: 225px;
@@ -6336,19 +6358,12 @@ body footer.bottom:hover {
 }
 /* line 118, ../sass/home_page.scss */
 #main-content #work-area #log-form input.button {
-  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background: #FAA83F;
   float: right;
   margin-top: 20px;
-  border: 1px solid #fcd39e;
   clear: both;
+  border: 1px solid #fcd39e;
 }
-/* line 125, ../sass/home_page.scss */
-#main-content #work-area #log-form input.button:hover {
-  background: #E39737;
-}
-/* line 129, ../sass/home_page.scss */
+/* line 124, ../sass/home_page.scss */
 #main-content #work-area #log-form label {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6356,7 +6371,7 @@ body footer.bottom:hover {
   font-weight: 800;
   margin-bottom: 5px;
 }
-/* line 136, ../sass/home_page.scss */
+/* line 131, ../sass/home_page.scss */
 #main-content #work-area #log-form .sign a {
   font-size: 16px;
   color: #DFD3C7;
@@ -6365,24 +6380,24 @@ body footer.bottom:hover {
   -webkit-font-smoothing: antialiased;
   float: right;
 }
-/* line 145, ../sass/home_page.scss */
+/* line 140, ../sass/home_page.scss */
 #main-content #work-area .fot {
   padding: 15px;
   padding-top: 10px;
   border-top: 4px solid black;
   margin-top: 10px;
 }
-/* line 150, ../sass/home_page.scss */
+/* line 145, ../sass/home_page.scss */
 #main-content #work-area .fot .image-fot {
   background: transparent url("../images/landing-page/graph-footer.png") repeat-x;
   height: 50px;
 }
-/* line 155, ../sass/home_page.scss */
+/* line 150, ../sass/home_page.scss */
 #main-content #work-area #projects {
   height: 388px;
   overflow-y: auto;
 }
-/* line 160, ../sass/home_page.scss */
+/* line 155, ../sass/home_page.scss */
 #main-content #work-area #projects .item {
   text-indent: 30px;
   padding: 10px 0;
@@ -6391,7 +6406,7 @@ body footer.bottom:hover {
   opacity: 0.6;
   cursor: pointer;
 }
-/* line 167, ../sass/home_page.scss */
+/* line 162, ../sass/home_page.scss */
 #main-content #work-area #projects .item a {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6400,12 +6415,12 @@ body footer.bottom:hover {
   color: #000;
   overflow: hidden;
 }
-/* line 177, ../sass/home_page.scss */
+/* line 172, ../sass/home_page.scss */
 #main-content #work-area #projects .item:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 184, ../sass/home_page.scss */
+/* line 179, ../sass/home_page.scss */
 #main-content #work-area .titles {
   font-size: 16px;
   font-weight: bold;
@@ -6420,6 +6435,17 @@ body footer.bottom:hover {
 .error-message .columns {
   float: none;
   margin: 0 auto;
+}
+
+/* line 9, ../sass/mixins.scss */
+.button {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #FAA83F;
+}
+/* line 12, ../sass/mixins.scss */
+.button:hover {
+  background: #E39737;
 }
 
 @-moz-keyframes flash-alert {
@@ -6658,90 +6684,122 @@ body footer.bottom:hover {
   margin: 10px;
   text-align: center;
 }
-/* line 187, ../sass/project_page.scss */
-#player-container .container.row #task-detail .cards .list .card {
-  background: transparent url("../images/estimation-game/cart-bg.png") no-repeat center center;
-  display: inline-block;
-  width: 40px;
-  height: 50px;
-  background-size: 100%;
-  padding: 15px;
-  margin: 3px;
-  cursor: pointer;
+/* line 185, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list {
+  overflow: hidden;
+  margin-top: 12px;
 }
-/* line 197, ../sass/project_page.scss */
-#player-container .container.row #task-detail .cards .list .card input {
-  width: 15px;
-  font-size: 9px;
-  padding: 0;
+/* line 189, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card {
+  background: transparent url("../images/poker_cards.png") no-repeat;
+  width: 45px;
+  height: 63px;
+  padding: 15px;
+  margin: 6px;
+  cursor: pointer;
+  float: left;
+}
+/* line 198, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card.p1 {
+  background-position: 0 0;
+}
+/* line 199, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card.p2 {
+  background-position: -45px 0;
+}
+/* line 200, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card.p3 {
+  background-position: -90px 0;
+}
+/* line 201, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card.p5 {
+  background-position: -180px 0;
+}
+/* line 202, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card.p8 {
+  background-position: -315px 0;
 }
 /* line 203, ../sass/project_page.scss */
-#player-container .container.row #task-detail .cards .list .card.selected {
-  background: #666;
+#player-container .container.row #task-detail .cards .list .card.pq {
+  background-position: 0 0;
 }
-/* line 212, ../sass/project_page.scss */
+/* line 205, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card input {
+  width: 20px;
+  font-size: 9px;
+  padding: 0;
+  height: 30px;
+  margin-top: 3px;
+  margin-left: -2px;
+}
+/* line 214, ../sass/project_page.scss */
+#player-container .container.row #task-detail .cards .list .card.selected {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 223, ../sass/project_page.scss */
 #player-container .container.row #task-detail .close-game {
   text-align: center;
   margin: 10px;
 }
-/* line 215, ../sass/project_page.scss */
+/* line 226, ../sass/project_page.scss */
 #player-container .container.row #task-detail .close-game .js-close {
   margin: 0 auto;
 }
-/* line 220, ../sass/project_page.scss */
+/* line 231, ../sass/project_page.scss */
 #player-container .container.row #task-detail .update {
   float: right;
   width: 100%;
   text-align: center;
 }
-/* line 228, ../sass/project_page.scss */
+/* line 239, ../sass/project_page.scss */
 #player-container .container.row #list-players {
   float: left;
 }
-/* line 231, ../sass/project_page.scss */
+/* line 242, ../sass/project_page.scss */
 #player-container .container.row #list-players h1 {
   padding-left: 40px;
   background: transparent url("../images/estimation-game/people.png") no-repeat left center;
 }
-/* line 236, ../sass/project_page.scss */
+/* line 247, ../sass/project_page.scss */
 #player-container .container.row #list-players .head {
   border-left: none;
   padding: 7px 10px 7px 0;
 }
-/* line 241, ../sass/project_page.scss */
+/* line 252, ../sass/project_page.scss */
 #player-container .container.row #list-players .button {
   float: right;
 }
-/* line 245, ../sass/project_page.scss */
+/* line 256, ../sass/project_page.scss */
 #player-container .container.row #list-players .nametask {
   width: 225px;
   margin: 0;
 }
-/* line 250, ../sass/project_page.scss */
+/* line 261, ../sass/project_page.scss */
 #player-container .container.row #list-players .list {
   padding: 10px 10px 0 0;
 }
-/* line 253, ../sass/project_page.scss */
+/* line 264, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item {
   border: 1px dashed #e3dace;
   background: #E9E8E5;
 }
-/* line 256, ../sass/project_page.scss */
+/* line 267, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.closed {
   text-decoration: line-through;
 }
-/* line 260, ../sass/project_page.scss */
+/* line 271, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item.opened {
   padding-bottom: 0;
 }
-/* line 265, ../sass/project_page.scss */
+/* line 276, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .name i {
   height: 16px;
   width: 16px;
   float: left;
   margin: 2px 3px 0 -7px;
 }
-/* line 273, ../sass/project_page.scss */
+/* line 284, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .edit {
   float: right;
   height: 10px;
@@ -6753,7 +6811,7 @@ body footer.bottom:hover {
   margin-top: 1px;
   cursor: pointer;
 }
-/* line 285, ../sass/project_page.scss */
+/* line 296, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .delete {
   float: right;
   height: 10px;
@@ -6764,7 +6822,7 @@ body footer.bottom:hover {
   margin: 1px 8px 0 8px;
   cursor: pointer;
 }
-/* line 296, ../sass/project_page.scss */
+/* line 307, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .play {
   float: right;
   height: 27px;
@@ -6776,38 +6834,38 @@ body footer.bottom:hover {
   margin-top: -8px;
   cursor: pointer;
 }
-/* line 308, ../sass/project_page.scss */
+/* line 319, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group {
   margin-left: 0;
   border-top: 1px solid #dfd4c7;
   margin-top: 5px;
 }
-/* line 312, ../sass/project_page.scss */
+/* line 323, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item .list-tasks-group li {
   padding: 7px 0;
 }
-/* line 319, ../sass/project_page.scss */
+/* line 330, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover {
   background: #fff;
 }
-/* line 321, ../sass/project_page.scss */
+/* line 332, ../sass/project_page.scss */
 #player-container .container.row #list-players .list .item:hover .play {
   background: transparent url("../images/games/play.png") no-repeat center center;
 }
-/* line 332, ../sass/project_page.scss */
+/* line 343, ../sass/project_page.scss */
 #player-container .container.row #list-tasks {
   float: left;
 }
-/* line 335, ../sass/project_page.scss */
+/* line 346, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head {
   border-right: none;
   padding: 5px 0 5px 10px;
 }
-/* line 339, ../sass/project_page.scss */
+/* line 350, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .head h1 {
   margin-top: 4px;
 }
-/* line 345, ../sass/project_page.scss */
+/* line 356, ../sass/project_page.scss */
 #player-container .container.row #list-tasks #filter {
   float: right;
   width: 272px;
@@ -6818,20 +6876,20 @@ body footer.bottom:hover {
   font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-/* line 355, ../sass/project_page.scss */
+/* line 366, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav {
   float: right;
 }
-/* line 358, ../sass/project_page.scss */
+/* line 369, ../sass/project_page.scss */
 #player-container .container.row #list-tasks nav a.button {
   float: left;
   margin: 2px 5px 0 5px;
 }
-/* line 365, ../sass/project_page.scss */
+/* line 376, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list {
   padding-top: 10px;
 }
-/* line 367, ../sass/project_page.scss */
+/* line 378, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -6841,11 +6899,11 @@ body footer.bottom:hover {
   background-image: -o-linear-gradient(#ffffff, #eeeeee);
   background-image: linear-gradient(#ffffff, #eeeeee);
 }
-/* line 370, ../sass/project_page.scss */
+/* line 381, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover .arrow:after {
   border-right-color: #f7f7f7;
 }
-/* line 374, ../sass/project_page.scss */
+/* line 385, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover .popover-title {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU1NTU1NSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -6858,12 +6916,12 @@ body footer.bottom:hover {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 380, ../sass/project_page.scss */
+/* line 391, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .popover section {
   padding: 10px;
   overflow: hidden;
 }
-/* line 386, ../sass/project_page.scss */
+/* line 397, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item {
   float: left;
   border-right: 1px solid #dfd4c7;
@@ -6871,7 +6929,7 @@ body footer.bottom:hover {
   margin-left: 3px;
   cursor: pointer;
 }
-/* line 393, ../sass/project_page.scss */
+/* line 404, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item .drag {
   float: right;
   height: 10px;
@@ -6883,19 +6941,30 @@ body footer.bottom:hover {
   opacity: .4;
   cursor: move;
 }
-/* line 405, ../sass/project_page.scss */
+/* line 416, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item.selected {
   background: #fff;
 }
-/* line 409, ../sass/project_page.scss */
+/* line 420, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover {
   background: #FAF9F8;
   color: #000;
   border-right: 3px solid #dfd4c7;
 }
-/* line 413, ../sass/project_page.scss */
+/* line 424, ../sass/project_page.scss */
 #player-container .container.row #list-tasks .list .item:hover .drag {
   opacity: 1;
+}
+
+/* line 9, ../sass/mixins.scss */
+.button {
+  font-family: "helvetica neue", helvetica-neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #FAA83F;
+}
+/* line 12, ../sass/mixins.scss */
+.button:hover {
+  background: #E39737;
 }
 
 /*
