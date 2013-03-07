@@ -17,6 +17,8 @@ module.exports = function(app, passport){
 
   app.get('/', homeController.index);
 
+  app.get('/landing_page', homeController.landing);
+
   app.post('/login', authenticate);
   app.get('/logout', authController.logout);
 
