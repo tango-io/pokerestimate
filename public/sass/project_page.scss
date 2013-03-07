@@ -8,10 +8,9 @@
 }
 
 @import "mixins";
-@import "colors";
 @import "animations";
-// @import "status/*.png";
-// @include all-status-sprites;
+@import "status/*.png";
+@include all-status-sprites;
 $experimental-support-for-svg: true;
 
 #player-container{
