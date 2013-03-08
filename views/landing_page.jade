@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-  #landing 
+  #landing-page
     nav.top-bar
       .row
         ul
@@ -16,4 +16,29 @@ block content
                 span ESTIMATE’EM
         section#tango
           img(src="images/tango-logo.png")
+     #content-display
+       .row
+         section.step-information
+           .step1
+              h1 Login
+              p In order to use this App you would need a Pivotal Tracker Account to fetch all your projects. Otherwise, you should create one.
+         section.monitor
+           .reflex
+           .step1
+              img(src="images/step1.jpg")
 
+      footer#steps
+        .row
+          ul#coins
+            li.step1 Step1
+            li.step2 Step2
+            li.step3 Step3
+            li.step4 Step4
+          #pivotal
+            .info If you don’t have a pivotal account go to
+            img(src="images/pivotal-logo.png")
+          #poker-card
+            img(src="images/estimation-game/cart-sel.png")
+
+
+          
