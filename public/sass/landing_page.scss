@@ -1,12 +1,80 @@
 #landing-page{
   .top-bar{
     margin-bottom: 0;
+
+    #tango{
+      float: right;
+
+      img{
+        float: right;
+        margin-top: 10px;
+      }
+
+    }
+
   }
 
   #content-display{
     @include background-image(linear-gradient($green-35,$green-3b));
     @include box-shadow(rgba(0,0,0,0.7) 0px 1px 40px);
     color: white;
-  }
 
+    .row{
+      padding: 40px 0;
+    }
+
+    .step-information{
+      @include border-radius(15px);
+      background: black;
+      border: 5px solid $gray-cc;
+      float: left;
+      min-height: 390px;
+      padding: 40px 20px;
+      width: 400px;
+    }
+
+    .step-information #info-steps{
+
+      h1{
+        color: $orange-f9;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      p{
+        color: $green-b2;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+    }
+
+    .monitor{
+      background: transparent url('../images/monitor.png') no-repeat center center;
+      float: right;
+      height: 410px;
+      position: relative;
+      width: 540px;
+    }
+
+    .monitor .reflex{
+      height: 274px;
+      left: 38px;
+      position: absolute;
+      top: 22px;
+      width: 397px;
+    }
+
+    .monitor #screen-steps{ 
+      height: 255px;
+      left: 38px;
+      overflow: hidden;
+      position: absolute;
+      top: 22px;
+      width: 454px;
+    } 
+
+  }
 }
