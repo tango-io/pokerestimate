@@ -1,0 +1,12 @@
+#landing-page{
+  .top-bar{
+    margin-bottom: 0;
+  }
+
+  #content-display{
+    @include background-image(linear-gradient($green-35,$green-3b));
+    @include box-shadow(rgba(0,0,0,0.7) 0px 1px 40px);
+    color: white;
+  }
+
+}
