@@ -1,3 +1,6 @@
+// @import "coins/*.png";
+// @include all-coins-sprites;
+
 #landing-page{
   .top-bar{
     margin-bottom: 0;
@@ -34,6 +37,13 @@
     }
 
     .step-information #info-steps{
+
+      li{
+        display: none;
+        &.visible{
+          display: block;
+        }
+      }
 
       h1{
         color: $orange-f9;
@@ -75,6 +85,25 @@
       top: 22px;
       width: 454px;
     } 
+
+  }
+
+  footer#steps{
+
+    .row{
+      padding-top: 20px;
+    }
+
+    #coins{
+
+      li{
+        height: 141px;
+        display: inline-block;
+        width: 141px;
+        background: transparent url('../images/coins.png') no-repeat center 141px;
+      }
+
+    }
 
   }
 }
