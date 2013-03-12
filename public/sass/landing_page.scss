@@ -15,6 +15,10 @@
 
     }
 
+    .name{
+      float: left;
+    }
+
   }
 
   #content-display{
@@ -88,22 +92,89 @@
 
   }
 
-  footer#steps{
+  #steps{
 
     .row{
       padding-top: 20px;
+      position: relative;
     }
 
     #coins{
 
       li{
-        height: 141px;
+        @include transition(1s);
+        background: transparent url("../images/coins.png") no-repeat center -141px;
+        cursor: pointer;
         display: inline-block;
+        height: 141px;
+        margin: 0 20px;
+        text-align: center;
         width: 141px;
-        background: transparent url('../images/coins.png') no-repeat center 141px;
+        &.step1:hover{
+          background: transparent url("../images/coins.png") no-repeat center 0;
+        }
+        &.step2:hover{
+          background: transparent url("../images/coins.png") no-repeat center -282px;
+        }
+        &.step3:hover{
+          background: transparent url("../images/coins.png") no-repeat center -423px;
+        }
+        &.step4:hover{
+          background: transparent url("../images/coins.png") no-repeat center -564px;
+        }
+      }
+
+      li span{
+        color: white;
+        display: table-cell;
+        font-size: 24px;
+        height: inherit;
+        vertical-align: middle;
+        width: inherit;
       }
 
     }
 
+    #pivotal{
+      background: transparent url("../images/red-arrow.png") no-repeat right center;
+      width: 570px;
+      height: 95px;
+
+
+      .info{
+        color: $red-c7;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      a img{
+        margin: 35px 0 0 222px;
+      }
+
+    }
+
+
+  }
+
+  footer{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+
+    .row{
+      position: relative;
+    }
+
+    #poker-card{
+      @include box-shadow(rgba(0,0,0,0.9) 0px 0px 30px);
+      bottom: -71px;
+      position: absolute;
+      right: 0;
+      @include transition(1s);
+      &:hover{
+        bottom: 0px;
+      }
+    }
+    
   }
 }
