@@ -1,13 +1,10 @@
 @import "mixins";
 
 html{
-  height: 100%;
 }
 body {
   @include global_font;
   background-color: #F2F1ED;
-  height: 100%;
-  overflow: hidden;
   h1, h2, h3, h4, li, p , button, a{
     @include global_font;
     padding: 0;
