@@ -4,6 +4,39 @@ Estimates stories from PIVOTALTRACKER by playing planning poker. The purpose of 
 
 In middle of a iteration you can see notifications when a participant has voted. and when time is over all the cards are showed and the point for that story is calculated.
 
+##Things you need
+
+- Computer (with internet)
+- node.js
+- npm
+- ExpressJS
+
+###Install node
+
+     git clone https://github.com/joyent/node.git
+     cd node
+     ./configure
+     make
+     make install
+
+###Install npm
+
+npm comes with node now but if not
+
+    brew install npm
+
+###Install express
+
+    npm install express -g
+
+###Install dependencies
+
+    npm install -d
+
+###Run the application
+
+    node app.js
+
 ##API
 
 GET /api/v1/projects
