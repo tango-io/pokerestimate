@@ -71,8 +71,6 @@ define([
     },
 
     landing: function(){
-      console.log('landing');
-
       this.landing = new LandingPageView({
         el: '#landing-page',
         router: this
@@ -80,7 +78,6 @@ define([
     },
 
     home: function(){
-      console.log('home');
       this.account.reload();
 
       this.home = new HomeView({

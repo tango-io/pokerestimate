@@ -7,9 +7,16 @@ define([
 
   var LandingPageView = Backbone.View.extend({
 
+    events: {
+      'click #coins li' : 'changeStep'
+    },
+
     initialize: function(){
       // this.render();
-      console.log('in the view')
+    },
+
+    changeStep: function(){
+      console.log('this is the change step');
     },
 
     render: function(){
