@@ -14,7 +14,8 @@ define([
   'app/views/flash',
   'app/views/homeView',
   'app/views/projectManager',
-  'app/views/socketController'
+  'app/views/socketController',
+  'app/views/landingPageView'
 
 ], function(
 
@@ -32,14 +33,16 @@ define([
   Flash,
   HomeView,
   ProjectManager,
-  socketController
+  socketController,
+  LandingPageView
 
 ){
   var Router = Backbone.Router.extend({
     routes: {
 
       //Home
-      '' : 'home',
+      'g' : 'home',
+      '' : 'landing',
 
       'project/:id': 'projectManager'
     },
@@ -67,7 +70,17 @@ define([
       this.socket = new socketController({ router: this });
     },
 
+    landing: function(){
+      console.log('landing');
+
+      this.landing = new LandingPageView({
+        el: '#landing-page',
+        router: this
+      });
+    },
+
     home: function(){
+      console.log('home');
       this.account.reload();
 
       this.home = new HomeView({
