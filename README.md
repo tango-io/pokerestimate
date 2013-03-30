@@ -25,7 +25,7 @@ npm comes with node now but if not
 
     brew install npm
 
-###Install npm
+###Checking node version
 
 NOTE: If you're using 'nvm' please use the 0.8.14 node version
 
