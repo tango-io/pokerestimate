@@ -25,6 +25,16 @@ npm comes with node now but if not
 
     brew install npm
 
+###Install npm
+
+NOTE: If you're using 'nvm' please use the 0.8.14 node version
+
+    nvm use 0.8.14
+
+If you haven't installed that version install with :
+
+    nvm install 0.8.14
+
 ###Install express
 
     npm install express -g
@@ -87,7 +97,7 @@ GET /api/v1/projects/:id/tasks/:id
 
 Install zurb-foundation gem:
 
-    gem install zurb-foundation
+    gem install zurb-foundation -v 3.2.5
 
 Install animation and animate gems:
 
