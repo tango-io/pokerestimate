@@ -13103,33 +13103,41 @@ body .loading:after {
   background: black;
   border: 5px solid #cccccc;
   float: left;
-  min-height: 390px;
+  height: 390px;
+  overflow: hidden;
   padding: 40px 20px;
   width: 400px;
 }
-/* line 46, ../sass/landing_page.scss */
+/* line 45, ../sass/landing_page.scss */
+#landing-page #content-display .step-information #info-steps {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  overflow: hidden;
+  width: 3000px;
+}
+/* line 50, ../sass/landing_page.scss */
 #landing-page #content-display .step-information #info-steps li {
-  display: none;
+  float: left;
+  margin-right: 40px;
+  width: 350px;
 }
-/* line 48, ../sass/landing_page.scss */
-#landing-page #content-display .step-information #info-steps li.visible {
-  display: block;
-}
-/* line 53, ../sass/landing_page.scss */
+/* line 56, ../sass/landing_page.scss */
 #landing-page #content-display .step-information #info-steps h1 {
   color: #f9a73f;
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 15px;
 }
-/* line 60, ../sass/landing_page.scss */
+/* line 63, ../sass/landing_page.scss */
 #landing-page #content-display .step-information #info-steps p {
   color: #b2bdac;
   font-size: 24px;
   font-style: italic;
   font-weight: bold;
 }
-/* line 69, ../sass/landing_page.scss */
+/* line 72, ../sass/landing_page.scss */
 #landing-page #content-display .monitor {
   background: transparent url("../images/monitor.png") no-repeat center center;
   float: right;
@@ -13137,7 +13145,7 @@ body .loading:after {
   position: relative;
   width: 540px;
 }
-/* line 77, ../sass/landing_page.scss */
+/* line 80, ../sass/landing_page.scss */
 #landing-page #content-display .monitor .reflex {
   height: 274px;
   left: 38px;
@@ -13145,7 +13153,7 @@ body .loading:after {
   top: 22px;
   width: 397px;
 }
-/* line 85, ../sass/landing_page.scss */
+/* line 88, ../sass/landing_page.scss */
 #landing-page #content-display .monitor #screen-steps {
   height: 255px;
   left: 38px;
@@ -13154,17 +13162,13 @@ body .loading:after {
   top: 22px;
   width: 454px;
 }
-/* line 98, ../sass/landing_page.scss */
+/* line 101, ../sass/landing_page.scss */
 #landing-page #steps .row {
   padding-top: 20px;
   position: relative;
 }
-/* line 105, ../sass/landing_page.scss */
+/* line 108, ../sass/landing_page.scss */
 #landing-page #steps #coins li {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
   background: transparent url("../images/coins.png") no-repeat center -141px;
   cursor: pointer;
   display: inline-block;
@@ -13173,23 +13177,23 @@ body .loading:after {
   text-align: center;
   width: 141px;
 }
-/* line 114, ../sass/landing_page.scss */
+/* line 116, ../sass/landing_page.scss */
 #landing-page #steps #coins li.step1:hover {
   background: transparent url("../images/coins.png") no-repeat center 0;
 }
-/* line 117, ../sass/landing_page.scss */
+/* line 119, ../sass/landing_page.scss */
 #landing-page #steps #coins li.step2:hover {
   background: transparent url("../images/coins.png") no-repeat center -282px;
 }
-/* line 120, ../sass/landing_page.scss */
+/* line 122, ../sass/landing_page.scss */
 #landing-page #steps #coins li.step3:hover {
   background: transparent url("../images/coins.png") no-repeat center -423px;
 }
-/* line 123, ../sass/landing_page.scss */
+/* line 125, ../sass/landing_page.scss */
 #landing-page #steps #coins li.step4:hover {
   background: transparent url("../images/coins.png") no-repeat center -564px;
 }
-/* line 128, ../sass/landing_page.scss */
+/* line 130, ../sass/landing_page.scss */
 #landing-page #steps #coins li span {
   color: white;
   display: table-cell;
@@ -13198,34 +13202,34 @@ body .loading:after {
   vertical-align: middle;
   width: inherit;
 }
-/* line 139, ../sass/landing_page.scss */
+/* line 141, ../sass/landing_page.scss */
 #landing-page #steps #pivotal {
   background: transparent url("../images/red-arrow.png") no-repeat right center;
   width: 570px;
   height: 95px;
 }
-/* line 145, ../sass/landing_page.scss */
+/* line 147, ../sass/landing_page.scss */
 #landing-page #steps #pivotal .info {
   color: #c70a2a;
   font-size: 24px;
   font-weight: bold;
 }
-/* line 151, ../sass/landing_page.scss */
+/* line 153, ../sass/landing_page.scss */
 #landing-page #steps #pivotal a img {
   margin: 35px 0 0 222px;
 }
-/* line 160, ../sass/landing_page.scss */
+/* line 162, ../sass/landing_page.scss */
 #landing-page footer {
   bottom: 0;
   position: absolute;
   width: 100%;
   margin: -147px 0;
 }
-/* line 166, ../sass/landing_page.scss */
+/* line 168, ../sass/landing_page.scss */
 #landing-page footer .row {
   position: relative;
 }
-/* line 170, ../sass/landing_page.scss */
+/* line 172, ../sass/landing_page.scss */
 #landing-page footer #poker-card {
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 30px;
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 30px;
@@ -13235,14 +13239,14 @@ body .loading:after {
   border-radius: 10px;
   bottom: -71px;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   right: 0;
   -webkit-transition: 1s;
   -moz-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
 }
-/* line 178, ../sass/landing_page.scss */
+/* line 180, ../sass/landing_page.scss */
 #landing-page footer #poker-card:hover {
   bottom: 0px;
 }
