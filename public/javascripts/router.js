@@ -78,6 +78,7 @@ define([
     },
 
     home: function(){
+      console.log('home');
       this.account.reload();
 
       this.home = new HomeView({
