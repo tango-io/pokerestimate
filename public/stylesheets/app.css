@@ -13240,7 +13240,7 @@ body .loading:after {
   bottom: -71px;
   cursor: pointer;
   position: fixed;
-  right: 0;
+  right: 50px;
   -webkit-transition: 1s;
   -moz-transition: 1s;
   -o-transition: 1s;
