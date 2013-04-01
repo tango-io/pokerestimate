@@ -13,15 +13,12 @@ define([
 
     changeStep: function(e){
       e.preventDefault();
-      var step  = this.$('#coins li').index(e.currentTarget);
-      var movePx = -1 * ((step + 1) * 390 - 390);
+      var stepIndex  = this.$(e.currentTarget).index();
+      var movePx = -1 * ((stepIndex + 1) * 390 - 390);
       this.$('#info-steps').css('margin-left', movePx+'px');
       this.$('#screen-steps li').fadeOut('fast');
-      var screenToShow = this.$('#screen-steps li')[step];
+      var screenToShow = this.$('#screen-steps li')[stepIndex];
       this.$(screenToShow).fadeIn('fast');
-
-      
-
     },
 
   });
