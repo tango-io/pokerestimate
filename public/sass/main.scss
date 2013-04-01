@@ -1,5 +1,7 @@
 @import "mixins";
 
+html{
+}
 body {
   @include global_font;
   background-color: #F2F1ED;
@@ -179,3 +181,4 @@ body {
 
 @import "home_page";
 @import "project_page";
+@import "landing_page";
