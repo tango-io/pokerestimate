@@ -15,7 +15,9 @@ module.exports = function(app, passport){
 
   var authenticate = authController.setUp(authController, passport);
 
-  app.get('/', homeController.index);
+  app.get('/game', homeController.index);
+
+  app.get('/', homeController.landing);
 
   app.post('/login', authenticate);
   app.get('/logout', authController.logout);

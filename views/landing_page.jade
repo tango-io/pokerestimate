@@ -1,0 +1,70 @@
+extends layout
+
+block content
+
+  #landing-page
+    nav.top-bar
+      .row
+        ul
+          li.name
+            .egg
+            .logo
+              a(href="/game#g")
+                img(src="images/logo.png")
+            h1
+              a(href="/game#g") POKER 
+                span ESTIMATE’EM
+        section#tango
+          img(src="images/tango-logo.png")
+     #content-display
+       .row
+         section.step-information
+           ul#info-steps
+            li
+              h1 Login
+              p In order to use this App you would need a Pivotal Tracker Account to fetch all your projects. Otherwise, you should create one.
+            li
+              h1 Choose a Project
+              p Once you have logged in, you will be able to navigate between Pivotal Tracker projects.
+            li
+              h1 Estimate
+              p After selecting a project, you can start to estimate by picking a card from the deck.
+            li
+              h1 Play
+              p Wait for all the participants to estimate and PLAY!
+
+         section.monitor
+           // .reflex
+           ul#screen-steps
+             li
+               img(src="images/step1.jpg")
+             li
+               img(src="images/step2.jpg")
+             li
+               img(src="images/step3.jpg")
+             li
+               img(src="images/step4.jpg")
+
+      #steps
+        .row
+          ul#coins
+            li.step1 
+              span Step1
+            li.step2
+              span Step2
+            li.step3
+              span Step3
+            li.step4
+              span Step4
+          #pivotal
+            .info If you don’t have a pivotal account go to
+            a(href="https://www.pivotaltracker.com/signup/new")
+              img(src="images/pivotal-logo.png")
+      footer
+        .row
+          #poker-card
+            a(href="/game#g")
+              img(src="images/poker-card.png")
+
+
+          
