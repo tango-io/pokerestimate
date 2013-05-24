@@ -7,7 +7,7 @@ define([
 
   //View
   'app/views/taskItemView',
-  'app/views/TaskDetail',
+  'app/views/taskDetail',
 
   //Template
   'text!templates/project-page/taskItemTemplate.html',
