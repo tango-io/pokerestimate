@@ -1,19 +1,17 @@
 var mongodb = require('mongodb');
-
-var host = "alex.mongohq.com";
-var port = 10016;
-var options = {};
-
-var server = new mongodb.Server(host, port, options, {native_parser: true});
-var Database = new mongodb.Db("TexasEstimateEm", server, {safe: false});
-
 var inspect  = require('eyes').inspector({ stream: null });
 
 exports.close = function(){
   Database.close();
 };
 
-exports.open = function(callback){
+exports.open = function(database, callback){
+  var connection = database.connection;
+  var user       = database.user;
+
+  var server = new mongodb.Server(connection.host, connection.port, connection.options, connection.native_parser);
+  var Database = new mongodb.Db(database.name, server, {safe: false});
+
   console.log(inspect('Opening database...'));
 
   Database.open(function(error, db){
@@ -21,7 +19,7 @@ exports.open = function(callback){
     if(error){return callback.call(this, error);}
     console.log(inspect('Authenticating...'));
 
-    db.authenticate('narciso', 'guillen', function (err, replies) {
+    db.authenticate(user.username, user.password, function (err, replies) {
       console.log(inspect("We are now connected and authenticated ."));
 
       var collections = {
