@@ -1,0 +1,2 @@
+css:
+	compass compile public/
