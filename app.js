@@ -8,17 +8,21 @@ var express = require('express')
   , path = require('path');
 
 var app           = express();
-
+var config        = require('./config');
 var flash         = require('connect-flash');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt        = require('bcrypt');
 var inspect       = require('eyes').inspector({ stream: null });
 
+
+if(!config){throw new Error('Configuration file missing');}
+process.env.PORT = process.env.PORT || config.app.PORT;
+
 var User = require('./models/user');
 var database = require("./config/database");
 
-database.open(function(err, db){
+database.open(config.database, function(err, db){
   console.log(inspect('Database Ready!'));
 
   // Set up database
