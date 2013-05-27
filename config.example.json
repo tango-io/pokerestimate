@@ -1,0 +1,19 @@
+{
+  "app": {
+    "PORT": "3000"
+  },
+  "database": {
+    "name": "",
+    "user": {
+      "username": "",
+      "password": ""
+    },
+    "connection": {
+      "host": "",
+      "port": null,
+      "options": {
+      },
+      "native_parser": true
+    }
+  }
+}
