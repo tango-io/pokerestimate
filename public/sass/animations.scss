@@ -1,4 +1,5 @@
 @import "animate";
+@import "compass/css3/text-shadow";
 
 @include keyframes(flash-alert) {
   0%, 100% {

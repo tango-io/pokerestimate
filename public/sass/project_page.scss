@@ -9,6 +9,10 @@
 
 @import "mixins";
 @import "animations";
+@import "colors";
+@import "compass/css3/border-radius";
+@import "compass/css3/images";
+@import "compass/css3/transition";
 @import "status/*.png";
 @include all-status-sprites;
 $experimental-support-for-svg: true;
